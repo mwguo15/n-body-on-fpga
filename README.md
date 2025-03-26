@@ -1,1 +1,1 @@
-# path-tracing
+# Real-Time Path Tracing
