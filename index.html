@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Progress</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: Arial, sans-serif; margin: 40px; padding: 20px; }
+        body { font-family: 'Open Sans', sans-serif; margin: 40px; padding: 20px; }
         h1, h2 { color: #333; }
         .container { max-width: 800px; margin: auto; }
         .milestones { margin-top: 20px; }
         .milestone { border-left: 4px solid #007bff; padding: 10px; margin: 10px 0; }
         .file-embed { margin-top: 20px; }
+        .text-block { border: 1px solid #ccc; padding: 10px; margin: 10px 0; min-height: 50px; }
     </style>
 </head>
 <body>
@@ -35,6 +37,13 @@
         <div class="file-embed">
             <p><a href="files/sample.pdf" target="_blank">View Sample File</a></p>
         </div>
+
+        <h2>Notes & Text Blocks</h2>
+        <div class="text-block" contenteditable="true">Click here to edit this block...</div>
+        <div class="text-block" contenteditable="true">Add your notes here...</div>
     </div>
+    <footer style="margin-top: 20px; text-align: center; font-size: 14px; color: #666;">
+        <p>Created by Enrique Gomez and Maxwell Guo</p>
+    </footer>
 </body>
 </html>
