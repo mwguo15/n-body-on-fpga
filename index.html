@@ -1,48 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Progress</title>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Open Sans', sans-serif; margin: 40px; padding: 20px; }
-        h1, h2 { color: #333; }
-        .container { max-width: 800px; margin: auto; }
-        .milestones { margin-top: 20px; }
-        .milestone { border-left: 4px solid #007bff; padding: 10px; margin: 10px 0; }
-        .file-embed { margin-top: 20px; }
-        .text-block { border: 1px solid #ccc; padding: 10px; margin: 10px 0; min-height: 50px; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Real-Time Path Tracing Engine in CUDA+OpenGL</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 20px;
+      background: #fff;
+    }
+    header, footer {
+      background: #007bff;
+      color: #fff;
+      padding: 10px 0;
+      text-align: center;
+    }
+    h1, h2, h3 {
+      margin-top: 20px;
+      color: #007bff;
+    }
+    section {
+      margin-bottom: 30px;
+    }
+    .section-content {
+      margin: 10px 0;
+    }
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .milestone, .info-block {
+      border-left: 4px solid #007bff;
+      background: #e9f0ff;
+      padding: 10px;
+      margin: 10px 0;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 20px;
+    }
+    @media (max-width: 600px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Project Progress</h1>
-        <p>Welcome to my project documentation page!</p>
+  <header>
+    <h1>Real-Time Path Tracing Engine in CUDA+OpenGL</h1>
+    <p>Enrique Gomez (exg) &amp; Maxwell Guo (mwguo)</p>
+  </header>
+  <div class="container">
+    <!-- Project Proposal -->
+    <section id="proposal">
+      <h2>Project Proposal</h2>
+      <div class="section-content">
+        <p>
+          We propose to build a real-time global illumination renderer using Monte Carlo path tracing entirely on a GPU. Our engine will utilize CUDA to trace rays in parallel and produce progressively refined images of a 3D scene. An OpenGL front-end will display the rendered image in real time, resetting the accumulation whenever the user interacts (e.g., moves the camera). Our goal is to achieve interactive frame rates at low-to-moderate resolutions through massive parallelism and careful optimization.
+        </p>
+        <p>
+          <strong>Proposal PDF:</strong> <a href="files/project_proposal.pdf" target="_blank">View Project Proposal (PDF)</a>
+        </p>
+      </div>
+    </section>
 
-        <h2>Milestones</h2>
-        <div class="milestones">
-            <div class="milestone">
-                <strong>Milestone 1:</strong> Project setup and initial research
-            </div>
-            <div class="milestone">
-                <strong>Milestone 2:</strong> Implementation and development
-            </div>
-            <div class="milestone">
-                <strong>Milestone 3:</strong> Testing and final adjustments
-            </div>
+    <!-- Background -->
+    <section id="background">
+      <h2>Background</h2>
+      <div class="section-content">
+        <p>
+          In path tracing, rays are cast from the camera and bounce through the scene, interacting with surfaces and light sources to compute global illumination effects such as soft shadows, indirect lighting, and color bleeding. Our implementation will focus on core components including ray generation, intersection tests, multi-bounce path tracing, and progressive sample accumulation, providing an excellent platform to explore advanced GPU optimization techniques.
+        </p>
+      </div>
+    </section>
+
+    <!-- The Challenge -->
+    <section id="challenge">
+      <h2>The Challenge</h2>
+      <div class="section-content">
+        <p>
+          Unlike a basic ray tracer that shoots a single ray per pixel, our path tracer spawns many rays that bounce stochastically to capture global illumination. This leads to highly irregular workloads with divergent execution—some rays terminate quickly while others bounce several times—resulting in severe load imbalance across GPU threads. To address this, we must design and implement advanced techniques such as active ray compaction and efficient BVH traversal, both of which require deep knowledge of GPU memory hierarchies, thread scheduling, and SIMT architecture. These challenges make our project an ideal case study in the complexities of parallel programming on modern GPUs, going far beyond simply optimizing for frame rate or resolution.
+      </p>
+      </div>
+    </section>
+
+    <!-- Platform Choice & Resources -->
+    <section id="platform-resources">
+      <h2>Platform Choice &amp; Resources</h2>
+      <div class="grid">
+        <div class="info-block">
+          <h3>Platform Choice</h3>
+          <p>
+            We will implement our renderer in C++ using CUDA, targeting NVIDIA GPUs. NVIDIA’s GPUs are tailored for high-throughput, data-parallel workloads, making them ideal for the massive number of ray computations required by a path tracer. Integrating CUDA with OpenGL via pixel buffer objects allows for efficient real-time display. This platform is perfect for addressing the non-uniform, dynamic workloads that our project demands.
+          </p>
         </div>
-
-        <h2>Embedded Files</h2>
-        <div class="file-embed">
-            <p><a href="files/sample.pdf" target="_blank">View Sample File</a></p>
+        <div class="info-block">
+          <h3>Resources</h3>
+          <p>
+            Development and testing will primarily be done on our personal machines equipped with NVIDIA GPUs (RTX 3060 and RTX 3070) and supplemented by GHC lab machines with RTX 2080 GPUs. We will write our path tracer largely from scratch, referencing key resources such as “Ray Tracing in One Weekend” and various online CUDA path tracing tutorials. We also plan to utilize GLM for vector math and CUDA’s curand library for random number generation, along with standard OpenGL libraries (using GLFW for window management).
+          </p>
         </div>
+      </div>
+    </section>
 
-        <h2>Project Repository</h2>
-        <p>Check out the full project! <a href="https://github.com/mwguo15/path-tracing" target="_blank">GitHub Repository</a></p>
-    </div>
-    <footer style="margin-top: 20px; text-align: center; font-size: 14px; color: #666;">
-        <p>Created by Enrique Gomez and Maxwell Guo</p>
-    </footer>
+    <!-- Schedule -->
+    <section id="schedule">
+      <h2>Schedule</h2>
+      <div class="section-content">
+        <div class="milestone">
+          <strong>Week 1 (Mar 26 – Apr 1):</strong> Setup and research. Establish the repository, configure the build system, study foundational materials, and implement a simple CPU-based ray tracer that renders a basic scene (spheres and a ground plane).
+        </div>
+        <div class="milestone">
+          <strong>Week 2 (Apr 2 – Apr 8):</strong> Port the core functionality to CUDA. Develop a naive GPU kernel mapping one thread per pixel for ray generation, intersection tests, and color computation. Verify output matches the CPU version.
+        </div>
+        <div class="milestone">
+          <strong>Week 3 (Apr 9 – Apr 15):</strong> Extend to multi-bounce path tracing and introduce basic material support. Begin designing a BVH for accelerated intersections. Profile initial GPU performance and prepare the milestone report.
+        </div>
+        <div class="milestone">
+          <strong>Week 4 (Apr 16 – Apr 22):</strong> Integrate acceleration structures (BVH) and optimize memory access patterns. Implement active ray compaction to manage divergent workloads. Use profiling tools to maximize GPU occupancy.
+        </div>
+        <div class="milestone">
+          <strong>Week 5 (Apr 23 – Apr 28):</strong> Integrate CUDA–OpenGL interop for real-time display. Implement interactive controls (mouse/keyboard) for camera movement and accumulation reset. Finalize testing, performance evaluation, and prepare the live demo and final report.
+        </div>
+      </div>
+    </section>
+
+    <!-- Repository & Additional Info -->
+    <section id="repository">
+      <h2>Project Repository</h2>
+      <div class="section-content">
+        <p>
+          Check out the full project on GitHub: <a href="https://github.com/mwguo15/path-tracing" target="_blank">https://github.com/mwguo15/path-tracing</a>
+        </p>
+      </div>
+    </section>
+  </div>
+  <footer>
+    <p>Real-Time Path Tracing Engine in CUDA+OpenGL &mdash; Created by Enrique Gomez (exg) and Maxwell Guo (mwguo) &mdash; <a href="https://mwguo15.github.io/path-tracing/" target="_blank">Project Webpage</a></p>
+  </footer>
 </body>
 </html>
