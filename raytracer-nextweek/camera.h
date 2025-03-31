@@ -2,6 +2,10 @@
 #define CAMERA_H
 
 #include "hittable.h"
+#include "material.h"
+
+#include <omp.h>
+#include <chrono>
 
 class camera {
     public:
@@ -23,12 +27,14 @@ class camera {
 
             std::cout << "P3\n" << image_width << ' ' << image_height << "\n255\n";
 
+            auto start = std::chrono::high_resolution_clock::now(); // Start timer
+
             for (int j = 0; j < image_height; j++) {
                 std::clog << "\rScanlines remaining: " << (image_height - j) << ' ' << std::flush;
-                // #pragma omp parallel for
+                #pragma parallel for
                 for (int i = 0; i < image_width; i++) {
                     color pixel_color(0, 0, 0);
-                    // #pragma omp parallel for
+                    #pragma parallel for
                     for (int sample = 0; sample < samples_per_pixel; sample++) {
                         ray r = get_ray(i, j);
                         pixel_color += ray_color(r, max_depth, world);
@@ -37,7 +43,10 @@ class camera {
                 }
             }
 
-            std::clog << "\rDone.                 \n";
+            auto end = std::chrono::high_resolution_clock::now(); // End timer
+            std::chrono::duration<double> elapsed = end - start;  // Compute elapsed time
+        
+            std::clog << "\rElapsed time: " << elapsed.count() << " seconds\n";
         }
 
     private:
@@ -101,7 +110,7 @@ class camera {
             auto ray_origin = (defocus_angle <= 0) ? center : defocus_disk_sample();            
             auto ray_direction = pixel_sample - ray_origin;
             auto ray_time = random_double();
-    
+
             return ray(ray_origin, ray_direction, ray_time);
         }
     

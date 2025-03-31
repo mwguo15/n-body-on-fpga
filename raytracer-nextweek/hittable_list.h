@@ -7,7 +7,7 @@
 #include <vector>
 
 class hittable_list : public hittable {
-public:
+  public:
     std::vector<shared_ptr<hittable>> objects;
 
     hittable_list() {}
@@ -25,7 +25,6 @@ public:
         bool hit_anything = false;
         auto closest_so_far = ray_t.max;
 
-        #pragma omp parallel for
         for (const auto& object : objects) {
             if (object->hit(r, interval(ray_t.min, closest_so_far), temp_rec)) {
                 hit_anything = true;
@@ -39,9 +38,8 @@ public:
 
     aabb bounding_box() const override { return bbox; }
 
-private:
+  private:
     aabb bbox;
-
 };
 
 #endif
