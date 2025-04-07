@@ -1,1 +1,1 @@
-# Real-Time Path Tracing
+# N-body Simulation on FPGA
