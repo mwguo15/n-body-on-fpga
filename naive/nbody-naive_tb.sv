@@ -6,7 +6,7 @@ module NBodySim_tb();
     logic clk, reset, start, done;
 
     // Instantiate NBodySim
-    NBodySim sim (
+    NBodySim sim #(N = 2) (
         .clk(clk),
         .reset(reset),
         .start(start),
