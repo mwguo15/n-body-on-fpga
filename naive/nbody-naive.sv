@@ -10,7 +10,11 @@ typedef struct packed {
     logic        [15:0] mass;
 } body_t;
 
+<<<<<<< HEAD
 module NBodySim #(parameter N = 16,                    // Number of bodies 
+=======
+module NBodySim #(parameter int N = 16,
+>>>>>>> c3663961481222673b907f3750e485868a06ca65
                   parameter ADDR_WIDTH = $clog2(N),
                   parameter DT = 32'h3C23D70A,         // 0.01 in IEEE 754 - timestep
                   parameter G = 32'h3A83126F,          // 0.001 in IEEE 754 - gravitatonal constant
