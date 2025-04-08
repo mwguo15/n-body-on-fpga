@@ -39,20 +39,19 @@ force_calculator FORCE(.clk, .reset, .enable(fc_en),
                        .body_i, .body_j, .valid_in(fc_valid), 
                        .force_x, .force_y, .valid_out(fc_done));
 
-RAM_2_PORT bram(
-    .aclr(1'b0),
-    .address_a(addr),
-    .address_b(),
-    .clock(clk),
-    .data_a(write_data),      // Write data a
-    .data_b(),                // Write data b
-    .rden_a(rd_en),
-    .rden_b(),
-    .wren_a(wr_en),
-    .wren_b(),
-    .q_a(read_body),          // Read data a
-    .q_b()                    // Read data b
-);
+RAM_2_PORT BRAM(.aclr(1'b0),
+                .address_a(addr),
+                .address_b(addr),
+                .clock(clk),
+                .data_a(write_data),      // Write data a
+                .data_b(write_data),                // Write data b
+                .rden_a(rd_en),
+                .rden_b(rd_en),
+                .wren_a(wr_en),
+                .wren_b(wr_en),
+                .q_a(read_body),          // Read data a
+                .q_b(read_body)                    // Read data b
+               );
 
 enum logic [3:0] {
     IDLE,   
