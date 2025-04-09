@@ -1,34 +1,24 @@
-LDVERSION= $(shell $(PIC_LD) -v | grep -q 2.30 ;echo $$?)
-ifeq ($(LDVERSION), 0)
-     LD_NORELAX_FLAG= --no-relax
-endif
+PIC_LD=ld
 
 ARCHIVE_OBJS=
-ARCHIVE_OBJS += _2272746_archive_1.so
-_2272746_archive_1.so : archive.1/_2272746_archive_1.a
+ARCHIVE_OBJS += _3376945_archive_1.so
+_3376945_archive_1.so : archive.20/_3376945_archive_1.a
 	@$(AR) -s $<
-	@$(PIC_LD) -shared  -Bsymbolic $(LD_NORELAX_FLAG)  -o .//../simv.daidir//_2272746_archive_1.so --whole-archive $< --no-whole-archive
+	@$(PIC_LD) -shared  -o .//../simv.daidir//_3376945_archive_1.so --whole-archive $< --no-whole-archive
 	@rm -f $@
-	@ln -sf .//../simv.daidir//_2272746_archive_1.so $@
+	@ln -sf .//../simv.daidir//_3376945_archive_1.so $@
 
 
-ARCHIVE_OBJS += _2272777_archive_1.so
-_2272777_archive_1.so : archive.1/_2272777_archive_1.a
+ARCHIVE_OBJS += _prev_archive_1.so
+_prev_archive_1.so : archive.20/_prev_archive_1.a
 	@$(AR) -s $<
-	@$(PIC_LD) -shared  -Bsymbolic $(LD_NORELAX_FLAG)  -o .//../simv.daidir//_2272777_archive_1.so --whole-archive $< --no-whole-archive
+	@$(PIC_LD) -shared  -o .//../simv.daidir//_prev_archive_1.so --whole-archive $< --no-whole-archive
 	@rm -f $@
-	@ln -sf .//../simv.daidir//_2272777_archive_1.so $@
+	@ln -sf .//../simv.daidir//_prev_archive_1.so $@
 
 
 
 
-VCS_CU_ARC_OBJS = 
-
-
-O0_OBJS =
-
-$(O0_OBJS) : %.o: %.c
-	$(CC_CG) $(CFLAGS_O0) -c -o $@ $<
 
 
 %.o: %.c
@@ -40,7 +30,7 @@ CU_LVL_OBJS = \
 SIM_l.o 
 
 MAIN_OBJS = \
-objs/amcQw_d.o 
+amcQwB.o objs/amcQw_d.o 
 
 CU_OBJS = $(MAIN_OBJS) $(ARCHIVE_OBJS) $(CU_UDP_OBJS) $(CU_LVL_OBJS)
 

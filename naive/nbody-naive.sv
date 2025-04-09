@@ -51,6 +51,7 @@ enum logic [3:0] {
     LOAD_BODY_I,    // Set RAM address = i to load body i
     INIT_BODY_I,    // Register body_i
     LOAD_BODY_J,    // Set RAM address = j to load body j (inner loop)
+    WAIT,
     INIT_BODY_J,    // Register body_j
     COMPUTE_FORCE,  // Compute force contribution from body j
     WAIT_FORCE,     // Wait for force calculation to finish
@@ -131,20 +132,26 @@ always_comb begin
         end
         INIT_BODY_I: begin
             register_i = 1; // Register body_i
+            addr = i;
             nextState = LOAD_BODY_J;
         end 
         LOAD_BODY_J: begin
             addr = j; // Reading body_j
+            nextState = j == i ? INCR_J : WAIT; // If j equal to i, then increment again to skip 
+        end
+        WAIT: begin
+            addr = j;
             nextState = INIT_BODY_J;
         end
         INIT_BODY_J: begin
             register_j = 1;     // Register body_j
+            addr = j;
             nextState = COMPUTE_FORCE;
         end
         COMPUTE_FORCE: begin
             fc_en = 1; // Begin force calculation
             fc_valid = 1; // Signal that the input is valid for 1 cycle
-            nextState = j < N - 1 ? WAIT_FORCE : UPDATE_BODY;
+            nextState = j < N ? WAIT_FORCE : UPDATE_BODY;
         end
         WAIT_FORCE: begin
             fc_en = 1; // Keeping force calculation enabled while it runs 
@@ -152,7 +159,7 @@ always_comb begin
         end
         INCR_J: begin
             incr_j = 1'b1;
-            nextState = j == i - 1 ? INCR_J : LOAD_BODY_J; // If j will be equal to i, then increment again to skip 
+            nextState = LOAD_BODY_J; 
         end
         UPDATE_BODY: begin
             // probably update some velocity position stuff here lol 
@@ -166,7 +173,7 @@ always_comb begin
         end
         INCR_I: begin
             incr_i = 1'b1;
-            nextState = i < N - 1 ? LOAD_BODY_I : DONE;
+            nextState = i < N ? LOAD_BODY_I : DONE;
         end
         DONE: begin
             done = 1;
@@ -180,22 +187,22 @@ endmodule : NBodySim
 
 
 module force_calculator #(
-    parameter G = 32'h66,          // 0.001 in IEEE 754
-    parameter SOFTENING = 32'h66,  // 0.001 in IEEE 754
-    parameter LATENCY = 6                // Number of pipeline stages
+    parameter G = 1000,          // Scaled integer (e.g., 1000 represents 0.001)
+    parameter SOFTENING = 1,     // Integer softening factor
+    parameter LATENCY = 6        // Number of pipeline stages
 )(
-    input  logic clk,                   // Clock
-    input  logic reset,                 // Active-high reset
-    input  logic enable,                // Module enable
-    input  body_t body_i,               // Body i
-    input  body_t body_j,               // Body j
-    input  logic valid_in,              // Input valid
-    output logic [31:0] force_x,        // Force x-component
-    output logic [31:0] force_y,        // Force y-component
-    output logic valid_out              // Output valid
+    input  logic clk,
+    input  logic reset,
+    input  logic enable,
+    input  body_t body_i,
+    input  body_t body_j,
+    input  logic valid_in,
+    output logic [31:0] force_x, // Output forces (scaled integers)
+    output logic [31:0] force_y,
+    output logic valid_out
 );
 
-// Pipeline stage registers
+// --- Pipeline Stages (Integer-only) ---
 typedef struct packed {
     logic signed [15:0] pos_x_i, pos_x_j, pos_y_i, pos_y_j;
     logic [15:0] mass_i, mass_j;
@@ -203,38 +210,29 @@ typedef struct packed {
 } stage1_t;
 
 typedef struct packed {
-    logic signed [15:0] dx, dy;
+    logic signed [31:0] dx, dy;  // Expanded to 32-bit for squared values
     logic [15:0] mass_j;
     logic valid;
 } stage2_t;
 
 typedef struct packed {
-    logic signed [15:0] dx, dy;
-    logic [31:0] dx_sq, dy_sq;
+    logic signed [31:0] dx_sq, dy_sq;
     logic [31:0] softening_sq;
     logic [15:0] mass_j;
     logic valid;
 } stage3_t;
 
 typedef struct packed {
-    logic signed [15:0] dx, dy;
     logic [31:0] dist_sq;
     logic [15:0] mass_j;
     logic valid;
 } stage4_t;
 
 typedef struct packed {
-    logic signed [15:0] dx, dy;
-    logic [31:0] inv_dist;
+    logic [31:0] inv_dist_sq;  // 1/dist_sq (scaled integer)
     logic [31:0] mass_j_scaled;
     logic valid;
 } stage5_t;
-
-typedef struct packed {
-    logic [31:0] inv_dist3;
-    logic [31:0] mass_j_scaled;
-    logic valid;
-} stage6_t;
 
 // Pipeline registers
 stage1_t s1;
@@ -242,18 +240,15 @@ stage2_t s2;
 stage3_t s3;
 stage4_t s4;
 stage5_t s5;
-stage6_t s6;
 
-// Softening squared (constant)
-logic [31:0] softening_sq;
-assign softening_sq = SOFTENING * SOFTENING;
+logic [31:0] safe_dist_sq;
+logic [63:0] magnitude;
 
 // =============================================
 // Pipeline Stage 1: Input Registration
 // =============================================
 always_ff @(posedge clk) begin
-    if (reset | valid_out) 
-        s1 <= '0;
+    if (reset) s1 <= '0;
     else if (enable) begin
         s1.pos_x_i <= body_i.x;
         s1.pos_y_i <= body_i.y;
@@ -269,13 +264,12 @@ end
 // Pipeline Stage 2: Delta Calculation
 // =============================================
 always_ff @(posedge clk) begin
-    if (reset | valid_out) 
-        s2 <= '0;
+    if (reset) s2 <= '0;
     else if (enable) begin
-        s2.dx    <= s1.pos_x_j - s1.pos_x_i;
-        s2.dy    <= s1.pos_y_j - s1.pos_y_i;
+        s2.dx     <= s1.pos_x_j - s1.pos_x_i;  // Signed delta
+        s2.dy     <= s1.pos_y_j - s1.pos_y_i;
         s2.mass_j <= s1.mass_j;
-        s2.valid <= s1.valid;
+        s2.valid  <= s1.valid;
     end
 end
 
@@ -283,16 +277,13 @@ end
 // Pipeline Stage 3: Squared Calculations
 // =============================================
 always_ff @(posedge clk) begin
-    if (reset | valid_out) 
-        s3 <= '0;
+    if (reset) s3 <= '0;
     else if (enable) begin
-        s3.dx          <= s2.dx;
-        s3.dy          <= s2.dy;
-        s3.dx_sq       <= s2.dx * s2.dx;
+        s3.dx_sq       <= s2.dx * s2.dx;       // dx^2 (32-bit result)
         s3.dy_sq       <= s2.dy * s2.dy;
-        s3.softening_sq <= softening_sq;
+        s3.softening_sq <= SOFTENING * SOFTENING;
         s3.mass_j      <= s2.mass_j;
-        s3.valid       <= s2.valid;
+        s3.valid      <= s2.valid;
     end
 end
 
@@ -300,11 +291,8 @@ end
 // Pipeline Stage 4: Distance Squared
 // =============================================
 always_ff @(posedge clk) begin
-    if (reset | valid_out) 
-        s4 <= '0;
+    if (reset) s4 <= '0;
     else if (enable) begin
-        s4.dx      <= s3.dx;
-        s4.dy      <= s3.dy;
         s4.dist_sq <= s3.dx_sq + s3.dy_sq + s3.softening_sq;
         s4.mass_j  <= s3.mass_j;
         s4.valid   <= s3.valid;
@@ -312,54 +300,227 @@ always_ff @(posedge clk) begin
 end
 
 // =============================================
-// Pipeline Stage 5: Inverse Distance
+// Pipeline Stage 5: Inverse Distance Approximation
 // =============================================
-logic [31:0] sqrt_dist_sq;
-logic [31:0] inv_dist;
-
-assign sqrt_dist_sq = $sqrt($bitstoshortreal(s4.dist_sq));
-assign inv_dist = 1.0 / sqrt_dist_sq;
+// Use fixed-point scaling for 1/r^2 (e.g., scale factor = 2^16)
+localparam SCALE = 4096;  // 12 fractional bits
 
 always_ff @(posedge clk) begin
-    if (reset | valid_out) 
-        s5 <= '0;
+    if (reset) s5 <= '0;
     else if (enable) begin
-        s5.dx          <= s4.dx;  
-        s5.dy          <= s4.dy;  
-        s5.inv_dist     <= inv_dist;
+        // Avoid division by zero (clamp dist_sq to 1 if too small)
+        safe_dist_sq = (s4.dist_sq < 1) ? 1 : s4.dist_sq;
+        
+        // Approximate 1/dist_sq using scaling (fixed-point)
+        s5.inv_dist_sq <= (SCALE * SCALE) / safe_dist_sq;  // Scaled 1/r^2
+        
+        // Scale G*m_j for later multiplication
         s5.mass_j_scaled <= G * s4.mass_j;
-        s5.valid       <= s4.valid;
+        s5.valid <= s4.valid;
     end
 end
 
 // =============================================
-// Pipeline Stage 6: Final Force Calculation
+// Final Force Calculation
 // =============================================
-logic [31:0] inv_dist3;
-logic [31:0] magnitude;
-
-assign inv_dist3 = s5.inv_dist * s5.inv_dist * s5.inv_dist;
-assign magnitude = s5.mass_j_scaled * inv_dist3;
-
 always_ff @(posedge clk) begin
-    if (reset | valid_out) begin
-        s6 <= '0;
-        force_x <= '0;
-        force_y <= '0;
-        valid_out <= '0;
+    if (reset) begin
+        force_x   <= 0;
+        force_y   <= 0;
+        valid_out <= 0;
     end else if (enable) begin
-        s6.inv_dist3    <= inv_dist3;
-        s6.mass_j_scaled <= s5.mass_j_scaled;
-        s6.valid        <= s5.valid;
+        // magnitude = (G * m_j * inv_dist_sq) / SCALE^2
+        magnitude = (s5.mass_j_scaled * s5.inv_dist_sq) / SCALE;
         
-        // Final outputs
-        force_x <= magnitude * s5.dx;
-        force_y <= magnitude * s5.dy;
+        // Force components (rescale to original units)
+        force_x <= magnitude * s2.dx / SCALE;  // Preserve sign
+        force_y <= magnitude * s2.dy / SCALE;
         valid_out <= s5.valid;
     end
 end
 
-endmodule: force_calculator
+endmodule
+
+
+// module force_calculator #(
+//     parameter G = 1000,          
+//     parameter SOFTENING = 1, 
+//     parameter LATENCY = 6                // Number of pipeline stages
+// )(
+//     input  logic clk,                   // Clock
+//     input  logic reset,                 // Active-high reset
+//     input  logic enable,                // Module enable
+//     input  body_t body_i,               // Body i
+//     input  body_t body_j,               // Body j
+//     input  logic valid_in,              // Input valid
+//     output logic [31:0] force_x,        // Force x-component
+//     output logic [31:0] force_y,        // Force y-component
+//     output logic valid_out              // Output valid
+// );
+
+// // Pipeline stage registers
+// typedef struct packed {
+//     logic signed [15:0] pos_x_i, pos_x_j, pos_y_i, pos_y_j;
+//     logic [15:0] mass_i, mass_j;
+//     logic valid;
+// } stage1_t;
+
+// typedef struct packed {
+//     logic signed [15:0] dx, dy;
+//     logic [15:0] mass_j;
+//     logic valid;
+// } stage2_t;
+
+// typedef struct packed {
+//     logic signed [15:0] dx, dy;
+//     logic [31:0] dx_sq, dy_sq;
+//     logic [31:0] softening_sq;
+//     logic [15:0] mass_j;
+//     logic valid;
+// } stage3_t;
+
+// typedef struct packed {
+//     logic signed [15:0] dx, dy;
+//     logic [31:0] dist_sq;
+//     logic [15:0] mass_j;
+//     logic valid;
+// } stage4_t;
+
+// typedef struct packed {
+//     logic signed [15:0] dx, dy;
+//     logic [31:0] inv_dist;
+//     logic [31:0] mass_j_scaled;
+//     logic valid;
+// } stage5_t;
+
+// typedef struct packed {
+//     logic [31:0] inv_dist3;
+//     logic [31:0] mass_j_scaled;
+// } stage6_t;
+
+// // Pipeline registers
+// stage1_t s1;
+// stage2_t s2;
+// stage3_t s3;
+// stage4_t s4;
+// stage5_t s5;
+// stage6_t s6;
+
+// // Softening squared (constant)
+// logic [31:0] softening_sq;
+// assign softening_sq = SOFTENING * SOFTENING;
+
+// // =============================================
+// // Pipeline Stage 1: Input Registration
+// // =============================================
+// always_ff @(posedge clk) begin
+//     if (reset | valid_out) 
+//         s1 <= '0;
+//     else if (enable) begin
+//         s1.pos_x_i <= body_i.x;
+//         s1.pos_y_i <= body_i.y;
+//         s1.mass_i  <= body_i.mass;
+//         s1.pos_x_j <= body_j.x;
+//         s1.pos_y_j <= body_j.y;
+//         s1.mass_j  <= body_j.mass;
+//         s1.valid   <= valid_in;
+//     end
+// end
+
+// // =============================================
+// // Pipeline Stage 2: Delta Calculation
+// // =============================================
+// always_ff @(posedge clk) begin
+//     if (reset | valid_out) 
+//         s2 <= '0;
+//     else if (enable) begin
+//         s2.dx    <= s1.pos_x_j - s1.pos_x_i;
+//         s2.dy    <= s1.pos_y_j - s1.pos_y_i;
+//         s2.mass_j <= s1.mass_j;
+//         s2.valid <= s1.valid;
+//     end
+// end
+
+// // =============================================
+// // Pipeline Stage 3: Squared Calculations
+// // =============================================
+// always_ff @(posedge clk) begin
+//     if (reset | valid_out) 
+//         s3 <= '0;
+//     else if (enable) begin
+//         s3.dx          <= s2.dx;
+//         s3.dy          <= s2.dy;
+//         s3.dx_sq       <= s2.dx * s2.dx;
+//         s3.dy_sq       <= s2.dy * s2.dy;
+//         s3.softening_sq <= softening_sq;
+//         s3.mass_j      <= s2.mass_j;
+//         s3.valid       <= s2.valid;
+//     end
+// end
+
+// // =============================================
+// // Pipeline Stage 4: Distance Squared
+// // =============================================
+// always_ff @(posedge clk) begin
+//     if (reset | valid_out) 
+//         s4 <= '0;
+//     else if (enable) begin
+//         s4.dx      <= s3.dx;
+//         s4.dy      <= s3.dy;
+//         s4.dist_sq <= s3.dx_sq + s3.dy_sq + s3.softening_sq;
+//         s4.mass_j  <= s3.mass_j;
+//         s4.valid   <= s3.valid;
+//     end
+// end
+
+// // =============================================
+// // Pipeline Stage 5: Inverse Distance
+// // =============================================
+// logic [31:0] sqrt_dist_sq;
+// logic [31:0] inv_dist;
+
+// assign sqrt_dist_sq = $sqrt($bitstoshortreal(s4.dist_sq));
+// assign inv_dist = 1.0 / sqrt_dist_sq;
+
+// always_ff @(posedge clk) begin
+//     if (reset | valid_out) 
+//         s5 <= '0;
+//     else if (enable) begin
+//         s5.dx          <= s4.dx;  
+//         s5.dy          <= s4.dy;  
+//         s5.inv_dist     <= inv_dist;
+//         s5.mass_j_scaled <= G * s4.mass_j;
+//         s5.valid       <= s4.valid;
+//     end
+// end
+
+// // =============================================
+// // Pipeline Stage 6: Final Force Calculation
+// // =============================================
+// logic [31:0] inv_dist3;
+// logic [31:0] magnitude;
+
+// assign inv_dist3 = s5.inv_dist * s5.inv_dist * s5.inv_dist;
+// assign magnitude = s5.mass_j_scaled * inv_dist3;
+
+// always_ff @(posedge clk) begin
+//     if (reset | valid_out) begin
+//         s6 <= '0;
+//         force_x <= '0;
+//         force_y <= '0;
+//         valid_out <= '0;
+//     end else if (enable) begin
+//         s6.inv_dist3    <= inv_dist3;
+//         s6.mass_j_scaled <= s5.mass_j_scaled;
+        
+//         // Final outputs
+//         force_x <= magnitude * s5.dx;
+//         force_y <= magnitude * s5.dy;
+//         valid_out <= s5.valid;
+//     end
+// end
+
+// endmodule: force_calculator
 
 
 // module force_calculator_waa #(

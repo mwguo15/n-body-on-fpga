@@ -1,0 +1,266 @@
+Chronologic VCS simulator copyright 1991-2015
+Contains Synopsys proprietary information.
+Compiler version K-2015.09_Full64; Runtime version K-2015.09_Full64;  Apr  9 12:27 2025
+VCD+ Writer K-2015.09_Full64 Copyright (c) 1991-2015 by Synopsys Inc.
+The file '/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/inter.vpd' was opened successfully.
+Simulation completed at time 395000
+Reading forces from memory...
+Force 0: xxxxxxxxxxxxxxxxxxxx
+Force 1: 00000000000000000000
+Force 2: 00000000000000000000
+Force 3: 00000000000000000000
+Force 4: 00000000000000000000
+Body 0: 00000000000000000000
+Body 1: 0064006400050005000a
+Body 2: 0069006900060006000c
+Body 3: 00000000000000000000
+Body 4: 00000000000000000000
+$finish called from file "nbody-naive_tb.sv", line 55.
+$finish at simulation time               695000
+Simulation complete, time is 695000 ps.
+Chronologic VCS simulator copyright 1991-2015
+Contains Synopsys proprietary information.
+Compiler version K-2015.09_Full64; Runtime version K-2015.09_Full64;  Apr  9 12:32 2025
+VCD+ Writer K-2015.09_Full64 Copyright (c) 1991-2015 by Synopsys Inc.
+The file '/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/inter.vpd' was opened successfully.
+Simulation completed at time 395000
+Reading forces from memory...
+Force 0: xxxxxxxxxxxxxxxxxxxx
+Force 1: 00000000000000000000
+Force 2: 00000000000000000000
+Force 3: 00000000000000000000
+Force 4: 00000000000000000000
+Body 0: 00000000000000000000
+Body 1: 0064006400050005000a
+Body 2: 0069006900060006000c
+Body 3: 00000000000000000000
+Body 4: 00000000000000000000
+$finish called from file "nbody-naive_tb.sv", line 55.
+$finish at simulation time               695000
+Simulation complete, time is 695000 ps.
+Chronologic VCS simulator copyright 1991-2015
+Contains Synopsys proprietary information.
+Compiler version K-2015.09_Full64; Runtime version K-2015.09_Full64;  Apr  9 12:45 2025
+VCD+ Writer K-2015.09_Full64 Copyright (c) 1991-2015 by Synopsys Inc.
+The file '/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/inter.vpd' was opened successfully.
+Simulation completed at time 325000
+Reading forces from memory...
+Force 0: xxxxxxxxxxxxxxxxxxxx
+Force 1: 00000000000000000000
+Force 2: 00000000000000000000
+Force 3: 00000000000000000000
+Force 4: 00000000000000000000
+Body 0: 00000000000000000000
+Body 1: 0064006400050005000a
+Body 2: 0069006900060006000c
+Body 3: 00000000000000000000
+Body 4: 00000000000000000000
+$finish called from file "nbody-naive_tb.sv", line 55.
+$finish at simulation time               625000
+Simulation complete, time is 625000 ps.
+Chronologic VCS simulator copyright 1991-2015
+Contains Synopsys proprietary information.
+Compiler version K-2015.09_Full64; Runtime version K-2015.09_Full64;  Apr  9 12:52 2025
+VCD+ Writer K-2015.09_Full64 Copyright (c) 1991-2015 by Synopsys Inc.
+The file '/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/inter.vpd' was opened successfully.
+Simulation completed at time 325000
+Reading forces from memory...
+Force 0: xxxxxxxxxxxxxxxxxxxx
+Force 1: 00000000000000000000
+Force 2: 00000000000000000000
+Force 3: 00000000000000000000
+Force 4: 00000000000000000000
+Body 0: 00000000000000000000
+Body 1: 0064006400050005000a
+Body 2: 0069006900060006000c
+Body 3: 00000000000000000000
+Body 4: 00000000000000000000
+$finish called from file "nbody-naive_tb.sv", line 55.
+$finish at simulation time               625000
+Simulation complete, time is 625000 ps.
+Chronologic VCS simulator copyright 1991-2015
+Contains Synopsys proprietary information.
+Compiler version K-2015.09_Full64; Runtime version K-2015.09_Full64;  Apr  9 12:57 2025
+VCD+ Writer K-2015.09_Full64 Copyright (c) 1991-2015 by Synopsys Inc.
+The file '/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/inter.vpd' was opened successfully.
+Simulation completed at time 355000
+Reading forces from memory...
+Force 0: xxxxxxxxxxxxxxxxxxxx
+Force 1: 00000000000000000000
+Force 2: 00000000000000000000
+Force 3: 00000000000000000000
+Force 4: 00000000000000000000
+Body 0: 00000000000000000000
+Body 1: 0064006400050005000a
+Body 2: 0069006900060006000c
+Body 3: 00000000000000000000
+Body 4: 00000000000000000000
+$finish called from file "nbody-naive_tb.sv", line 55.
+$finish at simulation time               655000
+Simulation complete, time is 655000 ps.
+Chronologic VCS simulator copyright 1991-2015
+Contains Synopsys proprietary information.
+Compiler version K-2015.09_Full64; Runtime version K-2015.09_Full64;  Apr  9 13:01 2025
+VCD+ Writer K-2015.09_Full64 Copyright (c) 1991-2015 by Synopsys Inc.
+The file '/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/inter.vpd' was opened successfully.
+Simulation completed at time 785000
+Reading forces from memory...
+Force 0: xxxxxxxxxxxxxxxxxxxx
+Force 1: 00000000000000000000
+Force 2: 00000000000000000000
+Force 3: 00000000000000000000
+Force 4: 00000000000000000000
+Body 0: 00000000000000000000
+Body 1: 0064006400050005000a
+Body 2: 0069006900060006000c
+Body 3: 00000000000000000000
+Body 4: 00000000000000000000
+$finish called from file "nbody-naive_tb.sv", line 55.
+$finish at simulation time              1085000
+Simulation complete, time is 1085000 ps.
+Chronologic VCS simulator copyright 1991-2015
+Contains Synopsys proprietary information.
+Compiler version K-2015.09_Full64; Runtime version K-2015.09_Full64;  Apr  9 13:21 2025
+VCD+ Writer K-2015.09_Full64 Copyright (c) 1991-2015 by Synopsys Inc.
+The file '/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/inter.vpd' was opened successfully.
+Error: [DVAP037] 
+Errors while sourcing the file '/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/.restartSimSession.tcl':
+
+ Line 113: [DVSG007] 
+Signal ' "NBodySim_tb.sim.FORCE.s6" "NBodySim_tb.sim.FORCE.softening_sq" "NBodySim_tb.sim.FORCE.sqrt_dist_sq" "NBodySim_tb.sim.FORCE.inv_dist" "NBodySim_tb.sim.FORCE.inv_dist3" "NBodySim_tb.sim.FORCE.magnitude"' cannot be found.
+ Line 182: gui_list_expand: Unable to find item with name "NBodySim_tb.sim.FORCE.s6.
+Simulation completed at time 785000
+Reading forces from memory...
+Force 0: xxxxxxxxxxxxxxxxxxxx
+Force 1: 00000000000000000000
+Force 2: 00000000000000000000
+Force 3: 00000000000000000000
+Force 4: 00000000000000000000
+Body 0: 00000000000000000000
+Body 1: 0064006400050005000a
+Body 2: 0069006900060006000c
+Body 3: 00000000000000000000
+Body 4: 00000000000000000000
+$finish called from file "nbody-naive_tb.sv", line 55.
+$finish at simulation time              1085000
+Simulation complete, time is 1085000 ps.
+Chronologic VCS simulator copyright 1991-2015
+Contains Synopsys proprietary information.
+Compiler version K-2015.09_Full64; Runtime version K-2015.09_Full64;  Apr  9 13:22 2025
+VCD+ Writer K-2015.09_Full64 Copyright (c) 1991-2015 by Synopsys Inc.
+The file '/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/inter.vpd' was opened successfully.
+Simulation completed at time 785000
+Reading forces from memory...
+Force 0: xxxxxxxxxxxxxxxxxxxx
+Force 1: 00000000000000000000
+Force 2: 00000000000000000000
+Force 3: 00000000000000000000
+Force 4: 00000000000000000000
+Body 0: 00000000000000000000
+Body 1: 0064006400050005000a
+Body 2: 0069006900060006000c
+Body 3: 00000000000000000000
+Body 4: 00000000000000000000
+$finish called from file "nbody-naive_tb.sv", line 55.
+$finish at simulation time              1085000
+Simulation complete, time is 1085000 ps.
+Chronologic VCS simulator copyright 1991-2015
+Contains Synopsys proprietary information.
+Compiler version K-2015.09_Full64; Runtime version K-2015.09_Full64;  Apr  9 13:28 2025
+VCD+ Writer K-2015.09_Full64 Copyright (c) 1991-2015 by Synopsys Inc.
+The file '/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/inter.vpd' was opened successfully.
+Simulation completed at time 785000
+Reading forces from memory...
+Force 0: xxxxxxxxxxxxxxxxxxxx
+Force 1: 00000000000000000000
+Force 2: 00000000000000000000
+Force 3: 00000000000000000000
+Force 4: 00000000000000000000
+Body 0: 00000000000000000000
+Body 1: 0064006400050005000a
+Body 2: 0069006900060006000c
+Body 3: 00000000000000000000
+Body 4: 00000000000000000000
+$finish called from file "nbody-naive_tb.sv", line 55.
+$finish at simulation time              1085000
+Simulation complete, time is 1085000 ps.
+Chronologic VCS simulator copyright 1991-2015
+Contains Synopsys proprietary information.
+Compiler version K-2015.09_Full64; Runtime version K-2015.09_Full64;  Apr  9 13:30 2025
+VCD+ Writer K-2015.09_Full64 Copyright (c) 1991-2015 by Synopsys Inc.
+The file '/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/inter.vpd' was opened successfully.
+Simulation completed at time 785000
+Reading forces from memory...
+Force 0: xxxxxxxxxxxxxxxxxxxx
+Force 1: 00000000000000000000
+Force 2: 00000000000000000000
+Force 3: 00000000000000000000
+Force 4: 00000000000000000000
+Body 0: 00000000000000000000
+Body 1: 0064006400050005000a
+Body 2: 0069006900060006000c
+Body 3: 00000000000000000000
+Body 4: 00000000000000000000
+$finish called from file "nbody-naive_tb.sv", line 55.
+$finish at simulation time              1085000
+Simulation complete, time is 1085000 ps.
+Chronologic VCS simulator copyright 1991-2015
+Contains Synopsys proprietary information.
+Compiler version K-2015.09_Full64; Runtime version K-2015.09_Full64;  Apr  9 13:33 2025
+VCD+ Writer K-2015.09_Full64 Copyright (c) 1991-2015 by Synopsys Inc.
+The file '/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/inter.vpd' was opened successfully.
+Simulation completed at time 785000
+Reading forces from memory...
+Force 0: xxxxxxxxxxxxxxxxxxxx
+Force 1: 00000000000000000000
+Force 2: 00000000000000000000
+Force 3: 00000000000000000000
+Force 4: 00000000000000000000
+Body 0: 00000000000000000000
+Body 1: 0064006400050005000a
+Body 2: 0069006900060006000c
+Body 3: 00000000000000000000
+Body 4: 00000000000000000000
+$finish called from file "nbody-naive_tb.sv", line 55.
+$finish at simulation time              1085000
+Simulation complete, time is 1085000 ps.
+Chronologic VCS simulator copyright 1991-2015
+Contains Synopsys proprietary information.
+Compiler version K-2015.09_Full64; Runtime version K-2015.09_Full64;  Apr  9 13:34 2025
+VCD+ Writer K-2015.09_Full64 Copyright (c) 1991-2015 by Synopsys Inc.
+The file '/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/inter.vpd' was opened successfully.
+Simulation completed at time 785000
+Reading forces from memory...
+Force 0: xxxxxxxxxxxxxxxxxxxx
+Force 1: 00000000000000000000
+Force 2: 00000000000000000000
+Force 3: 00000000000000000000
+Force 4: 00000000000000000000
+Body 0: 00000000000000000000
+Body 1: 0064006400050005000a
+Body 2: 0069006900060006000c
+Body 3: 00000000000000000000
+Body 4: 00000000000000000000
+$finish called from file "nbody-naive_tb.sv", line 55.
+$finish at simulation time              1085000
+Simulation complete, time is 1085000 ps.
+Chronologic VCS simulator copyright 1991-2015
+Contains Synopsys proprietary information.
+Compiler version K-2015.09_Full64; Runtime version K-2015.09_Full64;  Apr  9 13:37 2025
+VCD+ Writer K-2015.09_Full64 Copyright (c) 1991-2015 by Synopsys Inc.
+The file '/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/inter.vpd' was opened successfully.
+Simulation completed at time 785000
+Reading forces from memory...
+Force 0: xxxxxxxxxxxxxxxxxxxx
+Force 1: 00000000000000000000
+Force 2: 00000000000000000000
+Force 3: 00000000000000000000
+Force 4: 00000000000000000000
+Body 0: 00000000000000000000
+Body 1: 0064006400050005000a
+Body 2: 0069006900060006000c
+Body 3: 00000000000000000000
+Body 4: 00000000000000000000
+$finish called from file "nbody-naive_tb.sv", line 55.
+$finish at simulation time              1085000
+Simulation complete, time is 1085000 ps.

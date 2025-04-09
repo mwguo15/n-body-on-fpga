@@ -1,4 +1,5 @@
-/afs/andrew.cmu.edu/usr8/exg/private/15418/n-body-on-fpga/naive/divide_example.sv
-/afs/andrew.cmu.edu/usr8/exg/private/15418/n-body-on-fpga/naive/division.v
+/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/nbody-naive.sv
+/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/nbody-naive_tb.sv
+/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/ram_2_port.v
 /afs/ece/support/altera/release/16.1.2/quartus/eda/sim_lib/220model.v
-/afs/ece/support/altera/release/16.1.2/quartus/eda/sim_lib/altera_primitives.v
+/afs/ece/support/altera/release/16.1.2/quartus/eda/sim_lib/altera_mf.v

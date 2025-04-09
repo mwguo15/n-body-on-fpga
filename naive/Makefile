@@ -15,7 +15,7 @@ VCSUUMFLAGS = -full64 -sverilog -debug=none +warn=all \
 					 -timescale=1ns/1ps
 
 # VCS flags
-VCSFLAGS = -full64 -sverilog -debug=none +warn=all -j$(THREADS) \
+VCSFLAGS = -debug_access+r -full64 -sverilog -debug=none +warn=all -j$(THREADS) \
 					 -timescale=1ns/1ps +v2k
 
 COMMON_FLAGS +=

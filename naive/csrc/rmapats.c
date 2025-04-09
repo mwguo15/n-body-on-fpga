@@ -4,37 +4,40 @@
 #include <strings.h>
 #include "rmapats.h"
 
-void  hsG_0__0 (struct dummyq_struct * I1381, EBLK  * I1376, U  I616);
-void  hsG_0__0 (struct dummyq_struct * I1381, EBLK  * I1376, U  I616)
+scalar dummyScalar;
+scalar fScalarIsForced=0;
+scalar fScalarIsReleased=0;
+scalar fScalarHasChanged=0;
+scalar fForceFromNonRoot=0;
+scalar fNettypeIsForced=0;
+scalar fNettypeIsReleased=0;
+void  hsG_0 (struct dummyq_struct * I1016, EBLK  * I1017, U  I719);
+void  hsG_0 (struct dummyq_struct * I1016, EBLK  * I1017, U  I719)
 {
-    U  I1644;
-    U  I1645;
-    U  I1646;
-    struct futq * I1647;
-    struct dummyq_struct * pQ = I1381;
-    I1644 = ((U )vcs_clocks) + I616;
-    I1646 = I1644 & ((1 << fHashTableSize) - 1);
-    I1376->I662 = (EBLK  *)(-1);
-    I1376->I663 = I1644;
-    if (0 && rmaProfEvtProp) {
-        vcs_simpSetEBlkEvtID(I1376);
+    U  I1250;
+    U  I1251;
+    U  I1252;
+    struct futq * I1253;
+    I1250 = ((U )vcs_clocks) + I719;
+    I1252 = I1250 & 0xfff;
+    I1017->I652 = (EBLK  *)(-1);
+    I1017->I656 = I1250;
+    if (I1250 < (U )vcs_clocks) {
+        I1251 = ((U  *)&vcs_clocks)[1];
+        sched_millenium(I1016, I1017, I1251 + 1, I1250);
     }
-    if (I1644 < (U )vcs_clocks) {
-        I1645 = ((U  *)&vcs_clocks)[1];
-        sched_millenium(pQ, I1376, I1645 + 1, I1644);
+    else if ((peblkFutQ1Head != ((void *)0)) && (I719 == 1)) {
+        I1017->I657 = (struct eblk *)peblkFutQ1Tail;
+        peblkFutQ1Tail->I652 = I1017;
+        peblkFutQ1Tail = I1017;
     }
-    else if ((peblkFutQ1Head != ((void *)0)) && (I616 == 1)) {
-        I1376->I665 = (struct eblk *)peblkFutQ1Tail;
-        peblkFutQ1Tail->I662 = I1376;
-        peblkFutQ1Tail = I1376;
-    }
-    else if ((I1647 = pQ->I1284[I1646].I685)) {
-        I1376->I665 = (struct eblk *)I1647->I683;
-        I1647->I683->I662 = (RP )I1376;
-        I1647->I683 = (RmaEblk  *)I1376;
+    else if ((I1253 = I1016->I981[I1252].I669)) {
+        I1017->I657 = (struct eblk *)I1253->I668;
+        I1253->I668->I652 = (RP )I1017;
+        I1253->I668 = (RmaEblk  *)I1017;
     }
     else {
-        sched_hsopt(pQ, I1376, I1644);
+        sched_hsopt(I1016, I1017, I1250);
     }
 }
 #ifdef __cplusplus

@@ -18,31 +18,29 @@ PRODUCT_TIMESTAMP=product_timestamp
 
 # Path to runtime library
 DEPLIBS=
-VCSUCLI=-lvcsucli
-LLVM_FLAGS=
-RUNTIME=-lvcsnew -lsimprofile -luclinative /afs/ece.cmu.edu/support/synopsys/synopsys.release/T-Foundation/vcs/T-2022.06/linux64/lib/vcs_tls.o $(DEPLIBS) 
+VCSUCLI=/afs/ece.cmu.edu/support/synopsys/synopsys.release/vcs-mx_vK-2015.09/linux64/lib/libvcsucli.so
+RUNTIME=/afs/ece.cmu.edu/support/synopsys/synopsys.release/vcs-mx_vK-2015.09/linux64/lib/libvcsnew.so /afs/ece.cmu.edu/support/synopsys/synopsys.release/vcs-mx_vK-2015.09/linux64/lib/libsimprofile.so /afs/ece.cmu.edu/support/synopsys/synopsys.release/vcs-mx_vK-2015.09/linux64/lib/libuclinative.so $(DEPLIBS) 
 
-VCS_SAVE_RESTORE_OBJ=/afs/ece.cmu.edu/support/synopsys/synopsys.release/T-Foundation/vcs/T-2022.06/linux64/lib/vcs_save_restore_new.o
+VCS_SAVE_RESTORE_OBJ=/afs/ece.cmu.edu/support/synopsys/synopsys.release/vcs-mx_vK-2015.09/linux64/lib/vcs_save_restore_new.o
 
 # Select your favorite compiler
 
 # Linux:
-# Compiler: 
 VCS_CC=gcc
+
 # Internal CC for gen_c flow:
 CC_CG=gcc
+# User overrode default CC: 
+VCS_CC=gcc
 # Loader
 LD=g++
-STDLIB = 
 
 # Strip Flags for target product
 STRIPFLAGS= 
-
-PRE_LDFLAGS= # Loader Flags
-LDFLAGS= -rdynamic  -Wl,-rpath='$$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir -Wl,-rpath=/afs/ece.cmu.edu/support/synopsys/synopsys.release/T-Foundation/vcs/T-2022.06/linux64/lib -L/afs/ece.cmu.edu/support/synopsys/synopsys.release/T-Foundation/vcs/T-2022.06/linux64/lib 
+# Loader Flags
+LDFLAGS= -rdynamic 
 # Picarchive Flags
-PICLDFLAGS= -Wl,-rpath-link=./ 
-PIC_LD=ld
+PICLDFLAGS=-Wl,-rpath-link=./ -Wl,-rpath='$$ORIGIN'/simv.daidir/ -Wl,-rpath=./simv.daidir/ -Wl,-rpath='$$ORIGIN'/simv.daidir//scsim.db.dir 
 
 # C run time startup
 CRT0=
@@ -56,7 +54,7 @@ SHELL=/bin/sh
 
 VCSTMPSPECARG=
 VCSTMPSPECENV=
-# NOTE: if you have little space in $TMPDIR, but plenty in /foo,
+# NOTE: if you have little space in /tmp, but plenty in /foo,
 #and you are using gcc, uncomment the next line
 #VCSTMPSPECENV=SNPS_VCS_TMPDIR=/foo
 
@@ -65,23 +63,14 @@ TMPSPECENV=$(VCSTMPSPECENV)
 CC=$(TMPSPECENV) $(VCS_CC) $(TMPSPECARG)
 
 # C flags for compilation
-CFLAGS=$(STDLIB)-w  -pipe -fPIC -O -I/afs/ece.cmu.edu/support/synopsys/synopsys.release/T-Foundation/vcs/T-2022.06/include   
+CFLAGS=-w  -pipe -fPIC -O -I/afs/ece.cmu.edu/support/synopsys/synopsys.release/vcs-mx_vK-2015.09/include   
 
-CFLAGS_O0=-w  -pipe -fPIC -I/afs/ece.cmu.edu/support/synopsys/synopsys.release/T-Foundation/vcs/T-2022.06/include -O0  -fno-strict-aliasing -fno-optimize-sibling-calls   
+CFLAGS_CG=-w   -pipe -fPIC -I/afs/ece.cmu.edu/support/synopsys/synopsys.release/vcs-mx_vK-2015.09/include -O  
 
-CFLAGS_CG=-w  -pipe -fPIC -I/afs/ece.cmu.edu/support/synopsys/synopsys.release/T-Foundation/vcs/T-2022.06/include -O  -fno-strict-aliasing -fno-optimize-sibling-calls   
-
-CFLAGS_CG_CLIB=-w  -pipe -fPIC -I/afs/ece.cmu.edu/support/synopsys/synopsys.release/T-Foundation/vcs/T-2022.06/include -O  -fno-strict-aliasing -fno-optimize-sibling-calls   
-
-CFLAGS_RMAR=-w  -pipe -fPIC -I/afs/ece.cmu.edu/support/synopsys/synopsys.release/T-Foundation/vcs/T-2022.06/include -O  -fno-strict-aliasing -fno-optimize-sibling-calls   
-
-CFLAGS_CG+=$(STDLIB)
-CFLAGS_CG_CLIB+=$(STDLIB)
-CFLAGS_O0+=$(STDLIB)
-LD_PARTIAL_LOADER=ld
 # Partial linking
-LD_PARTIAL=$(LD_PARTIAL_LOADER) -r -o
-LIBS=-lnuma -lvirsim -lerrorinf -lsnpsmalloc -lvfs 
+LD_PARTIAL=ld -r -o
+ASFLAGS=
+LIBS=/afs/ece.cmu.edu/support/synopsys/synopsys.release/vcs-mx_vK-2015.09/linux64/lib/libzerosoft_rt_stubs.so /afs/ece.cmu.edu/support/synopsys/synopsys.release/vcs-mx_vK-2015.09/linux64/lib/libvirsim.so /afs/ece.cmu.edu/support/synopsys/synopsys.release/vcs-mx_vK-2015.09/linux64/lib/liberrorinf.so /afs/ece.cmu.edu/support/synopsys/synopsys.release/vcs-mx_vK-2015.09/linux64/lib/libsnpsmalloc.so 
 # Note: if make gives you errors about include, either get gmake, or
 # replace the following line with the contents of the file filelist,
 # EACH TIME IT CHANGES
@@ -101,24 +90,16 @@ clean   :
 clobber : clean
 	rm -f $(PRODUCT) $(PRODUCT_TIMESTAMP) 
 
-picclean : 
-	rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
-	@rm -f $(PRODUCT).daidir/_[0-9]*_archive_*.so 2>/dev/null
+picclean :
+	rm -f _csrc*.so linux64_scvhdl_*.so pre_vcsobj_*.so share_vcsobj_*.so
 
-product_clean_order : 
-	@$(MAKE) -f Makefile --no-print-directory picclean
-	@$(MAKE) -f Makefile --no-print-directory product_order
-
-product_order : $(PRODUCT)
-
-$(PRODUCT_TIMESTAMP) : product_clean_order
-	-if [ -x $(PRODUCT) ]; then chmod a-x $(PRODUCT); fi
-	$(LD) $(CRT0) -o $(PRODUCT) $(LLVM_FLAGS) $(STDLIB) $(PRE_LDFLAGS) $(STRIPFLAGS) $(PCLDFLAGS) $(LDFLAGS) $(PICLDFLAGS) $(OBJS)  $(LIBS)   $(RUNTIME) -Wl,-whole-archive $(VCSMXSAIF) $(VCSUCLI) $(PLILIBS) $(DECLIBS) $(BALIBS) -Wl,-no-whole-archive     $(LINK_TB) $(DPI_STUB_OBJS) $(PLI_STUB_OBJS)   $(VCS_SAVE_RESTORE_OBJ) $(SYSLIBS) $(CRTN)
+$(PRODUCT_TIMESTAMP) : $(PRODUCT)
+	-if [ -x $(PRODUCT) ]; then chmod -x $(PRODUCT); fi
+	$(LD) $(CRT0) -o $(PRODUCT) $(STRIPFLAGS) $(PCLDFLAGS) $(PICLDFLAGS) $(LDFLAGS) $(OBJS)  $(LIBS)   $(RUNTIME) -Wl,-whole-archive $(VCSUCLI) -Wl,-no-whole-archive     $(LINK_TB) $(DPI_STUB_OBJS) $(PLI_STUB_OBJS)   $(VCS_SAVE_RESTORE_OBJ) $(SYSLIBS) $(CRTN)
 	@rm -f csrc[0-9]*.o
-	@rm -f cuarc[0-9]*.o
 	@touch $(PRODUCT_TIMESTAMP)
 	@-if [ -d ./objs ]; then find ./objs -type d -empty -delete; fi
 
-$(PRODUCT) :  $(LD_VERSION_CHECK)  $(OBJS) $(DOTLIBS) $(DPI_STUB_OBJS) $(PLI_STUB_OBJS) $(CMODLIB) $(SYSC_STUB_LIB)  /afs/ece.cmu.edu/support/synopsys/synopsys.release/T-Foundation/vcs/T-2022.06/linux64/lib/libvcsnew.so /afs/ece.cmu.edu/support/synopsys/synopsys.release/T-Foundation/vcs/T-2022.06/linux64/lib/libsimprofile.so /afs/ece.cmu.edu/support/synopsys/synopsys.release/T-Foundation/vcs/T-2022.06/linux64/lib/libuclinative.so /afs/ece.cmu.edu/support/synopsys/synopsys.release/T-Foundation/vcs/T-2022.06/linux64/lib/vcs_tls.o /afs/ece.cmu.edu/support/synopsys/synopsys.release/T-Foundation/vcs/T-2022.06/linux64/lib/libvcsucli.so  $(VCS_SAVE_RESTORE_OBJ) 
+$(PRODUCT) :  picclean  $(LD_VERSION_CHECK)  $(OBJS) $(DOTLIBS) $(DPI_STUB_OBJS) $(PLI_STUB_OBJS) $(CMODLIB) $(RUNTIME)  $(VCSUCLI)  $(VCS_SAVE_RESTORE_OBJ) 
 	@touch $(PRODUCT)
 

@@ -56,51 +56,35 @@ module NBodySim_tb();
     end
 
     task print_forces();
-        logic [31:0] data0, data1, data2, data3, data4;
+        logic [79:0] data0, data1, data2, data3, data4;
         
-        // Read address 400 (0x190) - Force on body 0
-        // ram_read(32'h190, force_body0);
-        // $display("Force on body 0: x=%0d, y=%0d", 
-        //          force_body0[31:16], force_body0[15:0]);
+        ram_read(32'h190, data0);
+        $display("Force 0: %20h", data0);
         
-        // // Read address 401 (0x191) - Force on body 1
-        // ram_read(32'h191, force_body1);
-        // $display("Force on body 1: x=%0d, y=%0d", 
-        //          force_body1[31:16], force_body1[15:0]);
+        ram_read(32'h191, data1);
+        $display("Force 1: %20h", data1);
 
-        // // Read address 402 (0x192) - Force on body 0
-        // ram_read(32'h192, force_body0);
-        // $display("Force on body 2: x=%0d, y=%0d", 
-        //          force_body2[31:16], force_body2[15:0]);
+        ram_read(32'h192, data2);
+        $display("Force 2: %20h", data2);
         
-        // // Read address 403 (0x193) - Force on body 1
-        // ram_read(32'h193, force_body1);
-        // $display("Force on body 3: x=%0d, y=%0d", 
-        //          force_body3[31:16], force_body3[15:0]);
+        ram_read(32'h193, data3);
+        $display("Force 3: %20h", data3);
 
-        // // Read address 404 (0x194) - Force on body 1
-        // ram_read(32'h194, force_body1);
-        // $display("Force on body 4: x=%0d, y=%0d", 
-        //          force_body4[31:16], force_body4[15:0]);
+        ram_read(32'h194, data4);
+        $display("Force 4: %20h", data4);
+
         ram_read(32'h0, data0);
         $display("Body 0: %20h", data0);
         
-        // Read address 401 (0x191) - Force on body 1
         ram_read(32'h1, data1);
         $display("Body 1: %20h", data1);
 
-
-        // Read address 402 (0x192) - Force on body 0
         ram_read(32'h2, data2);
         $display("Body 2: %20h", data2);
-
         
-        // Read address 403 (0x193) - Force on body 1
         ram_read(32'h3, data3);
         $display("Body 3: %20h", data3);
 
-
-        // Read address 404 (0x194) - Force on body 1
         ram_read(32'h4, data4);
         $display("Body 4: %20h", data4);
 
