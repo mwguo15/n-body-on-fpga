@@ -112,7 +112,8 @@ module NBodySim_tb();
         @(posedge clk);
         addr = rd_addr;      
         @(posedge clk);
-        data = read_data; 
+        data <= read_data;
+        @(posedge clk); 
     endtask
 
 endmodule: NBodySim_tb
