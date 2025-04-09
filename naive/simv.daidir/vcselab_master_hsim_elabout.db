@@ -183,7 +183,7 @@ fHsimModInline                     	1
 fHsimModInlineDbg                  	0
 fHsimPCDrvLoadDbg                  	0
 fHsimDrvChk                        	1
-fHsimRtlProcessingNeeded           	0
+fHsimRtlProcessingNeeded           	1
 fHsimGrpByGrpElab                  	0
 fHsimGrpByGrpElabMaster            	0
 fHsimNoParentSplitPC               	0
@@ -336,7 +336,7 @@ fHsimFuseMultiDrivers              	0
 fHsimNoSched0Reg                   	0
 fHsimAmsFusionEnabled              	0
 fHsimElab64                        	0
-fHsimRtlDbs                        	0
+fHsimRtlDbs                        	1
 fHsimWakeupId                      	0
 fHsimPassiveIbn                    	0
 fHsimBcOpt                         	1
@@ -417,7 +417,7 @@ fHsimCgVectorGatesNoReElab         	0
 fHsimCgScalarGates                 	0
 fHsimCgScalarGatesExpr             	0
 fHsimCgScalarGatesLut              	0
-fHsimCgRtl                         	1
+fHsimCgRtl                         	100000
 fHsimCgRtlFilter                   	0
 fHsimCgRtlDebug                    	0
 fHsimCgRtlSize                     	15

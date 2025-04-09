@@ -1,6 +1,6 @@
 #!/bin/csh -f
 
-cd /afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive
+cd /afs/andrew.cmu.edu/usr8/exg/private/15418/n-body-on-fpga/naive
 
 #This ENV is used to avoid overriding current script in next vcselab run 
 setenv SNPS_VCSELAB_SCRIPT_NO_OVERRIDE  1

@@ -1,7 +1,7 @@
 rc file Version 1.0
 
 [Design]
-COMPILE_PATH=/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive
+COMPILE_PATH=/afs/andrew.cmu.edu/usr8/exg/private/15418/n-body-on-fpga/naive
 VCS_HOME=/afs/ece.cmu.edu/support/synopsys/synopsys.release/T-Foundation/vcs/T-2022.06
 VERDI_HOME=
 SystemC=FALSE

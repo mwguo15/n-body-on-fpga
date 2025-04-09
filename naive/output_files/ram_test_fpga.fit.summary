@@ -1,0 +1,16 @@
+Fitter Status : Successful - Tue Apr  8 20:34:51 2025
+Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Standard Edition
+Revision Name : ram_test_fpga
+Top-level Entity Name : ram_test_fpga
+Family : Cyclone IV E
+Device : EP4CE115F29C7
+Timing Models : Final
+Total logic elements : 65 / 114,480 ( < 1 % )
+    Total combinational functions : 61 / 114,480 ( < 1 % )
+    Dedicated logic registers : 20 / 114,480 ( < 1 % )
+Total registers : 20
+Total pins : 45 / 529 ( 9 % )
+Total virtual pins : 0
+Total memory bits : 524,288 / 3,981,312 ( 13 % )
+Embedded Multiplier 9-bit elements : 0 / 532 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )

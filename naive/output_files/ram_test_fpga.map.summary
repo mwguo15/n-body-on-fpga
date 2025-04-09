@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue Apr  8 20:34:43 2025
+Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Standard Edition
+Revision Name : ram_test_fpga
+Top-level Entity Name : ram_test_fpga
+Family : Cyclone IV E
+Total logic elements : 65
+    Total combinational functions : 61
+    Dedicated logic registers : 20
+Total registers : 20
+Total pins : 45
+Total virtual pins : 0
+Total memory bits : 524,288
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

@@ -1,0 +1,375 @@
+Analysis & Synthesis report for top_divide_fpga
+Tue Apr  8 19:35:37 2025
+Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Parameter Settings for User Entity Instance: division:div_inst|lpm_divide:LPM_DIVIDE_component
+ 10. Port Connectivity Checks: "division:div_inst"
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2024  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-----------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                            ;
++------------------------------------+----------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Apr  8 19:35:37 2025              ;
+; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Standard Edition ;
+; Revision Name                      ; top_divide_fpga                                    ;
+; Top-level Entity Name              ; top_divide_fpga                                    ;
+; Family                             ; Cyclone IV E                                       ;
+; Total logic elements               ; 288                                                ;
+;     Total combinational functions  ; 288                                                ;
+;     Dedicated logic registers      ; 0                                                  ;
+; Total registers                    ; 0                                                  ;
+; Total pins                         ; 46                                                 ;
+; Total virtual pins                 ; 0                                                  ;
+; Total memory bits                  ; 0                                                  ;
+; Embedded Multiplier 9-bit elements ; 0                                                  ;
+; Total PLLs                         ; 0                                                  ;
++------------------------------------+----------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                            ; top_divide_fpga    ; top_divide_fpga    ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 20          ;
+; Maximum allowed            ; 12          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                       ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                   ; Library ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------------+---------+
+; division.v                       ; yes             ; User Wizard-Generated File   ; /afs/andrew.cmu.edu/usr8/exg/private/15418/n-body-on-fpga/naive/division.v                     ;         ;
+; divide_syn.sv                    ; yes             ; User SystemVerilog HDL File  ; /afs/andrew.cmu.edu/usr8/exg/private/15418/n-body-on-fpga/naive/divide_syn.sv                  ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; /afs/ece/support/altera/release/std-23.1.1/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; /afs/ece/support/altera/release/std-23.1.1/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; /afs/ece/support/altera/release/std-23.1.1/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
+; aglobal231.inc                   ; yes             ; Megafunction                 ; /afs/ece/support/altera/release/std-23.1.1/quartus/libraries/megafunctions/aglobal231.inc      ;         ;
+; db/lpm_divide_1ut.tdf            ; yes             ; Auto-Generated Megafunction  ; /afs/andrew.cmu.edu/usr8/exg/private/15418/n-body-on-fpga/naive/db/lpm_divide_1ut.tdf          ;         ;
+; db/sign_div_unsign_89h.tdf       ; yes             ; Auto-Generated Megafunction  ; /afs/andrew.cmu.edu/usr8/exg/private/15418/n-body-on-fpga/naive/db/sign_div_unsign_89h.tdf     ;         ;
+; db/alt_u_div_faf.tdf             ; yes             ; Auto-Generated Megafunction  ; /afs/andrew.cmu.edu/usr8/exg/private/15418/n-body-on-fpga/naive/db/alt_u_div_faf.tdf           ;         ;
+; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction  ; /afs/andrew.cmu.edu/usr8/exg/private/15418/n-body-on-fpga/naive/db/add_sub_7pc.tdf             ;         ;
+; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction  ; /afs/andrew.cmu.edu/usr8/exg/private/15418/n-body-on-fpga/naive/db/add_sub_8pc.tdf             ;         ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                                                                                                                                  ;
++---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Resource                                    ; Usage                                                                                                                                                          ;
++---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Estimated Total logic elements              ; 288                                                                                                                                                            ;
+;                                             ;                                                                                                                                                                ;
+; Total combinational functions               ; 288                                                                                                                                                            ;
+; Logic element usage by number of LUT inputs ;                                                                                                                                                                ;
+;     -- 4 input functions                    ; 33                                                                                                                                                             ;
+;     -- 3 input functions                    ; 193                                                                                                                                                            ;
+;     -- <=2 input functions                  ; 62                                                                                                                                                             ;
+;                                             ;                                                                                                                                                                ;
+; Logic elements by mode                      ;                                                                                                                                                                ;
+;     -- normal mode                          ; 158                                                                                                                                                            ;
+;     -- arithmetic mode                      ; 130                                                                                                                                                            ;
+;                                             ;                                                                                                                                                                ;
+; Total registers                             ; 0                                                                                                                                                              ;
+;     -- Dedicated logic registers            ; 0                                                                                                                                                              ;
+;     -- I/O registers                        ; 0                                                                                                                                                              ;
+;                                             ;                                                                                                                                                                ;
+; I/O pins                                    ; 46                                                                                                                                                             ;
+;                                             ;                                                                                                                                                                ;
+; Embedded Multiplier 9-bit elements          ; 0                                                                                                                                                              ;
+;                                             ;                                                                                                                                                                ;
+; Maximum fan-out node                        ; division:div_inst|lpm_divide:LPM_DIVIDE_component|lpm_divide_1ut:auto_generated|sign_div_unsign_89h:divider|alt_u_div_faf:divider|add_sub_14_result_int[15]~30 ;
+; Maximum fan-out                             ; 22                                                                                                                                                             ;
+; Total fan-out                               ; 883                                                                                                                                                            ;
+; Average fan-out                             ; 2.32                                                                                                                                                           ;
++---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                            ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                ; Entity Name         ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |top_divide_fpga                          ; 288 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 46   ; 0            ; |top_divide_fpga                                                                                                                                   ; top_divide_fpga     ; work         ;
+;    |division:div_inst|                    ; 264 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_divide_fpga|division:div_inst                                                                                                                 ; division            ; work         ;
+;       |lpm_divide:LPM_DIVIDE_component|   ; 264 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_divide_fpga|division:div_inst|lpm_divide:LPM_DIVIDE_component                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_1ut:auto_generated|  ; 264 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_divide_fpga|division:div_inst|lpm_divide:LPM_DIVIDE_component|lpm_divide_1ut:auto_generated                                                   ; lpm_divide_1ut      ; work         ;
+;             |sign_div_unsign_89h:divider| ; 264 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_divide_fpga|division:div_inst|lpm_divide:LPM_DIVIDE_component|lpm_divide_1ut:auto_generated|sign_div_unsign_89h:divider                       ; sign_div_unsign_89h ; work         ;
+;                |alt_u_div_faf:divider|    ; 264 (264)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_divide_fpga|division:div_inst|lpm_divide:LPM_DIVIDE_component|lpm_divide_1ut:auto_generated|sign_div_unsign_89h:divider|alt_u_div_faf:divider ; alt_u_div_faf       ; work         ;
+;    |hex_display:h0|                       ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_divide_fpga|hex_display:h0                                                                                                                    ; hex_display         ; work         ;
+;    |hex_display:h1|                       ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_divide_fpga|hex_display:h1                                                                                                                    ; hex_display         ; work         ;
+;    |hex_display:h2|                       ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_divide_fpga|hex_display:h2                                                                                                                    ; hex_display         ; work         ;
+;    |hex_display:h3|                       ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_divide_fpga|hex_display:h3                                                                                                                    ; hex_display         ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: division:div_inst|lpm_divide:LPM_DIVIDE_component ;
++------------------------+----------------+------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                 ;
++------------------------+----------------+------------------------------------------------------+
+; LPM_WIDTHN             ; 16             ; Signed Integer                                       ;
+; LPM_WIDTHD             ; 16             ; Signed Integer                                       ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                              ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                              ;
+; LPM_PIPELINE           ; 0              ; Untyped                                              ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                              ;
+; MAXIMIZE_SPEED         ; 6              ; Untyped                                              ;
+; CBXI_PARAMETER         ; lpm_divide_1ut ; Untyped                                              ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                              ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                              ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                           ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                         ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                         ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                       ;
++------------------------+----------------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "division:div_inst"                                                                          ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                             ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; numer[15..8] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; denom[15..8] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; remain       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 46                          ;
+; cycloneiii_lcell_comb ; 301                         ;
+;     arith             ; 130                         ;
+;         2 data inputs ; 44                          ;
+;         3 data inputs ; 86                          ;
+;     normal            ; 171                         ;
+;         0 data inputs ; 13                          ;
+;         1 data inputs ; 13                          ;
+;         2 data inputs ; 5                           ;
+;         3 data inputs ; 107                         ;
+;         4 data inputs ; 33                          ;
+;                       ;                             ;
+; Max LUT depth         ; 40.70                       ;
+; Average LUT depth     ; 36.99                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 23.1std.1 Build 993 05/14/2024 SC Standard Edition
+    Info: Processing started: Tue Apr  8 19:35:32 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DivisionTestFPGA -c top_divide_fpga
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file division.v
+    Info (12023): Found entity 1: division File: /afs/andrew.cmu.edu/usr8/exg/private/15418/n-body-on-fpga/naive/division.v Line: 40
+Info (12021): Found 2 design units, including 2 entities, in source file divide_syn.sv
+    Info (12023): Found entity 1: top_divide_fpga File: /afs/andrew.cmu.edu/usr8/exg/private/15418/n-body-on-fpga/naive/divide_syn.sv Line: 1
+    Info (12023): Found entity 2: hex_display File: /afs/andrew.cmu.edu/usr8/exg/private/15418/n-body-on-fpga/naive/divide_syn.sv Line: 30
+Info (12127): Elaborating entity "top_divide_fpga" for the top level hierarchy
+Info (12128): Elaborating entity "division" for hierarchy "division:div_inst" File: /afs/andrew.cmu.edu/usr8/exg/private/15418/n-body-on-fpga/naive/divide_syn.sv Line: 20
+Info (12128): Elaborating entity "lpm_divide" for hierarchy "division:div_inst|lpm_divide:LPM_DIVIDE_component" File: /afs/andrew.cmu.edu/usr8/exg/private/15418/n-body-on-fpga/naive/division.v Line: 63
+Info (12130): Elaborated megafunction instantiation "division:div_inst|lpm_divide:LPM_DIVIDE_component" File: /afs/andrew.cmu.edu/usr8/exg/private/15418/n-body-on-fpga/naive/division.v Line: 63
+Info (12133): Instantiated megafunction "division:div_inst|lpm_divide:LPM_DIVIDE_component" with the following parameter: File: /afs/andrew.cmu.edu/usr8/exg/private/15418/n-body-on-fpga/naive/division.v Line: 63
+    Info (12134): Parameter "lpm_drepresentation" = "SIGNED"
+    Info (12134): Parameter "lpm_hint" = "MAXIMIZE_SPEED=6,LPM_REMAINDERPOSITIVE=TRUE"
+    Info (12134): Parameter "lpm_nrepresentation" = "SIGNED"
+    Info (12134): Parameter "lpm_type" = "LPM_DIVIDE"
+    Info (12134): Parameter "lpm_widthd" = "16"
+    Info (12134): Parameter "lpm_widthn" = "16"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_1ut.tdf
+    Info (12023): Found entity 1: lpm_divide_1ut File: /afs/andrew.cmu.edu/usr8/exg/private/15418/n-body-on-fpga/naive/db/lpm_divide_1ut.tdf Line: 25
+Info (12128): Elaborating entity "lpm_divide_1ut" for hierarchy "division:div_inst|lpm_divide:LPM_DIVIDE_component|lpm_divide_1ut:auto_generated" File: /afs/ece/support/altera/release/std-23.1.1/quartus/libraries/megafunctions/lpm_divide.tdf Line: 148
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_89h.tdf
+    Info (12023): Found entity 1: sign_div_unsign_89h File: /afs/andrew.cmu.edu/usr8/exg/private/15418/n-body-on-fpga/naive/db/sign_div_unsign_89h.tdf Line: 25
+Info (12128): Elaborating entity "sign_div_unsign_89h" for hierarchy "division:div_inst|lpm_divide:LPM_DIVIDE_component|lpm_divide_1ut:auto_generated|sign_div_unsign_89h:divider" File: /afs/andrew.cmu.edu/usr8/exg/private/15418/n-body-on-fpga/naive/db/lpm_divide_1ut.tdf Line: 36
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_faf.tdf
+    Info (12023): Found entity 1: alt_u_div_faf File: /afs/andrew.cmu.edu/usr8/exg/private/15418/n-body-on-fpga/naive/db/alt_u_div_faf.tdf Line: 27
+Info (12128): Elaborating entity "alt_u_div_faf" for hierarchy "division:div_inst|lpm_divide:LPM_DIVIDE_component|lpm_divide_1ut:auto_generated|sign_div_unsign_89h:divider|alt_u_div_faf:divider" File: /afs/andrew.cmu.edu/usr8/exg/private/15418/n-body-on-fpga/naive/db/sign_div_unsign_89h.tdf Line: 33
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
+    Info (12023): Found entity 1: add_sub_7pc File: /afs/andrew.cmu.edu/usr8/exg/private/15418/n-body-on-fpga/naive/db/add_sub_7pc.tdf Line: 23
+Info (12128): Elaborating entity "add_sub_7pc" for hierarchy "division:div_inst|lpm_divide:LPM_DIVIDE_component|lpm_divide_1ut:auto_generated|sign_div_unsign_89h:divider|alt_u_div_faf:divider|add_sub_7pc:add_sub_0" File: /afs/andrew.cmu.edu/usr8/exg/private/15418/n-body-on-fpga/naive/db/alt_u_div_faf.tdf Line: 35
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
+    Info (12023): Found entity 1: add_sub_8pc File: /afs/andrew.cmu.edu/usr8/exg/private/15418/n-body-on-fpga/naive/db/add_sub_8pc.tdf Line: 23
+Info (12128): Elaborating entity "add_sub_8pc" for hierarchy "division:div_inst|lpm_divide:LPM_DIVIDE_component|lpm_divide_1ut:auto_generated|sign_div_unsign_89h:divider|alt_u_div_faf:divider|add_sub_8pc:add_sub_1" File: /afs/andrew.cmu.edu/usr8/exg/private/15418/n-body-on-fpga/naive/db/alt_u_div_faf.tdf Line: 36
+Info (12128): Elaborating entity "hex_display" for hierarchy "hex_display:h0" File: /afs/andrew.cmu.edu/usr8/exg/private/15418/n-body-on-fpga/naive/divide_syn.sv Line: 23
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "SW[16]" File: /afs/andrew.cmu.edu/usr8/exg/private/15418/n-body-on-fpga/naive/divide_syn.sv Line: 2
+    Warning (15610): No output dependent on input pin "SW[17]" File: /afs/andrew.cmu.edu/usr8/exg/private/15418/n-body-on-fpga/naive/divide_syn.sv Line: 2
+Info (21057): Implemented 334 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 18 input pins
+    Info (21059): Implemented 28 output pins
+    Info (21061): Implemented 288 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 470 megabytes
+    Info: Processing ended: Tue Apr  8 19:35:37 2025
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:13
+
+

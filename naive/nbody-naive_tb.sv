@@ -4,14 +4,24 @@
 
 module NBodySim_tb();
     logic clk, reset, start, done;
+    logic [79:0] read_data;
+    logic [14:0] addr;
 
     // Instantiate NBodySim
-    NBodySim sim #(N = 2) (
+    NBodySim #(.N(2)) sim(
         .clk(clk),
         .reset(reset),
         .start(start),
         .done(done)
     );
+
+    ram_2_port BRAM(.clock(clk),
+                    .data(),
+                    .rdaddress(addr),
+                    .wraddress(),
+                    .wren(),
+                    .q(read_data)
+                   );  
 
     // Clock generation (100 MHz)
     initial begin
@@ -46,47 +56,63 @@ module NBodySim_tb();
     end
 
     task print_forces();
-        logic [31:0] force_body0, force_body1;
+        logic [31:0] force_body0, force_body1, force_body2, force_body3, force_body4;
         
         // Read address 400 (0x190) - Force on body 0
-        force_ram_read(32'h190, force_body0);
+        // ram_read(32'h190, force_body0);
+        // $display("Force on body 0: x=%0d, y=%0d", 
+        //          force_body0[31:16], force_body0[15:0]);
+        
+        // // Read address 401 (0x191) - Force on body 1
+        // ram_read(32'h191, force_body1);
+        // $display("Force on body 1: x=%0d, y=%0d", 
+        //          force_body1[31:16], force_body1[15:0]);
+
+        // // Read address 402 (0x192) - Force on body 0
+        // ram_read(32'h192, force_body0);
+        // $display("Force on body 2: x=%0d, y=%0d", 
+        //          force_body2[31:16], force_body2[15:0]);
+        
+        // // Read address 403 (0x193) - Force on body 1
+        // ram_read(32'h193, force_body1);
+        // $display("Force on body 3: x=%0d, y=%0d", 
+        //          force_body3[31:16], force_body3[15:0]);
+
+        // // Read address 404 (0x194) - Force on body 1
+        // ram_read(32'h194, force_body1);
+        // $display("Force on body 4: x=%0d, y=%0d", 
+        //          force_body4[31:16], force_body4[15:0]);
+        ram_read(32'h0, force_body0);
         $display("Force on body 0: x=%0d, y=%0d", 
                  force_body0[31:16], force_body0[15:0]);
         
         // Read address 401 (0x191) - Force on body 1
-        force_ram_read(32'h191, force_body1);
+        ram_read(32'h1, force_body1);
         $display("Force on body 1: x=%0d, y=%0d", 
                  force_body1[31:16], force_body1[15:0]);
+
+        // Read address 402 (0x192) - Force on body 0
+        ram_read(32'h2, force_body0);
+        $display("Force on body 2: x=%0d, y=%0d", 
+                 force_body2[31:16], force_body2[15:0]);
+        
+        // Read address 403 (0x193) - Force on body 1
+        ram_read(32'h3, force_body1);
+        $display("Force on body 3: x=%0d, y=%0d", 
+                 force_body3[31:16], force_body3[15:0]);
+
+        // Read address 404 (0x194) - Force on body 1
+        ram_read(32'h4, force_body1);
+        $display("Force on body 4: x=%0d, y=%0d", 
+                 force_body4[31:16], force_body4[15:0]);
     endtask
 
     // Helper task to read from RAM (replace with your actual RAM interface)
-    task force_ram_read(input logic [31:0] addr, output logic [31:0] data);
-        // This assumes your RAM returns 32-bit force values at these addresses
-        // Replace with your actual RAM read protocol
+    task ram_read(input logic [14:0] rd_addr, output logic [79:0] data);
         @(posedge clk);
-        sim.addr = addr;      // Replace with actual RAM address input
-        sim.rd_en = 1;        // Replace with actual RAM read enable
+        addr = rd_addr;      
         @(posedge clk);
-        data = sim.read_body; // Replace with actual RAM data output
-        sim.rd_en = 0;
+        data = read_data; 
     endtask
 
-    // Initialize RAM with body data (from .mif)
-    initial begin
-        // Body 0: x=100, y=100, vx=200, vy=200, mass=5
-        // Body 1: x=200, y=200, vx=100, vy=100, mass=2
-        // Wait for reset to complete
-        @(negedge reset);
-        
-        // Write to RAM (replace with your actual RAM write protocol)
-        @(posedge clk);
-        sim.wr_en = 1;
-        sim.addr = 0;
-        sim.write_data = 80'h0064006400C800C80005; // Body 0 data
-        @(posedge clk);
-        sim.addr = 1;
-        sim.write_data = 80'h00C800C8006400640002; // Body 1 data
-        @(posedge clk);
-        sim.wr_en = 0;
-    end
-endmodule
+endmodule: NBodySim_tb

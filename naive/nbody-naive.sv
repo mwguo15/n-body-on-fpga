@@ -1,7 +1,5 @@
 `default_nettype none
 
-`include "RAM_2_PORT.v"
-
 typedef struct packed {
     logic signed [15:0] x;
     logic signed [15:0] y;
@@ -31,27 +29,22 @@ logic [31:0] force_x, force_y;
 logic [31:0] total_force_x, total_force_y; // Accumulated force for body_i
 logic [7:0] i, j; // i and j counters
 logic incr_i, incr_j;
-logic [15:0] addr;
+logic [14:0] addr;
 logic [79:0] write_data;
-logic rd_en, wr_en;
+logic wr_en;
 
 force_calculator FORCE(.clk, .reset, .enable(fc_en), 
                        .body_i, .body_j, .valid_in(fc_valid), 
                        .force_x, .force_y, .valid_out(fc_done));
 
-RAM_2_PORT BRAM(.aclr(1'b0),
-                .address_a(addr),
-                .address_b(),
-                .clock(clk),
-                .data_a(write_data),      // Write data a
-                .data_b(),                // Write data b
-                .rden_a(rd_en),
-                .rden_b(),
-                .wren_a(wr_en),
-                .wren_b(),
-                .q_a(read_body),          // Read data a
-                .q_b()                    // Read data b
-               );
+ram_2_port BRAM(.clock(clk),
+                .data(write_data),
+                .rdaddress(addr),
+                .wraddress(addr),
+                .wren(wr_en),
+                .q(read_body)
+               );   
+          
 
 enum logic [3:0] {
     IDLE,   
@@ -118,7 +111,6 @@ end
 // Next state and control signal generation 
 always_comb begin
     addr = 0;
-    rd_en = 0;
     wr_en = 0;
     fc_en = 0;
     fc_valid = 0;
@@ -134,7 +126,6 @@ always_comb begin
             nextState = start ? LOAD_BODY_I : IDLE;
         end
         LOAD_BODY_I: begin
-            rd_en = 1;
             addr = i; // Reading body_i
             nextState = INIT_BODY_I;
         end
@@ -143,7 +134,6 @@ always_comb begin
             nextState = LOAD_BODY_J;
         end 
         LOAD_BODY_J: begin
-            rd_en = 1;
             addr = j; // Reading body_j
             nextState = INIT_BODY_J;
         end
@@ -327,7 +317,7 @@ end
 logic [31:0] sqrt_dist_sq;
 logic [31:0] inv_dist;
 
-assign sqrt_dist_sq = $sqrt(s4.dist_sq);
+assign sqrt_dist_sq = $sqrt($bitstoshortreal(s4.dist_sq));
 assign inv_dist = 1.0 / sqrt_dist_sq;
 
 always_ff @(posedge clk) begin
@@ -351,7 +341,7 @@ logic [31:0] magnitude;
 assign inv_dist3 = s5.inv_dist * s5.inv_dist * s5.inv_dist;
 assign magnitude = s5.mass_j_scaled * inv_dist3;
 
-always_ff @(posedge clk or posedge reset) begin
+always_ff @(posedge clk) begin
     if (reset | valid_out) begin
         s6 <= '0;
         force_x <= '0;
