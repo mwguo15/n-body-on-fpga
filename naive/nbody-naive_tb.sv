@@ -56,7 +56,7 @@ module NBodySim_tb();
     end
 
     task print_forces();
-        logic [31:0] force_body0, force_body1, force_body2, force_body3, force_body4;
+        logic [31:0] data0, data1, data2, data3, data4;
         
         // Read address 400 (0x190) - Force on body 0
         // ram_read(32'h190, force_body0);
@@ -85,6 +85,7 @@ module NBodySim_tb();
         ram_read(32'h0, force_body0);
         $display("Force on body 0: x=%0d, y=%0d", 
                  force_body0[31:16], force_body0[15:0]);
+        $display("Body 0: %0d", force_body0)
         
         // Read address 401 (0x191) - Force on body 1
         ram_read(32'h1, force_body1);
@@ -92,17 +93,17 @@ module NBodySim_tb();
                  force_body1[31:16], force_body1[15:0]);
 
         // Read address 402 (0x192) - Force on body 0
-        ram_read(32'h2, force_body0);
+        ram_read(32'h2, force_body2);
         $display("Force on body 2: x=%0d, y=%0d", 
                  force_body2[31:16], force_body2[15:0]);
         
         // Read address 403 (0x193) - Force on body 1
-        ram_read(32'h3, force_body1);
+        ram_read(32'h3, force_body3);
         $display("Force on body 3: x=%0d, y=%0d", 
                  force_body3[31:16], force_body3[15:0]);
 
         // Read address 404 (0x194) - Force on body 1
-        ram_read(32'h4, force_body1);
+        ram_read(32'h4, force_body4);
         $display("Force on body 4: x=%0d, y=%0d", 
                  force_body4[31:16], force_body4[15:0]);
     endtask
