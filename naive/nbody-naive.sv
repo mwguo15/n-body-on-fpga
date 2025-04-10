@@ -50,8 +50,9 @@ enum logic [3:0] {
     IDLE,   
     LOAD_BODY_I,    // Set RAM address = i to load body i
     INIT_BODY_I,    // Register body_i
+    WAIT_LOAD_I,
     LOAD_BODY_J,    // Set RAM address = j to load body j (inner loop)
-    WAIT,
+    WAIT_LOAD_J,
     INIT_BODY_J,    // Register body_j
     COMPUTE_FORCE,  // Compute force contribution from body j
     WAIT_FORCE,     // Wait for force calculation to finish
@@ -128,6 +129,10 @@ always_comb begin
         end
         LOAD_BODY_I: begin
             addr = i; // Reading body_i
+            nextState = i == N ? DONE : WAIT_LOAD_I;
+        end
+        WAIT_LOAD_I: begin
+            addr = i; 
             nextState = INIT_BODY_I;
         end
         INIT_BODY_I: begin
@@ -137,9 +142,14 @@ always_comb begin
         end 
         LOAD_BODY_J: begin
             addr = j; // Reading body_j
-            nextState = j == i ? INCR_J : WAIT; // If j equal to i, then increment again to skip 
+            if (j == i) // If j == i, increment again to skip
+                nextState = INCR_J;
+            else if (j == N) // If reached end of bodies, update body i and restart
+                nextState = UPDATE_BODY;
+            else // Else continue loading body
+                nextState = WAIT_LOAD_J;  
         end
-        WAIT: begin
+        WAIT_LOAD_J: begin
             addr = j;
             nextState = INIT_BODY_J;
         end
@@ -151,11 +161,11 @@ always_comb begin
         COMPUTE_FORCE: begin
             fc_en = 1; // Begin force calculation
             fc_valid = 1; // Signal that the input is valid for 1 cycle
-            nextState = j < N ? WAIT_FORCE : UPDATE_BODY;
+            nextState = WAIT_FORCE;
         end
         WAIT_FORCE: begin
             fc_en = 1; // Keeping force calculation enabled while it runs 
-            nextState = fc_done ? INCR_J : WAIT_FORCE;
+            nextState = fc_done ? INCR_J : WAIT_FORCE; // Loop here until calculation is done
         end
         INCR_J: begin
             incr_j = 1'b1;
@@ -173,7 +183,7 @@ always_comb begin
         end
         INCR_I: begin
             incr_i = 1'b1;
-            nextState = i < N ? LOAD_BODY_I : DONE;
+            nextState = LOAD_BODY_I;
         end
         DONE: begin
             done = 1;
@@ -243,6 +253,8 @@ stage5_t s5;
 
 logic [31:0] safe_dist_sq;
 logic [63:0] magnitude;
+
+logic delayed_valid_out;
 
 // =============================================
 // Pipeline Stage 1: Input Registration
@@ -324,7 +336,7 @@ end
 // Final Force Calculation
 // =============================================
 always_ff @(posedge clk) begin
-    if (reset) begin
+    if (reset | delayed_valid_out) begin
         force_x   <= 0;
         force_y   <= 0;
         valid_out <= 0;
@@ -337,6 +349,13 @@ always_ff @(posedge clk) begin
         force_y <= magnitude * s2.dy / SCALE;
         valid_out <= s5.valid;
     end
+end
+
+always_ff @(posedge clk) begin
+    if (reset)
+        delayed_valid_out <= 0;
+    else
+        delayed_valid_out <= valid_out;
 end
 
 endmodule

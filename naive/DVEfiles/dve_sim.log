@@ -1,199 +1,40 @@
-13:37:00    2141 --> ...                                                                  [tcl] ucliGUI::start /afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/simv -ucligui 
-13:37:00    2142 --> ...                                                                      [tcl] set ucliGUI::state
-13:37:00    2143 --> ...                                                                          [tcl] gui_update_simulator_buttons
-13:37:01    2144 --> ...                                                                              [tcl] set ucliGUI::state
-13:37:01    2145 --> ...                                                                                  [tcl] ucliCore::getToolPID
-13:37:01    2146 --> ...                                                                                      [tcl] synopsys::env hasTB
-13:37:01    2147 --> ...                                                                                          [tcl] trigger_hier_stack_context_switch 0
-13:37:01    2148 --> ...                                                                                              [tcl] synUtils::setDVEInitPhase 1
-13:37:01    2149 --> ...                                                                                                  [tcl] gui_get_env SIMSETUP::SIMVPD
-13:37:01    2150 --> ...  [tcl] synopsys::dump -type VPD -file /afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/inter.vpd -locking
-13:37:02    2151 --> ...      [tcl] synopsys::dump -autoflush on -fid VPD12
-13:37:02    2152 --> ...          [tcl] set ::dve_fid VPD12
-13:37:02    2153 --> ...              [tcl] synUtils::setDVEInitPhase 0
-13:37:02    2154 --> ...                  [tcl] ucliCore::getToolPID
-13:37:02    2155 --> ...                      [tcl] synUtils::sendTool -active _icl_setToolSocket /tmp/smlnpkzn8vM
-13:37:02    2156 --> ...                          [tcl] synUtils::sendTool -active {_icl_start_rpc -version "K-2015.09_Full64" -sync_file /tmp/vcs_dve_rpc.mwguo.3369674}
-13:37:02    2157 --> ...                              [tcl] synUtils::sendTool -active {_icl_createSharedMemory /tmp/vcs_dve_general.mwguo.3369674}
-13:37:02    2158 --> ...                                  [tcl] config endofsim noexit
-13:37:02    2159 --> ...                                      [tcl] config onfail enable all
-13:37:02    2160 --> ...                                          [tcl] config syscaddplainmembers
-13:37:02    2161 --> ...                                              [tcl] config syscaddsourcenames
-13:37:02    2162 --> ...                                                  [tcl] config syscaddstructtypes
-13:37:02    2163 --> ...                                                      [tcl] synopsys::listing -disable
-13:37:02    2164 --> ...                                                          [tcl] # Begin_DVE_Session_Save_Info
-13:37:02    2165 --> ...                                                              [tcl] # DVE restart session
-13:37:02    2166 --> ...                                                                  [tcl] # Saved on Wed Apr 9 13:36:59 2025
-13:37:02    2167 --> ...                                                                      [tcl] # Designs open: 1
-13:37:02    2168 --> ...                                                                          [tcl] #   Sim: /afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/simv
-13:37:02    2169 --> ...                                                                              [tcl] # Toplevel windows open: 2
-13:37:02    2170 --> ...                                                                                  [tcl] # 	TopLevel.1
-13:37:02    2171 --> ...                                                                                      [tcl] # 	TopLevel.2
-13:37:02    2172 --> ...                                                                                          [tcl] #   Source.1: NBodySim_tb
-13:37:02    2173 --> ...                                                                                              [tcl] #   Wave.1: 44 signals
-13:37:02    2174 --> ...                                                                                                  [tcl] #   Group count = 4
-13:37:02    2175 --> ...  [tcl] #   Group Group1 signal count = 30
-13:37:02    2176 --> ...      [tcl] #   Group Group2 signal count = 14
-13:37:02    2177 --> ...          [tcl] #   Group Group3 signal count = 14
-13:37:02    2178 --> ...              [tcl] #   Group Group4 signal count = 30
-13:37:02    2179 --> ...                  [tcl] # End_DVE_Session_Save_Info
-13:37:02    2180 --> ...                      [tcl] # DVE version: K-2015.09_Full64
-13:37:02    2181 --> ...                          [tcl] # DVE build date: Aug 25 2015 21:36:02
-13:37:02    2182 --> ...                              [tcl] #<Session mode="Restart" path=".restartSimSession.tcl" type="Debug">
-13:37:02    2183 --> ...                                  [tcl] gui_set_loading_session_type Restart
-13:37:02    2184 --> ...                                      [tcl] gui_continuetime_set
-13:37:02    2185 --> ...                                          [tcl] gui_clear_window -type Wave
-13:37:02    2186 --> ...                                              [tcl] gui_clear_window -type List
-13:37:02    2187 --> ...                                                  [tcl] # Application preferences
-13:37:02    2188 --> ...                                                      [tcl] gui_set_pref_value -key app_default_font -value {Helvetica,10,-1,5,50,0,0,0,0,0}
-13:37:02    2189 --> ...                                                          [tcl] gui_src_preferences -tabstop 8 -maxbits 24 -windownumber 1
-13:37:02    2190 --> ...                                                              [tcl] #<WindowLayout>
-13:37:02    2191 --> ...                                                                  [tcl] # DVE top-level session
-13:37:02    2192 --> ...                                                                      [tcl] # Create and position top-level window: TopLevel.1
-13:37:02    2193 --> ...                                                                          [tcl] set TopLevel.1 TopLevel.1
-13:37:02    2194 --> ...                                                                              [tcl] # Docked window settings
-13:37:02    2195 --> ...                                                                                  [tcl] set HSPane.1 HSPane.1
-13:37:02    2196 --> ...                                                                                      [tcl] set Hier.1 Hier.1
-13:37:02    2197 --> ...                                                                                          [tcl] set DLPane.1 DLPane.1
-13:37:02    2198 --> ...                                                                                              [tcl] set Data.1 Data.1
-13:37:02    2199 --> ...                                                                                                  [tcl] set Console.1 Console.1
-13:37:02    2200 --> ...  [tcl] gui_sync_global -id ${TopLevel.1} -option true
-13:37:02    2201 --> ...      [tcl] # MDI window settings
-13:37:02    2202 --> ...          [tcl] set Source.1 Source.1
-13:37:02    2203 --> ...              [tcl] gui_update_layout -id ${Source.1} {{show_state maximized} {dock_state undocked} {dock_on_new_line false}}
-13:37:02    2204 --> ...                  [tcl] # End MDI window settings
-13:37:02    2205 --> ...                      [tcl] # Create and position top-level window: TopLevel.2
-13:37:02    2206 --> ...                          [tcl] set TopLevel.2 TopLevel.2
-13:37:02    2207 --> ...                              [tcl] # Docked window settings
-13:37:02    2208 --> ...                                  [tcl] gui_sync_global -id ${TopLevel.2} -option true
-13:37:02    2209 --> ...                                      [tcl] # MDI window settings
-13:37:02    2210 --> ...                                          [tcl] set Wave.1 Wave.1
-13:37:02    2211 --> ...                                              [tcl] gui_update_layout -id ${Wave.1} {{show_state maximized} {dock_state undocked} {dock_on_new_line false} {child_wave_left 495} {child_wave_right 1206} {child_wave_colname 236} {child_wave_colvalue 255} {child_wave_col1 0} {child_wave_col2 1}}
-13:37:02    2212 --> ...                                                  [tcl] # End MDI window settings
-13:37:02    2213 --> ...                                                      [tcl] #</WindowLayout>
-13:37:02    2214 --> ...                                                          [tcl] #<Database>
-13:37:02    2215 --> ...                                                              [tcl] gui_set_precision 1ps
-13:37:02    2216 --> ...                                                                  [tcl] gui_set_time_units 1ps
-13:37:02    2217 --> ...                                                                      [tcl] #</Database>
-13:37:02    2218 --> ...                                                                          [tcl] # DVE Global setting session:
-13:37:02    2219 --> ...                                                                              [tcl] # Global: Breakpoints
-13:37:02    2220 --> ...                                                                                  [tcl] # Global: Bus
-13:37:02    2221 --> ...                                                                                      [tcl] # Global: Expressions
-13:37:02    2222 --> ...                                                                                          [tcl] # Global: Signal Time Shift
-13:37:02    2223 --> ...                                                                                              [tcl] # Global: Signal Compare
-13:37:02    2224 --> ...                                                                                                  [tcl] # Global: Signal Groups
-13:37:02    2225 --> ...  [tcl] set _session_group_27 Group1
-13:37:02    2226 --> ...      [tcl] gui_sg_create "$_session_group_27"
-13:37:02    2227 --> ...          [tcl] set Group1 "$_session_group_27"
-13:37:02    2228 --> ...              [tcl] gui_sg_addsignal -group "$_session_group_27" { NBodySim_tb.sim.clk NBodySim_tb.sim.reset NBodySim_tb.sim.start NBodySim_tb.sim.done NBodySim_tb.sim.read_body NBodySim_tb.sim.body_i NBodySim_tb.sim.body_j NBodySim_tb.sim.register_i NBodySim_tb.sim.register_j NBodySim_tb.sim.fc_en NBodySim_tb.sim.fc_done NBodySim_tb.sim.fc_valid NBodySim_tb.sim.force_x NBodySim_tb.sim.force_y NBodySim_tb.sim.total_force_x NBodySim_tb.sim.total_force_y NBodySim_tb.sim.i NBodySim_tb.sim.j NBodySim_tb.sim.incr_i NBodySim_tb.sim.incr_j NBodySim_tb.sim.addr NBodySim_tb.sim.write_data NBodySim_tb.sim.wr_en NBodySim_tb.sim.currState NBodySim_tb.sim.nextState NBodySim_tb.sim.N NBodySim_tb.sim.ADDR_WIDTH NBodySim_tb.sim.DT NBodySim_tb.sim.G NBodySim_tb.sim.SOFTENING }
-13:37:02    2229 --> ...                  [tcl] gui_set_radix -radix {decimal} -signals {Sim:NBodySim_tb.sim.N}
-13:37:02    2230 --> ...                      [tcl] gui_set_radix -radix {twosComplement} -signals {Sim:NBodySim_tb.sim.N}
-13:37:02    2231 --> ...                          [tcl] gui_set_radix -radix {decimal} -signals {Sim:NBodySim_tb.sim.ADDR_WIDTH}
-13:37:02    2232 --> ...                              [tcl] gui_set_radix -radix {twosComplement} -signals {Sim:NBodySim_tb.sim.ADDR_WIDTH}
-13:37:02    2233 --> ...                                  [tcl] gui_set_radix -radix {decimal} -signals {Sim:NBodySim_tb.sim.DT}
-13:37:02    2234 --> ...                                      [tcl] gui_set_radix -radix {unsigned} -signals {Sim:NBodySim_tb.sim.DT}
-13:37:02    2235 --> ...                                          [tcl] gui_set_radix -radix {decimal} -signals {Sim:NBodySim_tb.sim.G}
-13:37:02    2236 --> ...                                              [tcl] gui_set_radix -radix {unsigned} -signals {Sim:NBodySim_tb.sim.G}
-13:37:02    2237 --> ...                                                  [tcl] gui_set_radix -radix {decimal} -signals {Sim:NBodySim_tb.sim.SOFTENING}
-13:37:02    2238 --> ...                                                      [tcl] gui_set_radix -radix {unsigned} -signals {Sim:NBodySim_tb.sim.SOFTENING}
-13:37:02    2239 --> ...                                                          [tcl] set _session_group_28 Group2
-13:37:02    2240 --> ...                                                              [tcl] gui_sg_create "$_session_group_28"
-13:37:02    2241 --> ...                                                                  [tcl] set Group2 "$_session_group_28"
-13:37:02    2242 --> ...                                                                      [tcl] gui_sg_addsignal -group "$_session_group_28" { NBodySim_tb.sim.FORCE.clk NBodySim_tb.sim.FORCE.reset NBodySim_tb.sim.FORCE.enable NBodySim_tb.sim.FORCE.body_i NBodySim_tb.sim.FORCE.body_j NBodySim_tb.sim.FORCE.valid_in NBodySim_tb.sim.FORCE.force_x NBodySim_tb.sim.FORCE.force_y NBodySim_tb.sim.FORCE.valid_out NBodySim_tb.sim.FORCE.s1 NBodySim_tb.sim.FORCE.s2 NBodySim_tb.sim.FORCE.s3 NBodySim_tb.sim.FORCE.s4 NBodySim_tb.sim.FORCE.s5 }
-13:37:02    2243 --> ...                                                                          [tcl] set _session_group_29 Group3
-13:37:02    2244 --> ...                                                                              [tcl] gui_sg_create "$_session_group_29"
-13:37:02    2245 --> ...                                                                                  [tcl] set Group3 "$_session_group_29"
-13:37:02    2246 --> ...                                                                                      [tcl] gui_sg_addsignal -group "$_session_group_29" { NBodySim_tb.sim.FORCE.valid_in NBodySim_tb.sim.FORCE.valid_out NBodySim_tb.sim.FORCE.reset NBodySim_tb.sim.FORCE.enable NBodySim_tb.sim.FORCE.s1 NBodySim_tb.sim.FORCE.s2 NBodySim_tb.sim.FORCE.s3 NBodySim_tb.sim.FORCE.s4 NBodySim_tb.sim.FORCE.s5 NBodySim_tb.sim.FORCE.force_x NBodySim_tb.sim.FORCE.force_y NBodySim_tb.sim.FORCE.clk NBodySim_tb.sim.FORCE.body_i NBodySim_tb.sim.FORCE.body_j }
-13:37:02    2247 --> ...                                                                                          [tcl] set _session_group_30 Group4
-13:37:02    2248 --> ...                                                                                              [tcl] gui_sg_create "$_session_group_30"
-13:37:02    2249 --> ...                                                                                                  [tcl] set Group4 "$_session_group_30"
-13:37:02    2250 --> ...  [tcl] gui_sg_addsignal -group "$_session_group_30" { NBodySim_tb.sim.nextState NBodySim_tb.sim.read_body NBodySim_tb.sim.reset NBodySim_tb.sim.G NBodySim_tb.sim.DT NBodySim_tb.sim.ADDR_WIDTH NBodySim_tb.sim.i NBodySim_tb.sim.j NBodySim_tb.sim.incr_i NBodySim_tb.sim.fc_en NBodySim_tb.sim.addr NBodySim_tb.sim.incr_j NBodySim_tb.sim.N NBodySim_tb.sim.SOFTENING NBodySim_tb.sim.total_force_x NBodySim_tb.sim.wr_en NBodySim_tb.sim.total_force_y NBodySim_tb.sim.fc_valid NBodySim_tb.sim.register_i NBodySim_tb.sim.register_j NBodySim_tb.sim.currState NBodySim_tb.sim.force_x NBodySim_tb.sim.force_y NBodySim_tb.sim.clk NBodySim_tb.sim.body_i NBodySim_tb.sim.body_j NBodySim_tb.sim.write_data NBodySim_tb.sim.done NBodySim_tb.sim.start NBodySim_tb.sim.fc_done }
-13:37:02    2251 --> ...      [tcl] gui_set_radix -radix {decimal} -signals {Sim:NBodySim_tb.sim.G}
-13:37:02    2252 --> ...          [tcl] gui_set_radix -radix {unsigned} -signals {Sim:NBodySim_tb.sim.G}
-13:37:02    2253 --> ...              [tcl] gui_set_radix -radix {decimal} -signals {Sim:NBodySim_tb.sim.DT}
-13:37:02    2254 --> ...                  [tcl] gui_set_radix -radix {unsigned} -signals {Sim:NBodySim_tb.sim.DT}
-13:37:02    2255 --> ...                      [tcl] gui_set_radix -radix {decimal} -signals {Sim:NBodySim_tb.sim.ADDR_WIDTH}
-13:37:02    2256 --> ...                          [tcl] gui_set_radix -radix {twosComplement} -signals {Sim:NBodySim_tb.sim.ADDR_WIDTH}
-13:37:02    2257 --> ...                              [tcl] gui_set_radix -radix {decimal} -signals {Sim:NBodySim_tb.sim.N}
-13:37:02    2258 --> ...                                  [tcl] gui_set_radix -radix {twosComplement} -signals {Sim:NBodySim_tb.sim.N}
-13:37:02    2259 --> ...                                      [tcl] gui_set_radix -radix {decimal} -signals {Sim:NBodySim_tb.sim.SOFTENING}
-13:37:02    2260 --> ...                                          [tcl] gui_set_radix -radix {unsigned} -signals {Sim:NBodySim_tb.sim.SOFTENING}
-13:37:02    2261 --> ...                                              [tcl] # Global: Highlighting
-13:37:02    2262 --> ...                                                  [tcl] # Global: Stack
-13:37:02    2263 --> ...                                                      [tcl] gui_change_stack_mode -mode list
-13:37:02    2264 --> ...                                                          [tcl] # Post database loading setting...
-13:37:02    2265 --> ...                                                              [tcl] # Save global setting...
-13:37:02    2266 --> ...                                                                  [tcl] # Wave/List view global setting
-13:37:02    2267 --> ...                                                                      [tcl] gui_list_create_group_when_add -wave -enable
-13:37:02    2268 --> ...                                                                          [tcl] gui_cov_show_value -switch false
-13:37:02    2269 --> ...                                                                              [tcl] # Close all empty TopLevel windows
-13:37:02    2270 --> ...                                                                                  [tcl] foreach __top [gui_ekki_get_window_ids -type TopLevel] {     if { [llength [gui_ekki_get_window_ids -parent $__top]] == 0} {         gui_close_window -window $__top     } }
-13:37:02    2271 --> ...                                                                                      [tcl] gui_set_loading_session_type noSession
-13:37:02    2272 --> ...                                                                                          [tcl] # DVE View/pane content session:
-13:37:02    2273 --> ...                                                                                              [tcl] # Hier 'Hier.1'
-13:37:02    2274 --> ...                                                                                                  [tcl] gui_show_window -window ${Hier.1}
-13:37:02    2275 --> ...  [tcl] gui_list_set_filter -id ${Hier.1} -list { {Package 1} {All 0} {Process 1} {VirtPowSwitch 0} {UnnamedProcess 1} {UDP 0} {Function 1} {Block 1} {SrsnAndSpaCell 0} {OVA Unit 1} {LeafScCell 1} {LeafVlgCell 1} {Interface 1} {LeafVhdCell 1} {$unit 1} {NamedBlock 1} {Task 1} {VlgPackage 1} {ClassDef 1} {VirtIsoCell 0} }
-13:37:02    2276 --> ...      [tcl] gui_list_set_filter -id ${Hier.1} -text {*}
-13:37:02    2277 --> ...          [tcl] gui_change_design -id ${Hier.1} -design Sim
-13:37:03    2278 --> ...              [tcl] catch {gui_list_expand -id ${Hier.1} NBodySim_tb}
-13:37:03    2279 --> ...                  [tcl] catch {gui_list_select -id ${Hier.1} {NBodySim_tb.sim}}
-13:37:03    2280 --> ...                      [tcl] dveMisc::vbusExpand NBodySim_tb.sim
-13:37:03    2281 --> ...                          [tcl] gui_view_scroll -id ${Hier.1} -vertical -set 0
-13:37:03    2282 --> ...                              [tcl] gui_view_scroll -id ${Hier.1} -horizontal -set 0
-13:37:03    2283 --> ...                                  [tcl] # Data 'Data.1'
-13:37:03    2284 --> ...                                      [tcl] gui_list_set_filter -id ${Data.1} -list { {Buffer 1} {Input 1} {Others 1} {Linkage 1} {Output 1} {LowPower 1} {Parameter 1} {All 1} {Aggregate 1} {LibBaseMember 1} {Event 1} {Assertion 1} {Constant 1} {Interface 1} {BaseMembers 1} {Signal 1} {$unit 1} {Inout 1} {Variable 1} }
-13:37:03    2285 --> ...                                          [tcl] gui_list_set_filter -id ${Data.1} -text {*}
-13:37:03    2286 --> ...                                              [tcl] gui_list_show_data -id ${Data.1} {NBodySim_tb.sim}
-13:37:03    2287 --> ...                                                  [tcl] gui_show_window -window ${Data.1}
-13:37:03    2288 --> ...                                                      [tcl] catch { gui_list_select -id ${Data.1} {NBodySim_tb.sim.nextState NBodySim_tb.sim.read_body NBodySim_tb.sim.reset NBodySim_tb.sim.G NBodySim_tb.sim.DT NBodySim_tb.sim.ADDR_WIDTH NBodySim_tb.sim.i NBodySim_tb.sim.j NBodySim_tb.sim.incr_i NBodySim_tb.sim.fc_en NBodySim_tb.sim.addr NBodySim_tb.sim.incr_j NBodySim_tb.sim.N NBodySim_tb.sim.SOFTENING NBodySim_tb.sim.total_force_x NBodySim_tb.sim.wr_en NBodySim_tb.sim.total_force_y NBodySim_tb.sim.fc_valid NBodySim_tb.sim.register_i NBodySim_tb.sim.register_j NBodySim_tb.sim.currState NBodySim_tb.sim.force_x NBodySim_tb.sim.force_y NBodySim_tb.sim.clk NBodySim_tb.sim.body_i NBodySim_tb.sim.body_j NBodySim_tb.sim.write_data NBodySim_tb.sim.done NBodySim_tb.sim.start NBodySim_tb.sim.fc_done }}
-13:37:03    2289 --> ...                                                          [tcl] gui_view_scroll -id ${Data.1} -vertical -set 0
-13:37:03    2290 --> ...                                                              [tcl] gui_view_scroll -id ${Data.1} -horizontal -set 0
-13:37:03    2291 --> ...                                                                  [tcl] gui_view_scroll -id ${Hier.1} -vertical -set 0
-13:37:03    2292 --> ...                                                                      [tcl] gui_view_scroll -id ${Hier.1} -horizontal -set 0
-13:37:03    2293 --> ...                                                                          [tcl] # Source 'Source.1'
-13:37:03    2294 --> ...                                                                              [tcl] gui_src_value_annotate -id ${Source.1} -switch false
-13:37:03    2295 --> ...                                                                                  [tcl] gui_set_env TOGGLE::VALUEANNOTATE 0
-13:37:03    2296 --> ...                                                                                      [tcl] gui_open_source -id ${Source.1}  -replace -active NBodySim_tb /afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/nbody-naive_tb.sv
-13:37:03    2297 --> ...                                                                                          [tcl] gui_view_scroll -id ${Source.1} -vertical -set 60
-13:37:03    2298 --> ...                                                                                              [tcl] gui_src_set_reusable -id ${Source.1}
-13:37:03    2299 --> ...                                                                                                  [tcl] # View 'Wave.1'
-13:37:03    2300 --> ...  [tcl] gui_wv_sync -id ${Wave.1} -switch false
-13:37:03    2301 --> ...      [tcl] set groupExD [gui_get_pref_value -category Wave -key exclusiveSG]
-13:37:03    2302 --> ...          [tcl] gui_set_pref_value -category Wave -key exclusiveSG -value {false}
-13:37:03    2303 --> ...              [tcl] set origWaveHeight [gui_get_pref_value -category Wave -key waveRowHeight]
-13:37:03    2304 --> ...                  [tcl] gui_list_set_height -id Wave -height 25
-13:37:03    2305 --> ...                      [tcl] set origGroupCreationState [gui_list_create_group_when_add -wave]
-13:37:03    2306 --> ...                          [tcl] gui_list_create_group_when_add -wave -disable
-13:37:03    2307 --> ...                              [tcl] gui_wv_zoom_timerange -id ${Wave.1} 85517 186637
-13:37:03    2308 --> ...                                  [tcl] gui_list_add_group -id ${Wave.1} -after {New Group} {Group3}
-13:37:03    2309 --> ...                                      [tcl] synopsys::dump -add {NBodySim_tb.sim.FORCE.body_i NBodySim_tb.sim.FORCE.body_j NBodySim_tb.sim.FORCE.clk NBodySim_tb.sim.FORCE.enable NBodySim_tb.sim.FORCE.force_x NBodySim_tb.sim.FORCE.force_y NBodySim_tb.sim.FORCE.reset NBodySim_tb.sim.FORCE.s1 NBodySim_tb.sim.FORCE.s2 NBodySim_tb.sim.FORCE.s3 NBodySim_tb.sim.FORCE.s4 NBodySim_tb.sim.FORCE.s5 NBodySim_tb.sim.FORCE.valid_in NBodySim_tb.sim.FORCE.valid_out } -aggregates  -fid VPD12
-13:37:03    2310 --> ...                                          [tcl] gui_list_add_group -id ${Wave.1} -after {New Group} {Group4}
-13:37:03    2311 --> ...                                              [tcl] ucliGUI::vpdAddHierarchy -scope NBodySim_tb.sim -depth 1 -file /afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/inter.vpd; synopsys::dump -flush VPD12
-13:37:03    2312 --> ...                                                  [tcl] synopsys::dump -add {NBodySim_tb.sim.ADDR_WIDTH NBodySim_tb.sim.DT NBodySim_tb.sim.G NBodySim_tb.sim.N NBodySim_tb.sim.SOFTENING NBodySim_tb.sim.addr NBodySim_tb.sim.currState NBodySim_tb.sim.done NBodySim_tb.sim.i NBodySim_tb.sim.incr_i NBodySim_tb.sim.incr_j NBodySim_tb.sim.j NBodySim_tb.sim.nextState NBodySim_tb.sim.read_body NBodySim_tb.sim.register_i NBodySim_tb.sim.register_j NBodySim_tb.sim.start NBodySim_tb.sim.total_force_x NBodySim_tb.sim.total_force_y NBodySim_tb.sim.wr_en NBodySim_tb.sim.write_data } -aggregates  -fid VPD12
-13:37:03    2313 --> ...                                                      [tcl] gui_list_expand -id ${Wave.1} NBodySim_tb.sim.FORCE.s4
-13:37:03    2314 --> ...                                                          [tcl] gui_list_expand -id ${Wave.1} NBodySim_tb.sim.FORCE.s5
-13:37:03    2315 --> ...                                                              [tcl] gui_seek_criteria -id ${Wave.1} {Any Edge}
-13:37:03    2316 --> ...                                                                  [tcl] gui_set_env TOGGLE::DEFAULT_WAVE_WINDOW ${Wave.1}
-13:37:03    2317 --> ...                                                                      [tcl] gui_set_pref_value -category Wave -key exclusiveSG -value $groupExD
-13:37:03    2318 --> ...                                                                          [tcl] gui_list_set_height -id Wave -height $origWaveHeight
-13:37:03    2319 --> ...                                                                              [tcl] if {$origGroupCreationState} { 	gui_list_create_group_when_add -wave -enable }
-13:37:03    2320 --> ...                                                                                  [tcl] if { $groupExD } {  gui_msg_report -code DVWW028 }
-13:37:03    2321 --> ...                                                                                      [tcl] gui_list_set_filter -id ${Wave.1} -list { {Buffer 1} {Input 1} {Others 1} {Linkage 1} {Output 1} {Parameter 1} {All 1} {Aggregate 1} {LibBaseMember 1} {Event 1} {Assertion 1} {Constant 1} {Interface 1} {BaseMembers 1} {Signal 1} {$unit 1} {Inout 1} {Variable 1} }
-13:37:03    2322 --> ...                                                                                          [tcl] gui_list_set_filter -id ${Wave.1} -text {*}
-13:37:03    2323 --> ...                                                                                              [tcl] gui_list_set_insertion_bar  -id ${Wave.1} -group Group4  -position in
-13:37:03    2324 --> ...                                                                                                  [tcl] gui_view_scroll -id ${Wave.1} -vertical -set 645
-13:37:03    2325 --> ...  [tcl] gui_show_grid -id ${Wave.1} -enable false
-13:37:03    2326 --> ...      [tcl] # Restore toplevel window zorder
-13:37:03    2327 --> ...          [tcl] # The toplevel window could be closed if it has no view/pane
-13:37:03    2328 --> ...              [tcl] if {[gui_exist_window -window ${TopLevel.1}]} { 	gui_set_active_window -window ${TopLevel.1} 	gui_set_active_window -window ${Source.1} 	gui_set_active_window -window ${DLPane.1} }
-13:37:03    2329 --> ...                  [tcl] if {[gui_exist_window -window ${TopLevel.2}]} { 	gui_set_active_window -window ${TopLevel.2} 	gui_set_active_window -window ${Wave.1} }
-13:37:03    2330 --> ...                      [tcl] #</Session>
-13:37:06    2331 --> ...                          [tcl] synopsys::run
-13:37:06    2332 --> ...                              [tcl] set ucliGUI::state
-13:37:06    2333 --> ...                                  [tcl] set ucliGUI::state
-13:37:06    2334 --> ...                                      [tcl] gui_update_simulator_buttons
-13:37:08    2335 --> ...                                          [tcl] set ucliGUI::state
-13:37:08    2336 --> ...                                              [tcl] set ucliGUI::state
-13:37:08    2337 --> ...                                                  [tcl] catch {senv activeDomain} dveMisc::result 
-13:37:08    2338 --> ...                                                      [tcl] set dveMisc::result
-13:37:08    2339 --> ...                                                          [tcl] gui_update_simulator_buttons
+00:14:56    16 -->                                                             [tcl] ucliGUI::connect -toolargs -ucligui -toolexe ./simv -pid 4150308 -toolin /tmp/vcs_20250410041450_4150306_mwguo..stdin -toolout /tmp/vcs_20250410041450_4150306_mwguo..stdout  
+00:14:56    17 -->                                                                 [tcl] set ucliGUI::state
+00:14:56    18 -->                                                                     [tcl] gui_update_simulator_buttons
+00:14:58    19 -->                                                                         [tcl] set ucliGUI::state
+00:14:58    20 -->                                                                             [tcl] ucliCore::getToolPID
+00:14:58    21 -->                                                                                 [tcl] synopsys::env hasTB
+00:14:58    22 -->                                                                                     [tcl] trigger_hier_stack_context_switch 0
+00:14:58    23 -->                                                                                         [tcl] synUtils::setDVEInitPhase 1
+00:14:58    24 -->                                                                                             [tcl] gui_get_env SIMSETUP::SIMVPD
+00:14:58    25 --> ...  [tcl] synopsys::dump -type VPD -file /afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/inter.vpd -locking
+00:14:58    26 --> ...      [tcl] synopsys::dump -autoflush on -fid VPD0
+00:14:58    27 --> ...          [tcl] set ::dve_fid VPD0
+00:14:58    28 --> ...              [tcl] synUtils::setDVEInitPhase 0
+00:14:58    29 --> ...                  [tcl] ucliCore::getToolPID
+00:14:58    30 --> ...                      [tcl] synUtils::sendTool -active _icl_setToolSocket /tmp/smlnpXT0MA4
+00:14:58    31 --> ...                          [tcl] synUtils::sendTool -active {_icl_start_rpc -version "K-2015.09_Full64" -sync_file /tmp/vcs_dve_rpc.mwguo.4150308}
+00:14:58    32 --> ...                              [tcl] synUtils::sendTool -active {_icl_createSharedMemory /tmp/vcs_dve_general.mwguo.4150308}
+00:14:58    33 --> ...                                  [tcl] dveMisc::vbusExpand NBodySim_tb
+00:14:59    34 --> ...                                      [tcl] dveMisc::vbusExpand _vcs_unit__100957332
+00:14:59    35 --> ...                                          [tcl] config endofsim noexit
+00:14:59    36 --> ...                                              [tcl] config onfail enable all
+00:14:59    37 --> ...                                                  [tcl] config syscaddplainmembers
+00:14:59    38 --> ...                                                      [tcl] config syscaddsourcenames
+00:14:59    39 --> ...                                                          [tcl] config syscaddstructtypes
+00:14:59    40 --> ...                                                              [tcl] synopsys::listing -disable
+00:15:10    41 --> ...                                                                  [tcl] dveMisc::vbusExpand NBodySim_tb.sim.BRAM
+00:15:10    42 --> ...                                                                      [tcl] dveMisc::vbusExpand NBodySim_tb.sim
+00:15:24    43 --> ...                                                                          [tcl] ucliGUI::vpdAddHierarchy -scope NBodySim_tb.sim -depth 1 -file /afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/inter.vpd; synopsys::dump -flush VPD0
+00:15:24    44 --> ...                                                                              [tcl] synopsys::dump -add {NBodySim_tb.sim.addr NBodySim_tb.sim.body_i NBodySim_tb.sim.body_j NBodySim_tb.sim.clk NBodySim_tb.sim.currState NBodySim_tb.sim.done NBodySim_tb.sim.fc_done NBodySim_tb.sim.fc_en NBodySim_tb.sim.fc_valid NBodySim_tb.sim.force_x NBodySim_tb.sim.force_y NBodySim_tb.sim.i NBodySim_tb.sim.incr_i NBodySim_tb.sim.incr_j NBodySim_tb.sim.j NBodySim_tb.sim.nextState NBodySim_tb.sim.read_body NBodySim_tb.sim.register_i NBodySim_tb.sim.register_j NBodySim_tb.sim.reset NBodySim_tb.sim.start NBodySim_tb.sim.total_force_x NBodySim_tb.sim.total_force_y NBodySim_tb.sim.wr_en NBodySim_tb.sim.write_data } -aggregates  -fid VPD0
+00:15:25    45 --> ...                                                                                  [tcl] dveMisc::vbusExpand NBodySim_tb.sim.FORCE
+00:15:31    46 --> ...                                                                                      [tcl] synopsys::dump -add {NBodySim_tb.sim.FORCE.body_i NBodySim_tb.sim.FORCE.body_j NBodySim_tb.sim.FORCE.clk NBodySim_tb.sim.FORCE.delayed_valid_out NBodySim_tb.sim.FORCE.enable NBodySim_tb.sim.FORCE.force_x NBodySim_tb.sim.FORCE.force_y NBodySim_tb.sim.FORCE.magnitude NBodySim_tb.sim.FORCE.reset NBodySim_tb.sim.FORCE.s1 NBodySim_tb.sim.FORCE.s2 NBodySim_tb.sim.FORCE.s3 NBodySim_tb.sim.FORCE.s4 NBodySim_tb.sim.FORCE.s5 NBodySim_tb.sim.FORCE.safe_dist_sq NBodySim_tb.sim.FORCE.valid_in NBodySim_tb.sim.FORCE.valid_out } -aggregates  -fid VPD0
+00:15:36    47 --> ...                                                                                          [tcl] synopsys::run
+00:15:36    48 --> ...                                                                                              [tcl] set ucliGUI::state
+00:15:36    49 --> ...                                                                                                  [tcl] set ucliGUI::state
+00:15:36    50 --> ...  [tcl] gui_update_simulator_buttons
+00:15:38    51 --> ...      [tcl] set ucliGUI::state
+00:15:43    52 --> ...          [tcl] set ucliGUI::state
+00:15:46    53 --> ...              [tcl] catch {senv activeDomain} dveMisc::result 
+00:15:49    54 --> ...                  [tcl] set dveMisc::result
+00:15:49    55 --> ...                      [tcl] gui_update_simulator_buttons

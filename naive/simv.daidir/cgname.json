@@ -1,7 +1,7 @@
 {
-    "ALTERA_MF_MEMORY_INITIALIZATION": [
-        "ALTERA_MF_MEMORY_INITIALIZATION",
-        "er73t",
+    "_vcs_unit__100957332": [
+        "_vcs_unit__100957332",
+        "WGNUL",
         "module"
     ],
     "std": [
@@ -9,9 +9,9 @@
         "reYIK",
         "module"
     ],
-    "_vcs_unit__100957332": [
-        "_vcs_unit__100957332",
-        "WGNUL",
+    "ALTERA_MF_MEMORY_INITIALIZATION": [
+        "ALTERA_MF_MEMORY_INITIALIZATION",
+        "er73t",
         "module"
     ],
     "NBodySim_tb": [
@@ -19,14 +19,14 @@
         "rm0m1",
         "module"
     ],
-    "...MASTER...": [
-        "SIM",
-        "amcQw",
-        "module"
-    ],
     "ram_2_port": [
         "ram_2_port",
         "gvUe1",
+        "module"
+    ],
+    "...MASTER...": [
+        "SIM",
+        "amcQw",
         "module"
     ]
 }

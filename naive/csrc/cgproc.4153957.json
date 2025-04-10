@@ -1,17 +1,17 @@
 {
-    "ObjArchives": [],
+    "CompUnits": {
+        "amcQw_d": {
+            "mod": "...MASTER...",
+            "out": "objs/amcQw_d.o",
+            "bytes": 7457,
+            "mode": 4,
+            "checksum": 4294967295
+        }
+    },
     "Modules": {
         "...MASTER...": {},
         "_vcs_unit__100957332": {}
     },
-    "CompUnits": {
-        "amcQw_d": {
-            "mode": 4,
-            "mod": "...MASTER...",
-            "out": "objs/amcQw_d.o",
-            "bytes": 7457,
-            "checksum": 4294967295
-        }
-    },
-    "reusePaths": {}
+    "reusePaths": {},
+    "ObjArchives": []
 }

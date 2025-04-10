@@ -1,62 +1,67 @@
 {
+    "PEModules": [],
     "MlibObjs": {},
-    "CompileStrategy": "fullobj",
+    "CurCompileUdps": {},
+    "SIMBData": {
+        "out": "amcQwB.o",
+        "bytes": 84674
+    },
     "PrevCompiledModules": {
         "_vcs_unit__100957332": {
             "WGNUL_d": {
-                "mod": "_vcs_unit__100957332",
                 "bytes": 30376,
+                "mod": "_vcs_unit__100957332",
+                "archive": "archive.28/_prev_archive_1.a",
                 "mode": 4,
                 "checksum": 4294967295,
-                "archive": "archive.19/_prev_archive_1.a",
                 "out": "WGNUL_d.o"
-            }
-        },
-        "ram_2_port": {
-            "gvUe1_d": {
-                "mod": "ram_2_port",
-                "bytes": 375306,
-                "mode": 4,
-                "checksum": 4294967295,
-                "archive": "archive.19/_prev_archive_1.a",
-                "out": "gvUe1_d.o"
-            }
-        },
-        "std": {
-            "reYIK_d": {
-                "mod": "std",
-                "bytes": 29709,
-                "mode": 4,
-                "checksum": 4294967295,
-                "archive": "archive.19/_prev_archive_1.a",
-                "out": "reYIK_d.o"
             }
         },
         "ALTERA_MF_MEMORY_INITIALIZATION": {
             "er73t_d": {
-                "mod": "ALTERA_MF_MEMORY_INITIALIZATION",
                 "bytes": 132940,
+                "mod": "ALTERA_MF_MEMORY_INITIALIZATION",
+                "archive": "archive.28/_prev_archive_1.a",
                 "mode": 4,
                 "checksum": 4294967295,
-                "archive": "archive.19/_prev_archive_1.a",
                 "out": "er73t_d.o"
-            }
-        },
-        "NBodySim_tb": {
-            "rm0m1_d": {
-                "mod": "NBodySim_tb",
-                "bytes": 55515,
-                "out": "rm0m1_d.o",
-                "mode": 4,
-                "checksum": 4294967295,
-                "archive": "archive.19/_3364506_archive_1.a"
             }
         },
         "...MASTER...": {
             "amcQw_d": {
-                "mod": "...MASTER...",
                 "bytes": 7457,
+                "mod": "...MASTER...",
                 "out": "objs/amcQw_d.o",
+                "mode": 4,
+                "checksum": 4294967295
+            }
+        },
+        "std": {
+            "reYIK_d": {
+                "bytes": 29709,
+                "mod": "std",
+                "archive": "archive.28/_prev_archive_1.a",
+                "mode": 4,
+                "checksum": 4294967295,
+                "out": "reYIK_d.o"
+            }
+        },
+        "ram_2_port": {
+            "gvUe1_d": {
+                "bytes": 375306,
+                "mod": "ram_2_port",
+                "archive": "archive.28/_prev_archive_1.a",
+                "mode": 4,
+                "checksum": 4294967295,
+                "out": "gvUe1_d.o"
+            }
+        },
+        "NBodySim_tb": {
+            "rm0m1_d": {
+                "bytes": 55583,
+                "mod": "NBodySim_tb",
+                "out": "rm0m1_d.o",
+                "archive": "archive.28/_4149965_archive_1.a",
                 "mode": 4,
                 "checksum": 4294967295
             }
@@ -68,14 +73,9 @@
             "WGNUL",
             "module"
         ],
-        "ALTERA_MF_MEMORY_INITIALIZATION": [
-            "ALTERA_MF_MEMORY_INITIALIZATION",
-            "er73t",
-            "module"
-        ],
-        "ram_2_port": [
-            "ram_2_port",
-            "gvUe1",
+        "...MASTER...": [
+            "SIM",
+            "amcQw",
             "module"
         ],
         "std": [
@@ -83,87 +83,87 @@
             "reYIK",
             "module"
         ],
-        "...MASTER...": [
-            "SIM",
-            "amcQw",
+        "ram_2_port": [
+            "ram_2_port",
+            "gvUe1",
             "module"
         ],
         "NBodySim_tb": [
             "NBodySim_tb",
             "rm0m1",
             "module"
+        ],
+        "ALTERA_MF_MEMORY_INITIALIZATION": [
+            "ALTERA_MF_MEMORY_INITIALIZATION",
+            "er73t",
+            "module"
         ]
     },
+    "CompileStrategy": "fullobj",
     "stat": {
-        "ru_self_cgstart": {
-            "ru_nvcsw": 164,
-            "ru_stime_sec": 0.118779,
-            "ru_utime_sec": 0.69956300000000005,
-            "ru_nivcsw": 6,
-            "ru_maxrss_kb": 86656,
-            "ru_majflt": 0,
-            "ru_minflt": 6215
-        },
         "ru_childs_cgstart": {
-            "ru_nvcsw": 0,
-            "ru_stime_sec": 0.0,
+            "ru_majflt": 0,
             "ru_utime_sec": 0.0,
-            "ru_nivcsw": 0,
+            "ru_stime_sec": 0.0,
             "ru_maxrss_kb": 0,
-            "ru_majflt": 0,
-            "ru_minflt": 0
+            "ru_minflt": 0,
+            "ru_nvcsw": 0,
+            "ru_nivcsw": 0
         },
-        "totalObjSize": 92131,
+        "Frontend(%)": 99.171951197021855,
+        "ru_self_cgstart": {
+            "ru_majflt": 0,
+            "ru_utime_sec": 0.75284799999999996,
+            "ru_stime_sec": 0.103196,
+            "ru_maxrss_kb": 86840,
+            "ru_minflt": 5708,
+            "ru_nvcsw": 179,
+            "ru_nivcsw": 7
+        },
         "ru_childs_end": {
-            "ru_nvcsw": 62,
-            "ru_stime_sec": 0.055350000000000003,
-            "ru_utime_sec": 0.046398000000000002,
-            "ru_nivcsw": 0,
-            "ru_maxrss_kb": 59204,
             "ru_majflt": 0,
-            "ru_minflt": 3820
+            "ru_utime_sec": 0.043131000000000003,
+            "ru_stime_sec": 0.057088,
+            "ru_maxrss_kb": 59188,
+            "ru_minflt": 3782,
+            "ru_nvcsw": 58,
+            "ru_nivcsw": 0
         },
-        "Frontend(%)": 98.756165528379086,
         "nMops": 0,
         "nQuads": 0,
+        "totalObjSize": 92131,
         "ru_self_end": {
-            "ru_nvcsw": 236,
-            "ru_stime_sec": 0.146367,
-            "ru_utime_sec": 0.70837399999999995,
-            "ru_nivcsw": 6,
-            "ru_maxrss_kb": 91160,
             "ru_majflt": 0,
-            "ru_minflt": 7848
+            "ru_utime_sec": 0.75913399999999998,
+            "ru_stime_sec": 0.14243,
+            "ru_maxrss_kb": 91252,
+            "ru_minflt": 7351,
+            "ru_nvcsw": 254,
+            "ru_nivcsw": 7
         },
-        "CodeGen(%)": 1.2438344716209098
+        "CodeGen(%)": 0.82804880297813221
     },
-    "SIMBData": {
-        "out": "amcQwB.o",
-        "bytes": 84674
-    },
-    "LVLData": [
-        "SIM"
-    ],
-    "CurCompileUdps": {},
-    "CompileProcesses": [
-        "cgproc.3364471.json",
-        "cgproc.3364504.json",
-        "cgproc.3364505.json",
-        "cgproc.3364506.json",
-        "cgproc.3364507.json"
-    ],
     "CurCompileModules": [
         "...MASTER..."
     ],
-    "PEModules": [],
+    "LVLData": [
+        "SIM"
+    ],
     "CompileStatus": "Successful",
+    "CompileProcesses": [
+        "cgproc.4149949.json",
+        "cgproc.4149963.json",
+        "cgproc.4149964.json",
+        "cgproc.4149965.json",
+        "cgproc.4149966.json"
+    ],
     "Misc": {
         "cwd": "/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive",
-        "daidir_abs": "/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/simv.daidir",
+        "daidir": "/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/simv.daidir",
         "csrc": "csrc",
         "csrc_abs": "/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/csrc",
-        "archive_dir": "archive.19",
-        "daidir": "/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/simv.daidir",
-        "default_output_dir": "csrc"
+        "default_output_dir": "csrc",
+        "daidir_abs": "/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/simv.daidir",
+        "archive_dir": "archive.28"
     }
 }
