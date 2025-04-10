@@ -3,22 +3,23 @@ gui_create_pref_key -category {Globals} -key {load_detail_for_funcov} -value_typ
 
 # State setting overrides
 gui_state_default_create -off -ini
-gui_set_state_value -category Layout -key child_console_size_x -value 2046
-gui_set_state_value -category Layout -key child_console_size_y -value 178
-gui_set_state_value -category Layout -key child_data_size_x -value 242
-gui_set_state_value -category Layout -key child_data_size_y -value 802
+gui_set_state_value -category Globals -key recent_sessions -value {{gui_load_session -ignore_errors -file /afs/ece.cmu.edu/usr/mwguo/private/18447/lab4-the-guohts/output/simulation/real_mem_stall.tcl} {gui_load_session -ignore_errors -file /afs/ece.cmu.edu/usr/mwguo/private/18447/lab4-the-guohts/output/simulation/real_mem_stall.tcl -ignore_errors}}
+gui_set_state_value -category Layout -key child_console_size_x -value 1646
+gui_set_state_value -category Layout -key child_console_size_y -value 176
+gui_set_state_value -category Layout -key child_data_size_x -value 240
+gui_set_state_value -category Layout -key child_data_size_y -value 804
 gui_set_state_value -category Layout -key child_hier_col3 -value {-1}
 gui_set_state_value -category Layout -key child_hier_colpd -value 0
-gui_set_state_value -category Layout -key child_hier_size_x -value 173
-gui_set_state_value -category Layout -key child_hier_size_y -value 802
+gui_set_state_value -category Layout -key child_hier_size_x -value 171
+gui_set_state_value -category Layout -key child_hier_size_y -value 804
 gui_set_state_value -category Layout -key child_source_pos_x -value {-2}
 gui_set_state_value -category Layout -key child_source_pos_y -value {-15}
-gui_set_state_value -category Layout -key child_source_size_x -value 1634
-gui_set_state_value -category Layout -key child_source_size_y -value 797
-gui_set_state_value -category Layout -key child_wave_colname -value 219
-gui_set_state_value -category Layout -key child_wave_colvalue -value 255
-gui_set_state_value -category Layout -key child_wave_left -value 478
-gui_set_state_value -category Layout -key child_wave_right -value 1163
+gui_set_state_value -category Layout -key child_source_size_x -value 1238
+gui_set_state_value -category Layout -key child_source_size_y -value 799
+gui_set_state_value -category Layout -key child_wave_colname -value 245
+gui_set_state_value -category Layout -key child_wave_colvalue -value 246
+gui_set_state_value -category Layout -key child_wave_left -value 495
+gui_set_state_value -category Layout -key child_wave_right -value 1206
 gui_set_state_value -category Layout -key main_pos_x -value 2048
 gui_set_state_value -category Layout -key main_pos_y -value 31
 gui_set_state_value -category Layout -key main_size_x -value 4094
@@ -26,41 +27,36 @@ gui_set_state_value -category Layout -key main_size_y -value 1110
 gui_set_state_value -category Layout -key stand_wave_child_docknewline -value false
 gui_set_state_value -category Layout -key stand_wave_child_pos_x -value {-2}
 gui_set_state_value -category Layout -key stand_wave_child_pos_y -value {-15}
-gui_set_state_value -category Layout -key stand_wave_child_size_x -value 1651
-gui_set_state_value -category Layout -key stand_wave_child_size_y -value 775
-gui_set_state_value -category Layout -key stand_wave_top_pos_x -value 8
-gui_set_state_value -category Layout -key stand_wave_top_pos_y -value 279
-gui_set_state_value -category Layout -key stand_wave_top_size_x -value 1654
-gui_set_state_value -category Layout -key stand_wave_top_size_y -value 1158
+gui_set_state_value -category Layout -key stand_wave_child_size_x -value 1711
+gui_set_state_value -category Layout -key stand_wave_child_size_y -value 784
+gui_set_state_value -category Layout -key stand_wave_top_pos_x -value 0
+gui_set_state_value -category Layout -key stand_wave_top_pos_y -value 23
+gui_set_state_value -category Layout -key stand_wave_top_size_x -value 1706
+gui_set_state_value -category Layout -key stand_wave_top_size_y -value 911
 gui_create_state_key -category FindDialog -key m_pMatchCase -value_type bool -value false
 gui_create_state_key -category FindDialog -key m_pMatchWord -value_type bool -value false
 gui_create_state_key -category FindDialog -key m_pUseCombo -value_type string -value {}
 gui_create_state_key -category FindDialog -key m_pWrapAround -value_type bool -value true
-gui_create_state_key -category Widget_History -key {dlgSimSetup|m_setupTab|tab pages|BuildTab|m_rebuildBtnGroup|m_customCmdCombo} -value_type string -value {{make build} {make sim TEST=447inputs/brtest0.S} {make verify TEST=447inputs/brtest0.S}}
+gui_create_state_key -category Widget_History -key TopLevel.1|qt_left_dock|DockWnd2|DLPane.1|pages|Data.1|hbox|textfilter -value_type string -value {delayed_mem_stall {}}
+gui_create_state_key -category Widget_History -key TopLevel.1|qt_left_dock|DockWnd4|DLPane.1|pages|Data.1|hbox|textfilter -value_type string -value delayed_mem_stall
+gui_create_state_key -category Widget_History -key TopLevel.1|qt_left_dock|DockWnd7|DLPane.1|pages|Data.1|hbox|textfilter -value_type string -value delayed_mem_stall
+gui_create_state_key -category Widget_History -key TopLevel.2|EkTopVbox|wndWorkspace|qt_workspacechild2|Wave.1|left|filterVBox|controlHBox|unnamed -value_type string -value {data_load_en clk clock ctrlReg_Mem}
+gui_create_state_key -category Widget_History -key TopLevel.2|EkTopVbox|wndWorkspace|qt_workspacechild5|Wave.1|left|filterVBox|controlHBox|unnamed -value_type string -value data_load
+gui_create_state_key -category Widget_History -key {dlgSimSetup|m_setupTab|tab pages|BuildTab|m_rebuildBtnGroup|m_customCmdCombo} -value_type string -value {{make sim TEST=447inputs/lwtest.S } {make sim TEST=447inputs/lwtest.S LAB_18447=4a} {make build} {make sim TEST=447inputs/brtest0.S} {make verify TEST=447inputs/brtest0.S}}
 gui_create_state_key -category Widget_History -key {dlgSimSetup|m_setupTab|tab pages|SimTab|m_VPDCombo} -value_type string -value inter.vpd
-gui_create_state_key -category Widget_History -key {dlgSimSetup|m_setupTab|tab pages|SimTab|m_curDirCombo} -value_type string -value /afs/ece.cmu.edu/usr/mwguo/private/18447/lab3-the-guohts/output/simulation
+gui_create_state_key -category Widget_History -key {dlgSimSetup|m_setupTab|tab pages|SimTab|m_curDirCombo} -value_type string -value {/afs/ece.cmu.edu/usr/mwguo/private/18447/lab4-the-guohts/output/simulation /afs/ece.cmu.edu/usr/mwguo/private/18447/lab3-the-guohts/output/simulation}
 gui_create_state_key -category Widget_History -key {dlgSimSetup|m_setupTab|tab pages|SimTab|m_exeCombo} -value_type string -value ./riscv_core
 gui_state_default_create -off
 
 # Begin command logging
 gui_sim_run Ucli -exe ./simv -args {-ucligui  } -dir .
 gui_list_expand -id  Hier.1   NBodySim_tb
-gui_list_expand -id  Hier.1   NBodySim_tb.sim
-gui_list_expand -id  Hier.1   NBodySim_tb.sim.BRAM
-gui_list_select -id Hier.1 -current_item_name NBodySim_tb.sim.BRAM -current_item_type Scope  -selected  { NBodySim_tb.sim.BRAM   }
 gui_list_select -id Hier.1 -current_item_name NBodySim_tb.sim -current_item_type Scope  -selected  { NBodySim_tb.sim   }
-gui_list_select -id Data.1 { NBodySim_tb.sim.clk  NBodySim_tb.sim.reset  NBodySim_tb.sim.start  NBodySim_tb.sim.done  NBodySim_tb.sim.read_body  NBodySim_tb.sim.body_i  NBodySim_tb.sim.body_j  NBodySim_tb.sim.register_i  NBodySim_tb.sim.register_j  NBodySim_tb.sim.fc_en  NBodySim_tb.sim.fc_done  NBodySim_tb.sim.fc_valid  {NBodySim_tb.sim.force_x[31:0]}  {NBodySim_tb.sim.force_y[31:0]}  {NBodySim_tb.sim.total_force_x[31:0]}  {NBodySim_tb.sim.total_force_y[31:0]}  {NBodySim_tb.sim.i[7:0]}  {NBodySim_tb.sim.j[7:0]}  NBodySim_tb.sim.incr_i  NBodySim_tb.sim.incr_j  {NBodySim_tb.sim.addr[14:0]}  {NBodySim_tb.sim.write_data[79:0]}  NBodySim_tb.sim.wr_en  NBodySim_tb.sim.currState  NBodySim_tb.sim.nextState  {NBodySim_tb.sim.N[31:0]}  {NBodySim_tb.sim.ADDR_WIDTH[31:0]}  NBodySim_tb.sim.currState  NBodySim_tb.sim.nextState  {NBodySim_tb.sim.N[31:0]}  {NBodySim_tb.sim.ADDR_WIDTH[31:0]}  NBodySim_tb.sim.currState  NBodySim_tb.sim.incr_j  {NBodySim_tb.sim.addr[14:0]}  {NBodySim_tb.sim.write_data[79:0]}  NBodySim_tb.sim.wr_en  NBodySim_tb.sim.currState  NBodySim_tb.sim.incr_j  {NBodySim_tb.sim.total_force_y[31:0]}  {NBodySim_tb.sim.i[7:0]}  {NBodySim_tb.sim.j[7:0]}  NBodySim_tb.sim.incr_i  NBodySim_tb.sim.incr_j  {NBodySim_tb.sim.total_force_y[31:0]}  {NBodySim_tb.sim.force_x[31:0]}  {NBodySim_tb.sim.force_y[31:0]}  {NBodySim_tb.sim.total_force_x[31:0]}  {NBodySim_tb.sim.total_force_y[31:0]}  {NBodySim_tb.sim.force_x[31:0]}  NBodySim_tb.sim.fc_valid  {NBodySim_tb.sim.force_x[31:0]}  NBodySim_tb.sim.fc_valid  NBodySim_tb.sim.register_i  NBodySim_tb.sim.register_j  NBodySim_tb.sim.fc_en  NBodySim_tb.sim.fc_done  NBodySim_tb.sim.fc_valid  NBodySim_tb.sim.register_i  NBodySim_tb.sim.body_i  NBodySim_tb.sim.body_j  NBodySim_tb.sim.register_i  NBodySim_tb.sim.body_i  NBodySim_tb.sim.done  NBodySim_tb.sim.read_body  NBodySim_tb.sim.body_i  NBodySim_tb.sim.done  NBodySim_tb.sim.start  NBodySim_tb.sim.done  NBodySim_tb.sim.start  NBodySim_tb.sim.reset  NBodySim_tb.sim.start  NBodySim_tb.sim.reset  NBodySim_tb.sim.start  NBodySim_tb.sim.done  NBodySim_tb.sim.read_body  NBodySim_tb.sim.body_i  NBodySim_tb.sim.body_j  NBodySim_tb.sim.register_i  NBodySim_tb.sim.register_j  NBodySim_tb.sim.fc_en  NBodySim_tb.sim.fc_done  NBodySim_tb.sim.fc_valid  {NBodySim_tb.sim.force_x[31:0]}  {NBodySim_tb.sim.force_y[31:0]}  {NBodySim_tb.sim.total_force_x[31:0]}  {NBodySim_tb.sim.total_force_y[31:0]}  {NBodySim_tb.sim.i[7:0]}  {NBodySim_tb.sim.j[7:0]}  NBodySim_tb.sim.incr_i  NBodySim_tb.sim.incr_j  {NBodySim_tb.sim.addr[14:0]}  {NBodySim_tb.sim.write_data[79:0]}  NBodySim_tb.sim.wr_en  NBodySim_tb.sim.currState  NBodySim_tb.sim.nextState  {NBodySim_tb.sim.N[31:0]}  {NBodySim_tb.sim.ADDR_WIDTH[31:0]}  {NBodySim_tb.sim.DT[31:0]}  {NBodySim_tb.sim.G[31:0]}  {NBodySim_tb.sim.DT[31:0]}  {NBodySim_tb.sim.G[31:0]}  {NBodySim_tb.sim.DT[31:0]}  {NBodySim_tb.sim.ADDR_WIDTH[31:0]}  {NBodySim_tb.sim.DT[31:0]}  {NBodySim_tb.sim.ADDR_WIDTH[31:0]}  {NBodySim_tb.sim.N[31:0]}  {NBodySim_tb.sim.ADDR_WIDTH[31:0]}  {NBodySim_tb.sim.N[31:0]}  NBodySim_tb.sim.nextState  {NBodySim_tb.sim.N[31:0]}  NBodySim_tb.sim.nextState  {NBodySim_tb.sim.N[31:0]}  {NBodySim_tb.sim.ADDR_WIDTH[31:0]}   }
-gui_list_select -id Data.1 { {NBodySim_tb.sim.ADDR_WIDTH[31:0]}   }
-gui_list_select -id Data.1 { {NBodySim_tb.sim.N[31:0]}   }
+gui_list_select -id Data.1 { NBodySim_tb.sim.clk  NBodySim_tb.sim.reset  NBodySim_tb.sim.start  NBodySim_tb.sim.done  NBodySim_tb.sim.read_body  NBodySim_tb.sim.body_i  NBodySim_tb.sim.body_j  NBodySim_tb.sim.register_i  NBodySim_tb.sim.register_j  NBodySim_tb.sim.fc_en  NBodySim_tb.sim.fc_done  NBodySim_tb.sim.fc_valid  {NBodySim_tb.sim.force_x[31:0]}  {NBodySim_tb.sim.force_y[31:0]}  {NBodySim_tb.sim.total_force_x[31:0]}  {NBodySim_tb.sim.total_force_y[31:0]}  {NBodySim_tb.sim.i[7:0]}  {NBodySim_tb.sim.j[7:0]}  NBodySim_tb.sim.incr_i  NBodySim_tb.sim.incr_j  {NBodySim_tb.sim.addr[14:0]}  {NBodySim_tb.sim.write_data[79:0]}  NBodySim_tb.sim.wr_en  NBodySim_tb.sim.currState  NBodySim_tb.sim.nextState  {NBodySim_tb.sim.N[31:0]}  {NBodySim_tb.sim.ADDR_WIDTH[31:0]}  {NBodySim_tb.sim.DT[31:0]}  {NBodySim_tb.sim.G[31:0]}  {NBodySim_tb.sim.SOFTENING[31:0]}  {NBodySim_tb.sim.G[31:0]}  {NBodySim_tb.sim.SOFTENING[31:0]}  {NBodySim_tb.sim.G[31:0]}  {NBodySim_tb.sim.DT[31:0]}  {NBodySim_tb.sim.G[31:0]}  {NBodySim_tb.sim.DT[31:0]}  {NBodySim_tb.sim.N[31:0]}  {NBodySim_tb.sim.ADDR_WIDTH[31:0]}  {NBodySim_tb.sim.DT[31:0]}  {NBodySim_tb.sim.N[31:0]}  NBodySim_tb.sim.currState  NBodySim_tb.sim.nextState  {NBodySim_tb.sim.N[31:0]}  NBodySim_tb.sim.currState  NBodySim_tb.sim.wr_en  NBodySim_tb.sim.currState  NBodySim_tb.sim.wr_en  {NBodySim_tb.sim.write_data[79:0]}  NBodySim_tb.sim.wr_en  {NBodySim_tb.sim.write_data[79:0]}  {NBodySim_tb.sim.addr[14:0]}  {NBodySim_tb.sim.write_data[79:0]}  {NBodySim_tb.sim.addr[14:0]}  NBodySim_tb.sim.incr_i  NBodySim_tb.sim.incr_j  {NBodySim_tb.sim.addr[14:0]}  NBodySim_tb.sim.incr_i  {NBodySim_tb.sim.j[7:0]}  NBodySim_tb.sim.incr_i  {NBodySim_tb.sim.j[7:0]}  {NBodySim_tb.sim.i[7:0]}  {NBodySim_tb.sim.j[7:0]}  {NBodySim_tb.sim.i[7:0]}  {NBodySim_tb.sim.total_force_y[31:0]}  {NBodySim_tb.sim.i[7:0]}  {NBodySim_tb.sim.total_force_y[31:0]}  {NBodySim_tb.sim.total_force_x[31:0]}  {NBodySim_tb.sim.total_force_y[31:0]}  {NBodySim_tb.sim.total_force_x[31:0]}  {NBodySim_tb.sim.force_y[31:0]}  {NBodySim_tb.sim.total_force_x[31:0]}  {NBodySim_tb.sim.force_y[31:0]}  {NBodySim_tb.sim.force_x[31:0]}  {NBodySim_tb.sim.force_y[31:0]}  {NBodySim_tb.sim.force_x[31:0]}  NBodySim_tb.sim.fc_valid  {NBodySim_tb.sim.force_x[31:0]}  NBodySim_tb.sim.fc_valid  NBodySim_tb.sim.fc_done  NBodySim_tb.sim.fc_valid  NBodySim_tb.sim.fc_done  NBodySim_tb.sim.fc_en  NBodySim_tb.sim.fc_done  NBodySim_tb.sim.fc_en  NBodySim_tb.sim.register_j  NBodySim_tb.sim.fc_en  NBodySim_tb.sim.register_j  NBodySim_tb.sim.register_i  NBodySim_tb.sim.register_j  NBodySim_tb.sim.register_i  NBodySim_tb.sim.body_j  NBodySim_tb.sim.register_i  NBodySim_tb.sim.body_j  NBodySim_tb.sim.body_i  NBodySim_tb.sim.body_j  NBodySim_tb.sim.body_i  NBodySim_tb.sim.read_body  NBodySim_tb.sim.body_i  NBodySim_tb.sim.read_body  NBodySim_tb.sim.body_i  NBodySim_tb.sim.body_j  NBodySim_tb.sim.register_i  NBodySim_tb.sim.register_j  NBodySim_tb.sim.fc_en  NBodySim_tb.sim.fc_done  NBodySim_tb.sim.fc_valid  {NBodySim_tb.sim.force_x[31:0]}  {NBodySim_tb.sim.force_y[31:0]}  {NBodySim_tb.sim.total_force_x[31:0]}  {NBodySim_tb.sim.total_force_y[31:0]}  {NBodySim_tb.sim.i[7:0]}  {NBodySim_tb.sim.j[7:0]}  NBodySim_tb.sim.incr_i  NBodySim_tb.sim.incr_j  {NBodySim_tb.sim.addr[14:0]}  {NBodySim_tb.sim.write_data[79:0]}  NBodySim_tb.sim.wr_en  NBodySim_tb.sim.currState  NBodySim_tb.sim.nextState   }
 gui_list_create_group_when_add -wave -enable
 gui_open_window Wave
 gui_list_add -id Wave.1 -from Data.1 { NBodySim_tb.sim.clk NBodySim_tb.sim.reset NBodySim_tb.sim.start NBodySim_tb.sim.done NBodySim_tb.sim.read_body NBodySim_tb.sim.body_i NBodySim_tb.sim.body_j NBodySim_tb.sim.register_i NBodySim_tb.sim.register_j NBodySim_tb.sim.fc_en NBodySim_tb.sim.fc_done NBodySim_tb.sim.fc_valid {NBodySim_tb.sim.force_x[31:0]} {NBodySim_tb.sim.force_y[31:0]} {NBodySim_tb.sim.total_force_x[31:0]} {NBodySim_tb.sim.total_force_y[31:0]} {NBodySim_tb.sim.i[7:0]} {NBodySim_tb.sim.j[7:0]} NBodySim_tb.sim.incr_i NBodySim_tb.sim.incr_j {NBodySim_tb.sim.addr[14:0]} {NBodySim_tb.sim.write_data[79:0]} NBodySim_tb.sim.wr_en NBodySim_tb.sim.currState NBodySim_tb.sim.nextState } -insertionbar
-gui_list_select -id Hier.1 -current_item_name NBodySim_tb.sim.FORCE -current_item_type Scope  -selected  { NBodySim_tb.sim.FORCE   }
-gui_list_select -id Data.1 { NBodySim_tb.sim.FORCE.clk  NBodySim_tb.sim.FORCE.reset  NBodySim_tb.sim.FORCE.enable  NBodySim_tb.sim.FORCE.body_i  NBodySim_tb.sim.FORCE.body_j  NBodySim_tb.sim.FORCE.valid_in  {NBodySim_tb.sim.FORCE.force_x[31:0]}  {NBodySim_tb.sim.FORCE.force_y[31:0]}  NBodySim_tb.sim.FORCE.valid_out  NBodySim_tb.sim.FORCE.s1  NBodySim_tb.sim.FORCE.s2  NBodySim_tb.sim.FORCE.s3  NBodySim_tb.sim.FORCE.s4  NBodySim_tb.sim.FORCE.s5  NBodySim_tb.sim.FORCE.s2  NBodySim_tb.sim.FORCE.s3  NBodySim_tb.sim.FORCE.s4  NBodySim_tb.sim.FORCE.s5  NBodySim_tb.sim.FORCE.s2  {NBodySim_tb.sim.FORCE.force_y[31:0]}  NBodySim_tb.sim.FORCE.valid_out  NBodySim_tb.sim.FORCE.s1  NBodySim_tb.sim.FORCE.s2  {NBodySim_tb.sim.FORCE.force_y[31:0]}  NBodySim_tb.sim.FORCE.body_j  NBodySim_tb.sim.FORCE.valid_in  {NBodySim_tb.sim.FORCE.force_x[31:0]}  {NBodySim_tb.sim.FORCE.force_y[31:0]}  NBodySim_tb.sim.FORCE.body_j  NBodySim_tb.sim.FORCE.enable  NBodySim_tb.sim.FORCE.body_i  NBodySim_tb.sim.FORCE.body_j  NBodySim_tb.sim.FORCE.enable  NBodySim_tb.sim.FORCE.reset  NBodySim_tb.sim.FORCE.enable  NBodySim_tb.sim.FORCE.reset  NBodySim_tb.sim.FORCE.clk  NBodySim_tb.sim.FORCE.reset  NBodySim_tb.sim.FORCE.clk  NBodySim_tb.sim.FORCE.reset  NBodySim_tb.sim.FORCE.clk  NBodySim_tb.sim.FORCE.reset  NBodySim_tb.sim.FORCE.clk  NBodySim_tb.sim.FORCE.reset  NBodySim_tb.sim.FORCE.enable  NBodySim_tb.sim.FORCE.body_i  NBodySim_tb.sim.FORCE.body_j  NBodySim_tb.sim.FORCE.valid_in  {NBodySim_tb.sim.FORCE.force_x[31:0]}  {NBodySim_tb.sim.FORCE.force_y[31:0]}  NBodySim_tb.sim.FORCE.valid_out  NBodySim_tb.sim.FORCE.s1  NBodySim_tb.sim.FORCE.s2  NBodySim_tb.sim.FORCE.s3  NBodySim_tb.sim.FORCE.s4  NBodySim_tb.sim.FORCE.s5  {NBodySim_tb.sim.FORCE.safe_dist_sq[31:0]}  {NBodySim_tb.sim.FORCE.magnitude[63:0]}  NBodySim_tb.sim.FORCE.delayed_valid_out   }
-gui_list_add -id Wave.1 -from Data.1 { NBodySim_tb.sim.FORCE.clk NBodySim_tb.sim.FORCE.reset NBodySim_tb.sim.FORCE.enable NBodySim_tb.sim.FORCE.body_i NBodySim_tb.sim.FORCE.body_j NBodySim_tb.sim.FORCE.valid_in {NBodySim_tb.sim.FORCE.force_x[31:0]} {NBodySim_tb.sim.FORCE.force_y[31:0]} NBodySim_tb.sim.FORCE.valid_out NBodySim_tb.sim.FORCE.s1 NBodySim_tb.sim.FORCE.s2 NBodySim_tb.sim.FORCE.s3 NBodySim_tb.sim.FORCE.s4 NBodySim_tb.sim.FORCE.s5 {NBodySim_tb.sim.FORCE.safe_dist_sq[31:0]} {NBodySim_tb.sim.FORCE.magnitude[63:0]} NBodySim_tb.sim.FORCE.delayed_valid_out } -insertionbar
-gui_wv_zoom_timerange -id  Wave.1 0 476
 gui_sim_continue  
-gui_wv_scroll_hslidermove -id  Wave.1 2018429
 gui_zoom -window Wave.1 -factor 0.5
 gui_zoom -window Wave.1 -factor 0.5
 gui_zoom -window Wave.1 -factor 0.5
@@ -69,15 +65,15 @@ gui_zoom -window Wave.1 -factor 0.5
 gui_zoom -window Wave.1 -factor 0.5
 gui_zoom -window Wave.1 -factor 0.5
 gui_zoom -window Wave.1 -factor 0.5
-gui_wv_scroll_hslidermove -id  Wave.1 913
-gui_list_select -id Wave.1 -selected  { {NBodySim_tb.sim.i[7:0]}   }
-gui_list_select -id Wave.1 -selected  { {NBodySim_tb.sim.i[7:0]}  {NBodySim_tb.sim.j[7:0]}   }
-gui_wv_scroll_hslidermove -id  Wave.1 1550
-gui_marker_move -id  Wave.1 C1 214699
+gui_wv_scroll_hslidermove -id  Wave.1 2378
+gui_wv_scroll_hslidermove -id  Wave.1 1184
+gui_marker_move -id  Wave.1 C1 125000
+gui_wv_scroll_hslidermove -id  Wave.1 1532
+gui_marker_move -id  Wave.1 C1 185000
+gui_marker_move -id  Wave.1 C1 175000
+gui_marker_move -id  Wave.1 C1 185000
+gui_wv_scroll_hslidermove -id  Wave.1 1804
 gui_marker_move -id  Wave.1 C1 215000
-gui_wv_scroll_hslidermove -id  Wave.1 2526
-gui_wv_scroll_hslidermove -id  Wave.1 3326
-gui_marker_move -id  Wave.1 C1 355000
-gui_wv_scroll_hslidermove -id  Wave.1 3801
+gui_wv_scroll_hslidermove -id  Wave.1 3994
 gui_marker_move -id  Wave.1 C1 415000
-gui_wv_scroll_hslidermove -id  Wave.1 231
+gui_wv_scroll_hslidermove -id  Wave.1 2415

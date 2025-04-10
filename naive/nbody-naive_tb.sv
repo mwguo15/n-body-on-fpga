@@ -4,24 +4,18 @@
 
 module NBodySim_tb();
     logic clk, reset, start, done;
-    logic [79:0] read_data;
-    logic [14:0] addr;
+    logic [79:0] read_body;
+    logic [14:0] test_addr;
 
     // Instantiate NBodySim
     NBodySim #(.N(2)) sim(
-        .clk(clk),
-        .reset(reset),
-        .start(start),
-        .done(done)
+        .clk,
+        .reset,
+        .test_addr,
+        .start,
+        .done,
+        .read_body
     );
-
-    ram_2_port BRAM(.clock(clk),
-                    .data(),
-                    .rdaddress(addr),
-                    .wraddress(),
-                    .wren(),
-                    .q(read_data)
-                   );  
 
     // Clock generation (100 MHz)
     initial begin
@@ -58,19 +52,19 @@ module NBodySim_tb();
     task print_forces();
         logic [79:0] data0, data1, data2, data3, data4;
         
-        ram_read(32'h190, data0);
+        ram_read(32'd400, data0);
         $display("Force 0: %20h", data0);
         
-        ram_read(32'h191, data1);
+        ram_read(32'd401, data1);
         $display("Force 1: %20h", data1);
 
-        ram_read(32'h192, data2);
+        ram_read(32'd402, data2);
         $display("Force 2: %20h", data2);
         
-        ram_read(32'h193, data3);
+        ram_read(32'd403, data3);
         $display("Force 3: %20h", data3);
 
-        ram_read(32'h194, data4);
+        ram_read(32'd404, data4);
         $display("Force 4: %20h", data4);
 
         ram_read(32'h0, data0);
@@ -93,10 +87,11 @@ module NBodySim_tb();
     // Helper task to read from RAM (replace with your actual RAM interface)
     task ram_read(input logic [14:0] rd_addr, output logic [79:0] data);
         @(posedge clk);
-        addr = rd_addr;      
+        test_addr = rd_addr;      
         @(posedge clk);
-        data <= read_data;
-        @(posedge clk); 
+        @(posedge clk);
+        data <= read_body;
+        @(posedge clk);
     endtask
 
 endmodule: NBodySim_tb

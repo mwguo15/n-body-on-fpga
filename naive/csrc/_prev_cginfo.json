@@ -1,81 +1,99 @@
 {
-    "PEModules": [],
     "MlibObjs": {},
-    "CurCompileUdps": {},
-    "SIMBData": {
-        "out": "amcQwB.o",
-        "bytes": 84674
-    },
     "PrevCompiledModules": {
-        "_vcs_unit__100957332": {
-            "WGNUL_d": {
-                "bytes": 30376,
-                "mod": "_vcs_unit__100957332",
-                "archive": "archive.28/_prev_archive_1.a",
-                "mode": 4,
+        "force_calculator": {
+            "MaNWi_d": {
                 "checksum": 4294967295,
-                "out": "WGNUL_d.o"
+                "bytes": 26494,
+                "mod": "force_calculator",
+                "out": "MaNWi_d.o",
+                "mode": 4,
+                "archive": "archive.23/_392709_archive_1.a"
             }
         },
         "ALTERA_MF_MEMORY_INITIALIZATION": {
             "er73t_d": {
+                "checksum": 4294967295,
                 "bytes": 132940,
                 "mod": "ALTERA_MF_MEMORY_INITIALIZATION",
-                "archive": "archive.28/_prev_archive_1.a",
                 "mode": 4,
-                "checksum": 4294967295,
+                "archive": "archive.23/_prev_archive_1.a",
                 "out": "er73t_d.o"
             }
         },
-        "...MASTER...": {
-            "amcQw_d": {
-                "bytes": 7457,
-                "mod": "...MASTER...",
-                "out": "objs/amcQw_d.o",
+        "_vcs_unit__100957332": {
+            "WGNUL_d": {
+                "checksum": 4294967295,
+                "bytes": 30376,
+                "mod": "_vcs_unit__100957332",
                 "mode": 4,
-                "checksum": 4294967295
+                "archive": "archive.23/_prev_archive_1.a",
+                "out": "WGNUL_d.o"
             }
         },
         "std": {
             "reYIK_d": {
+                "checksum": 4294967295,
                 "bytes": 29709,
                 "mod": "std",
-                "archive": "archive.28/_prev_archive_1.a",
                 "mode": 4,
-                "checksum": 4294967295,
+                "archive": "archive.23/_prev_archive_1.a",
                 "out": "reYIK_d.o"
             }
         },
         "ram_2_port": {
             "gvUe1_d": {
-                "bytes": 375306,
-                "mod": "ram_2_port",
-                "archive": "archive.28/_prev_archive_1.a",
-                "mode": 4,
                 "checksum": 4294967295,
+                "bytes": 374833,
+                "mod": "ram_2_port",
+                "mode": 4,
+                "archive": "archive.23/_prev_archive_1.a",
                 "out": "gvUe1_d.o"
+            }
+        },
+        "...MASTER...": {
+            "amcQw_d": {
+                "checksum": 4294967295,
+                "bytes": 7457,
+                "mod": "...MASTER...",
+                "out": "objs/amcQw_d.o",
+                "mode": 4
             }
         },
         "NBodySim_tb": {
             "rm0m1_d": {
-                "bytes": 55583,
+                "checksum": 4294967295,
+                "bytes": 41970,
                 "mod": "NBodySim_tb",
-                "out": "rm0m1_d.o",
-                "archive": "archive.28/_4149965_archive_1.a",
                 "mode": 4,
-                "checksum": 4294967295
+                "archive": "archive.23/_prev_archive_1.a",
+                "out": "rm0m1_d.o"
             }
         }
     },
+    "CompileStatus": "Successful",
+    "CompileProcesses": [
+        "cgproc.392693.json",
+        "cgproc.392706.json",
+        "cgproc.392707.json",
+        "cgproc.392708.json",
+        "cgproc.392709.json",
+        "cgproc.392710.json"
+    ],
     "NameTable": {
+        "ALTERA_MF_MEMORY_INITIALIZATION": [
+            "ALTERA_MF_MEMORY_INITIALIZATION",
+            "er73t",
+            "module"
+        ],
+        "force_calculator": [
+            "force_calculator",
+            "MaNWi",
+            "module"
+        ],
         "_vcs_unit__100957332": [
             "_vcs_unit__100957332",
             "WGNUL",
-            "module"
-        ],
-        "...MASTER...": [
-            "SIM",
-            "amcQw",
             "module"
         ],
         "std": [
@@ -83,87 +101,88 @@
             "reYIK",
             "module"
         ],
-        "ram_2_port": [
-            "ram_2_port",
-            "gvUe1",
-            "module"
-        ],
         "NBodySim_tb": [
             "NBodySim_tb",
             "rm0m1",
             "module"
         ],
-        "ALTERA_MF_MEMORY_INITIALIZATION": [
-            "ALTERA_MF_MEMORY_INITIALIZATION",
-            "er73t",
+        "...MASTER...": [
+            "SIM",
+            "amcQw",
+            "module"
+        ],
+        "ram_2_port": [
+            "ram_2_port",
+            "gvUe1",
             "module"
         ]
     },
     "CompileStrategy": "fullobj",
     "stat": {
-        "ru_childs_cgstart": {
-            "ru_majflt": 0,
-            "ru_utime_sec": 0.0,
-            "ru_stime_sec": 0.0,
-            "ru_maxrss_kb": 0,
-            "ru_minflt": 0,
-            "ru_nvcsw": 0,
-            "ru_nivcsw": 0
-        },
-        "Frontend(%)": 99.171951197021855,
         "ru_self_cgstart": {
+            "ru_maxrss_kb": 86836,
+            "ru_utime_sec": 0.70711400000000002,
+            "ru_nvcsw": 176,
+            "ru_stime_sec": 0.10020900000000001,
+            "ru_minflt": 5697,
             "ru_majflt": 0,
-            "ru_utime_sec": 0.75284799999999996,
-            "ru_stime_sec": 0.103196,
-            "ru_maxrss_kb": 86840,
-            "ru_minflt": 5708,
-            "ru_nvcsw": 179,
-            "ru_nivcsw": 7
-        },
-        "ru_childs_end": {
-            "ru_majflt": 0,
-            "ru_utime_sec": 0.043131000000000003,
-            "ru_stime_sec": 0.057088,
-            "ru_maxrss_kb": 59188,
-            "ru_minflt": 3782,
-            "ru_nvcsw": 58,
-            "ru_nivcsw": 0
+            "ru_nivcsw": 5
         },
         "nMops": 0,
-        "nQuads": 0,
-        "totalObjSize": 92131,
-        "ru_self_end": {
+        "Frontend(%)": 98.359045834602611,
+        "ru_childs_cgstart": {
+            "ru_maxrss_kb": 0,
+            "ru_utime_sec": 0.0,
+            "ru_nvcsw": 0,
+            "ru_stime_sec": 0.0,
+            "ru_minflt": 0,
             "ru_majflt": 0,
-            "ru_utime_sec": 0.75913399999999998,
-            "ru_stime_sec": 0.14243,
-            "ru_maxrss_kb": 91252,
-            "ru_minflt": 7351,
-            "ru_nvcsw": 254,
-            "ru_nivcsw": 7
+            "ru_nivcsw": 0
         },
-        "CodeGen(%)": 0.82804880297813221
+        "CodeGen(%)": 1.6409541653973785,
+        "nQuads": 0,
+        "ru_self_end": {
+            "ru_maxrss_kb": 91444,
+            "ru_utime_sec": 0.71891099999999997,
+            "ru_nvcsw": 253,
+            "ru_stime_sec": 0.127272,
+            "ru_minflt": 7354,
+            "ru_majflt": 0,
+            "ru_nivcsw": 5
+        },
+        "totalObjSize": 92131,
+        "mop/quad": 0.0,
+        "ru_childs_end": {
+            "ru_maxrss_kb": 58688,
+            "ru_utime_sec": 0.023673,
+            "ru_nvcsw": 62,
+            "ru_stime_sec": 0.068978999999999999,
+            "ru_minflt": 4161,
+            "ru_majflt": 0,
+            "ru_nivcsw": 0
+        },
+        "mopSpeed": 0.0,
+        "quadSpeed": 0.0
     },
+    "Misc": {
+        "daidir": "/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/simv.daidir",
+        "cwd": "/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive",
+        "csrc": "csrc",
+        "csrc_abs": "/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/csrc",
+        "default_output_dir": "csrc",
+        "daidir_abs": "/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/simv.daidir",
+        "archive_dir": "archive.23"
+    },
+    "SIMBData": {
+        "out": "amcQwB.o",
+        "bytes": 84674
+    },
+    "CurCompileUdps": {},
     "CurCompileModules": [
         "...MASTER..."
     ],
     "LVLData": [
         "SIM"
     ],
-    "CompileStatus": "Successful",
-    "CompileProcesses": [
-        "cgproc.4149949.json",
-        "cgproc.4149963.json",
-        "cgproc.4149964.json",
-        "cgproc.4149965.json",
-        "cgproc.4149966.json"
-    ],
-    "Misc": {
-        "cwd": "/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive",
-        "daidir": "/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/simv.daidir",
-        "csrc": "csrc",
-        "csrc_abs": "/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/csrc",
-        "default_output_dir": "csrc",
-        "daidir_abs": "/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/simv.daidir",
-        "archive_dir": "archive.28"
-    }
+    "PEModules": []
 }

@@ -38,5 +38,8 @@ VCSFLAGS += $(COMMON_FLAGS)
 default : $(SRC)
 		$(SIM) $(VCSFLAGS) $(INC_V_FLAGS) $(INC_SV_FLAGS) -o $(TARGET) $(SRC)
 
+test_bram : bram_write_test.sv ram_2_port.v
+		$(SIM) $(VCSFLAGS) $(INC_V_FLAGS) $(INC_SV_FLAGS) -o $(TARGET) bram_write_test.sv ram_2_port.v
+
 clean :
 	@rm -rf simv csrc *.vpd *.vcd *.key *.log ucli.key simv.daidir

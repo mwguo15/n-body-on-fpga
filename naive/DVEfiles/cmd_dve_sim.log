@@ -9,9 +9,9 @@ synopsys::dump -autoflush on -fid VPD0
 set ::dve_fid VPD0
 synUtils::setDVEInitPhase 0
 ucliCore::getToolPID
-synUtils::sendTool -active _icl_setToolSocket /tmp/smlnpXT0MA4
-synUtils::sendTool -active {_icl_start_rpc -version "K-2015.09_Full64" -sync_file /tmp/vcs_dve_rpc.mwguo.4150308}
-synUtils::sendTool -active {_icl_createSharedMemory /tmp/vcs_dve_general.mwguo.4150308}
+synUtils::sendTool -active _icl_setToolSocket /tmp/smlnplJNhJC
+synUtils::sendTool -active {_icl_start_rpc -version "K-2015.09_Full64" -sync_file /tmp/vcs_dve_rpc.mwguo.336780}
+synUtils::sendTool -active {_icl_createSharedMemory /tmp/vcs_dve_general.mwguo.336780}
 config endofsim noexit
 config onfail enable all
 config syscaddplainmembers
@@ -19,8 +19,18 @@ config syscaddsourcenames
 config syscaddstructtypes
 synopsys::listing -disable
 ucliGUI::vpdAddHierarchy -scope NBodySim_tb.sim -depth 1 -file /afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/inter.vpd; synopsys::dump -flush VPD0
-synopsys::dump -add {NBodySim_tb.sim.addr NBodySim_tb.sim.body_i NBodySim_tb.sim.body_j NBodySim_tb.sim.clk NBodySim_tb.sim.currState NBodySim_tb.sim.done NBodySim_tb.sim.fc_done NBodySim_tb.sim.fc_en NBodySim_tb.sim.fc_valid NBodySim_tb.sim.force_x NBodySim_tb.sim.force_y NBodySim_tb.sim.i NBodySim_tb.sim.incr_i NBodySim_tb.sim.incr_j NBodySim_tb.sim.j NBodySim_tb.sim.nextState NBodySim_tb.sim.read_body NBodySim_tb.sim.register_i NBodySim_tb.sim.register_j NBodySim_tb.sim.reset NBodySim_tb.sim.start NBodySim_tb.sim.total_force_x NBodySim_tb.sim.total_force_y NBodySim_tb.sim.wr_en NBodySim_tb.sim.write_data } -aggregates  -fid VPD0
-synopsys::dump -add {NBodySim_tb.sim.FORCE.body_i NBodySim_tb.sim.FORCE.body_j NBodySim_tb.sim.FORCE.clk NBodySim_tb.sim.FORCE.delayed_valid_out NBodySim_tb.sim.FORCE.enable NBodySim_tb.sim.FORCE.force_x NBodySim_tb.sim.FORCE.force_y NBodySim_tb.sim.FORCE.magnitude NBodySim_tb.sim.FORCE.reset NBodySim_tb.sim.FORCE.s1 NBodySim_tb.sim.FORCE.s2 NBodySim_tb.sim.FORCE.s3 NBodySim_tb.sim.FORCE.s4 NBodySim_tb.sim.FORCE.s5 NBodySim_tb.sim.FORCE.safe_dist_sq NBodySim_tb.sim.FORCE.valid_in NBodySim_tb.sim.FORCE.valid_out } -aggregates  -fid VPD0
+synopsys::dump -add {NBodySim_tb.sim.body_i NBodySim_tb.sim.body_j NBodySim_tb.sim.clk NBodySim_tb.sim.done NBodySim_tb.sim.fc_done NBodySim_tb.sim.fc_en NBodySim_tb.sim.fc_valid NBodySim_tb.sim.force_x NBodySim_tb.sim.force_y NBodySim_tb.sim.read_body NBodySim_tb.sim.register_i NBodySim_tb.sim.register_j NBodySim_tb.sim.reset NBodySim_tb.sim.start } -aggregates  -fid VPD0
+synopsys::dump -add {NBodySim_tb.sim.total_force_x} -aggregates  -fid VPD0
+synopsys::dump -add {NBodySim_tb.sim.total_force_y} -aggregates  -fid VPD0
+synopsys::dump -add {NBodySim_tb.sim.i} -aggregates  -fid VPD0
+synopsys::dump -add {NBodySim_tb.sim.j} -aggregates  -fid VPD0
+synopsys::dump -add {NBodySim_tb.sim.incr_i} -aggregates  -fid VPD0
+synopsys::dump -add {NBodySim_tb.sim.incr_j} -aggregates  -fid VPD0
+synopsys::dump -add {NBodySim_tb.sim.addr} -aggregates  -fid VPD0
+synopsys::dump -add {NBodySim_tb.sim.write_data} -aggregates  -fid VPD0
+synopsys::dump -add {NBodySim_tb.sim.wr_en} -aggregates  -fid VPD0
+synopsys::dump -add {NBodySim_tb.sim.currState} -aggregates  -fid VPD0
+synopsys::dump -add {NBodySim_tb.sim.nextState} -aggregates  -fid VPD0
 synopsys::run
 set ucliGUI::state
 set ucliGUI::state

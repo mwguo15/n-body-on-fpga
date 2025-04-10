@@ -1,20 +1,20 @@
 Chronologic VCS simulator copyright 1991-2015
 Contains Synopsys proprietary information.
-Compiler version K-2015.09_Full64; Runtime version K-2015.09_Full64;  Apr 10 00:14 2025
+Compiler version K-2015.09_Full64; Runtime version K-2015.09_Full64;  Apr 10 18:30 2025
 VCD+ Writer K-2015.09_Full64 Copyright (c) 1991-2015 by Synopsys Inc.
 The file '/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/inter.vpd' was opened successfully.
 Simulation completed at time 445000
 Reading forces from memory...
-Force 0: xxxxxxxxxxxxxxxxxxxx
+Force 0: 00000000000000000000
 Force 1: 00000000000000000000
 Force 2: 00000000000000000000
 Force 3: 00000000000000000000
 Force 4: 00000000000000000000
-Body 0: 00000000000000000000
-Body 1: 0064006400050005000a
-Body 2: 0069006900060006000c
+Body 0: 0064006400050005000a
+Body 1: 0069006900060006000c
+Body 2: 00000000000000000000
 Body 3: 00000000000000000000
 Body 4: 00000000000000000000
 $finish called from file "nbody-naive_tb.sv", line 55.
-$finish at simulation time               745000
-Simulation complete, time is 745000 ps.
+$finish at simulation time               845000
+Simulation complete, time is 845000 ps.

@@ -1,7 +1,12 @@
 {
-    "_vcs_unit__100957332": [
-        "_vcs_unit__100957332",
-        "WGNUL",
+    "NBodySim_tb": [
+        "NBodySim_tb",
+        "rm0m1",
+        "module"
+    ],
+    "force_calculator": [
+        "force_calculator",
+        "MaNWi",
         "module"
     ],
     "std": [
@@ -9,19 +14,19 @@
         "reYIK",
         "module"
     ],
-    "ALTERA_MF_MEMORY_INITIALIZATION": [
-        "ALTERA_MF_MEMORY_INITIALIZATION",
-        "er73t",
-        "module"
-    ],
-    "NBodySim_tb": [
-        "NBodySim_tb",
-        "rm0m1",
+    "_vcs_unit__100957332": [
+        "_vcs_unit__100957332",
+        "WGNUL",
         "module"
     ],
     "ram_2_port": [
         "ram_2_port",
         "gvUe1",
+        "module"
+    ],
+    "ALTERA_MF_MEMORY_INITIALIZATION": [
+        "ALTERA_MF_MEMORY_INITIALIZATION",
+        "er73t",
         "module"
     ],
     "...MASTER...": [

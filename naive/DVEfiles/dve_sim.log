@@ -1,40 +1,48 @@
-00:14:56    16 -->                                                             [tcl] ucliGUI::connect -toolargs -ucligui -toolexe ./simv -pid 4150308 -toolin /tmp/vcs_20250410041450_4150306_mwguo..stdin -toolout /tmp/vcs_20250410041450_4150306_mwguo..stdout  
-00:14:56    17 -->                                                                 [tcl] set ucliGUI::state
-00:14:56    18 -->                                                                     [tcl] gui_update_simulator_buttons
-00:14:58    19 -->                                                                         [tcl] set ucliGUI::state
-00:14:58    20 -->                                                                             [tcl] ucliCore::getToolPID
-00:14:58    21 -->                                                                                 [tcl] synopsys::env hasTB
-00:14:58    22 -->                                                                                     [tcl] trigger_hier_stack_context_switch 0
-00:14:58    23 -->                                                                                         [tcl] synUtils::setDVEInitPhase 1
-00:14:58    24 -->                                                                                             [tcl] gui_get_env SIMSETUP::SIMVPD
-00:14:58    25 --> ...  [tcl] synopsys::dump -type VPD -file /afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/inter.vpd -locking
-00:14:58    26 --> ...      [tcl] synopsys::dump -autoflush on -fid VPD0
-00:14:58    27 --> ...          [tcl] set ::dve_fid VPD0
-00:14:58    28 --> ...              [tcl] synUtils::setDVEInitPhase 0
-00:14:58    29 --> ...                  [tcl] ucliCore::getToolPID
-00:14:58    30 --> ...                      [tcl] synUtils::sendTool -active _icl_setToolSocket /tmp/smlnpXT0MA4
-00:14:58    31 --> ...                          [tcl] synUtils::sendTool -active {_icl_start_rpc -version "K-2015.09_Full64" -sync_file /tmp/vcs_dve_rpc.mwguo.4150308}
-00:14:58    32 --> ...                              [tcl] synUtils::sendTool -active {_icl_createSharedMemory /tmp/vcs_dve_general.mwguo.4150308}
-00:14:58    33 --> ...                                  [tcl] dveMisc::vbusExpand NBodySim_tb
-00:14:59    34 --> ...                                      [tcl] dveMisc::vbusExpand _vcs_unit__100957332
-00:14:59    35 --> ...                                          [tcl] config endofsim noexit
-00:14:59    36 --> ...                                              [tcl] config onfail enable all
-00:14:59    37 --> ...                                                  [tcl] config syscaddplainmembers
-00:14:59    38 --> ...                                                      [tcl] config syscaddsourcenames
-00:14:59    39 --> ...                                                          [tcl] config syscaddstructtypes
-00:14:59    40 --> ...                                                              [tcl] synopsys::listing -disable
-00:15:10    41 --> ...                                                                  [tcl] dveMisc::vbusExpand NBodySim_tb.sim.BRAM
-00:15:10    42 --> ...                                                                      [tcl] dveMisc::vbusExpand NBodySim_tb.sim
-00:15:24    43 --> ...                                                                          [tcl] ucliGUI::vpdAddHierarchy -scope NBodySim_tb.sim -depth 1 -file /afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/inter.vpd; synopsys::dump -flush VPD0
-00:15:24    44 --> ...                                                                              [tcl] synopsys::dump -add {NBodySim_tb.sim.addr NBodySim_tb.sim.body_i NBodySim_tb.sim.body_j NBodySim_tb.sim.clk NBodySim_tb.sim.currState NBodySim_tb.sim.done NBodySim_tb.sim.fc_done NBodySim_tb.sim.fc_en NBodySim_tb.sim.fc_valid NBodySim_tb.sim.force_x NBodySim_tb.sim.force_y NBodySim_tb.sim.i NBodySim_tb.sim.incr_i NBodySim_tb.sim.incr_j NBodySim_tb.sim.j NBodySim_tb.sim.nextState NBodySim_tb.sim.read_body NBodySim_tb.sim.register_i NBodySim_tb.sim.register_j NBodySim_tb.sim.reset NBodySim_tb.sim.start NBodySim_tb.sim.total_force_x NBodySim_tb.sim.total_force_y NBodySim_tb.sim.wr_en NBodySim_tb.sim.write_data } -aggregates  -fid VPD0
-00:15:25    45 --> ...                                                                                  [tcl] dveMisc::vbusExpand NBodySim_tb.sim.FORCE
-00:15:31    46 --> ...                                                                                      [tcl] synopsys::dump -add {NBodySim_tb.sim.FORCE.body_i NBodySim_tb.sim.FORCE.body_j NBodySim_tb.sim.FORCE.clk NBodySim_tb.sim.FORCE.delayed_valid_out NBodySim_tb.sim.FORCE.enable NBodySim_tb.sim.FORCE.force_x NBodySim_tb.sim.FORCE.force_y NBodySim_tb.sim.FORCE.magnitude NBodySim_tb.sim.FORCE.reset NBodySim_tb.sim.FORCE.s1 NBodySim_tb.sim.FORCE.s2 NBodySim_tb.sim.FORCE.s3 NBodySim_tb.sim.FORCE.s4 NBodySim_tb.sim.FORCE.s5 NBodySim_tb.sim.FORCE.safe_dist_sq NBodySim_tb.sim.FORCE.valid_in NBodySim_tb.sim.FORCE.valid_out } -aggregates  -fid VPD0
-00:15:36    47 --> ...                                                                                          [tcl] synopsys::run
-00:15:36    48 --> ...                                                                                              [tcl] set ucliGUI::state
-00:15:36    49 --> ...                                                                                                  [tcl] set ucliGUI::state
-00:15:36    50 --> ...  [tcl] gui_update_simulator_buttons
-00:15:38    51 --> ...      [tcl] set ucliGUI::state
-00:15:43    52 --> ...          [tcl] set ucliGUI::state
-00:15:46    53 --> ...              [tcl] catch {senv activeDomain} dveMisc::result 
-00:15:49    54 --> ...                  [tcl] set dveMisc::result
-00:15:49    55 --> ...                      [tcl] gui_update_simulator_buttons
+18:30:34    16 -->                                                             [tcl] ucliGUI::connect -toolargs -ucligui -toolexe ./simv -pid 336780 -toolin /tmp/vcs_20250410223030_336778_mwguo..stdin -toolout /tmp/vcs_20250410223030_336778_mwguo..stdout  
+18:30:34    17 -->                                                                 [tcl] set ucliGUI::state
+18:30:35    18 -->                                                                     [tcl] gui_update_simulator_buttons
+18:30:36    19 -->                                                                         [tcl] set ucliGUI::state
+18:30:36    20 -->                                                                             [tcl] ucliCore::getToolPID
+18:30:36    21 -->                                                                                 [tcl] synopsys::env hasTB
+18:30:36    22 -->                                                                                     [tcl] trigger_hier_stack_context_switch 0
+18:30:36    23 -->                                                                                         [tcl] synUtils::setDVEInitPhase 1
+18:30:36    24 -->                                                                                             [tcl] gui_get_env SIMSETUP::SIMVPD
+18:30:36    25 --> ...  [tcl] synopsys::dump -type VPD -file /afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/inter.vpd -locking
+18:30:36    26 --> ...      [tcl] synopsys::dump -autoflush on -fid VPD0
+18:30:36    27 --> ...          [tcl] set ::dve_fid VPD0
+18:30:36    28 --> ...              [tcl] synUtils::setDVEInitPhase 0
+18:30:36    29 --> ...                  [tcl] ucliCore::getToolPID
+18:30:36    30 --> ...                      [tcl] synUtils::sendTool -active _icl_setToolSocket /tmp/smlnplJNhJC
+18:30:36    31 --> ...                          [tcl] synUtils::sendTool -active {_icl_start_rpc -version "K-2015.09_Full64" -sync_file /tmp/vcs_dve_rpc.mwguo.336780}
+18:30:36    32 --> ...                              [tcl] synUtils::sendTool -active {_icl_createSharedMemory /tmp/vcs_dve_general.mwguo.336780}
+18:30:37    33 --> ...                                  [tcl] dveMisc::vbusExpand NBodySim_tb
+18:30:37    34 --> ...                                      [tcl] dveMisc::vbusExpand _vcs_unit__100957332
+18:30:37    35 --> ...                                          [tcl] config endofsim noexit
+18:30:37    36 --> ...                                              [tcl] config onfail enable all
+18:30:37    37 --> ...                                                  [tcl] config syscaddplainmembers
+18:30:37    38 --> ...                                                      [tcl] config syscaddsourcenames
+18:30:37    39 --> ...                                                          [tcl] config syscaddstructtypes
+18:30:37    40 --> ...                                                              [tcl] synopsys::listing -disable
+18:30:43    41 --> ...                                                                  [tcl] dveMisc::vbusExpand NBodySim_tb.sim
+18:30:54    42 --> ...                                                                      [tcl] ucliGUI::vpdAddHierarchy -scope NBodySim_tb.sim -depth 1 -file /afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/inter.vpd; synopsys::dump -flush VPD0
+18:30:55    43 --> ...                                                                          [tcl] synopsys::dump -add {NBodySim_tb.sim.body_i NBodySim_tb.sim.body_j NBodySim_tb.sim.clk NBodySim_tb.sim.done NBodySim_tb.sim.fc_done NBodySim_tb.sim.fc_en NBodySim_tb.sim.fc_valid NBodySim_tb.sim.force_x NBodySim_tb.sim.force_y NBodySim_tb.sim.read_body NBodySim_tb.sim.register_i NBodySim_tb.sim.register_j NBodySim_tb.sim.reset NBodySim_tb.sim.start } -aggregates  -fid VPD0
+18:30:55    44 --> ...                                                                              [tcl] synopsys::dump -add {NBodySim_tb.sim.total_force_x} -aggregates  -fid VPD0
+18:30:55    45 --> ...                                                                                  [tcl] synopsys::dump -add {NBodySim_tb.sim.total_force_y} -aggregates  -fid VPD0
+18:30:55    46 --> ...                                                                                      [tcl] synopsys::dump -add {NBodySim_tb.sim.i} -aggregates  -fid VPD0
+18:30:55    47 --> ...                                                                                          [tcl] synopsys::dump -add {NBodySim_tb.sim.j} -aggregates  -fid VPD0
+18:30:55    48 --> ...                                                                                              [tcl] synopsys::dump -add {NBodySim_tb.sim.incr_i} -aggregates  -fid VPD0
+18:30:55    49 --> ...                                                                                                  [tcl] synopsys::dump -add {NBodySim_tb.sim.incr_j} -aggregates  -fid VPD0
+18:30:55    50 --> ...  [tcl] synopsys::dump -add {NBodySim_tb.sim.addr} -aggregates  -fid VPD0
+18:30:55    51 --> ...      [tcl] synopsys::dump -add {NBodySim_tb.sim.write_data} -aggregates  -fid VPD0
+18:30:55    52 --> ...          [tcl] synopsys::dump -add {NBodySim_tb.sim.wr_en} -aggregates  -fid VPD0
+18:30:55    53 --> ...              [tcl] synopsys::dump -add {NBodySim_tb.sim.currState} -aggregates  -fid VPD0
+18:30:55    54 --> ...                  [tcl] synopsys::dump -add {NBodySim_tb.sim.nextState} -aggregates  -fid VPD0
+18:31:14    55 --> ...                      [tcl] synopsys::run
+18:31:14    56 --> ...                          [tcl] set ucliGUI::state
+18:31:14    57 --> ...                              [tcl] set ucliGUI::state
+18:31:14    58 --> ...                                  [tcl] gui_update_simulator_buttons
+18:31:15    59 --> ...                                      [tcl] set ucliGUI::state
+18:31:15    60 --> ...                                          [tcl] set ucliGUI::state
+18:31:15    61 --> ...                                              [tcl] catch {senv activeDomain} dveMisc::result 
+18:31:15    62 --> ...                                                  [tcl] set dveMisc::result
+18:31:15    63 --> ...                                                      [tcl] gui_update_simulator_buttons
