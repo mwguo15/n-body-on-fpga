@@ -5,11 +5,11 @@
     },
     "CompUnits": {
         "amcQw_d": {
-            "checksum": 4294967295,
             "mode": 4,
             "mod": "...MASTER...",
             "out": "objs/amcQw_d.o",
-            "bytes": 7457
+            "bytes": 7457,
+            "checksum": 4294967295
         }
     },
     "reusePaths": {},

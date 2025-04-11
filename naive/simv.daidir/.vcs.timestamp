@@ -44,7 +44,7 @@ ram_2_port.v
 57
 which_declare=declare -f
 sysc_uni_pwd=/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive
-XDG_SESSION_ID=5979
+XDG_SESSION_ID=5992
 XDG_RUNTIME_DIR=/run/user/2694451
 XDG_DATA_DIRS=/afs/ece.cmu.edu/usr/mwguo/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
 VMR_MODE_FLAG=64
@@ -63,9 +63,9 @@ TOOL_HOME=/afs/ece.cmu.edu/support/synopsys/synopsys.release/vcs-mx_vK-2015.09/l
 S_COLORS=auto
 SYNOPSYS_LICENSE=/afs/ece.cmu.edu/support/synopsys/license.dat
 SYNOPSYS_HOME=/afs/ece.cmu.edu/support/synopsys/synopsys.release
-SSH_TTY=/dev/pts/16
-SSH_CONNECTION=172.26.56.156 62182 172.19.138.13 22
-SSH_CLIENT=172.26.56.156 62182 22
+SSH_TTY=/dev/pts/8
+SSH_CONNECTION=172.26.56.156 59388 172.19.138.13 22
+SSH_CLIENT=172.26.56.156 59388 22
 SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
 SELINUX_USE_CURRENT_RANGE=
 SELINUX_ROLE_REQUESTED=
@@ -79,8 +79,8 @@ MODULESHOME=/usr/share/Modules
 MODULEPATH_modshare=/usr/share/Modules/modulefiles:2:/etc/modulefiles:2:/usr/share/modulefiles:2
 MODULEPATH=/etc/scl/modulefiles:/usr/share/Modules/modulefiles:/etc/modulefiles:/usr/share/modulefiles
 MFLAGS=
-MAKE_TERMOUT=/dev/pts/16
-MAKE_TERMERR=/dev/pts/16
+MAKE_TERMOUT=/dev/pts/8
+MAKE_TERMERR=/dev/pts/8
 MAKELEVEL=1
 MAKEFLAGS=
 LOADEDMODULES=
@@ -92,7 +92,7 @@ GDK_BACKEND=x11
 FASTX_INSTALL_DISABLE=fastx4,sshd,rlm
 DC_VERSION=Foundation-U/syn/U-2022.12-SP2/amd64/syn/
 DC_HOME=/afs/ece.cmu.edu/support/synopsys/synopsys.release/Foundation-U/syn/U-2022.12-SP2/amd64/syn/
-DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-vBzaTku3Dh,guid=7be28b50b206bf2a18f2fc5d67f844e9
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-UkUNmrGaii,guid=ae951d89651959815020f00567f86968
 BASH_FUNC_which%%=() {  ( alias;_ eval ${which_declare} ) | /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot $@_}
 BASH_FUNC_switchml%%=() {  typeset swfound=1;_ if [ "${MODULES_USE_COMPAT_VERSION:-0}" = '1' ]; then_ typeset swname='main';_ if [ -e /usr/share/Modules/libexec/modulecmd.tcl ]; then_ typeset swfound=0;_ unset MODULES_USE_COMPAT_VERSION;_ fi;_ else_ typeset swname='compatibility';_ if [ -e /usr/share/Modules/libexec/modulecmd-compat ]; then_ typeset swfound=0;_ MODULES_USE_COMPAT_VERSION=1;_ export MODULES_USE_COMPAT_VERSION;_ fi;_ fi;_ if [ $swfound -eq 0 ]; then_ echo "Switching to Modules $swname version";_ source /usr/share/Modules/init/bash;_ else_ echo "Cannot switch to Modules $swname version, command not found";_ return 1;_ fi_}
 BASH_FUNC_scl%%=() {  if [ "$1" = "load" -o "$1" = "unload" ]; then_ eval "module $@";_ else_ /usr/bin/scl "$@";_ fi_}
@@ -104,7 +104,7 @@ BASH_FUNC__module_raw%%=() {  unset _mlshdbg;_ if [ "${MODULES_SILENT_SHELL_DEBU
 1484797592 /afs/ece/support/altera/release/16.1.2/quartus/eda/sim_lib/220model.v
 1744215459 ram_2_port.v
 1744326924 nbody-naive_tb.sv
-1744328982 nbody-naive.sv
+1744335291 nbody-naive.sv
 0 /afs/ece/support/altera/release/16.1.2/quartus/eda/sim_lib/lpm.v
 1484818291 /afs/ece/support/altera/release/16.1.2/quartus/eda/sim_lib/cycloneiv_atoms.v
 1484797604 /afs/ece/support/altera/release/16.1.2/quartus/eda/sim_lib/altera_mf.v
@@ -115,4 +115,4 @@ BASH_FUNC__module_raw%%=() {  unset _mlshdbg;_ if [ "${MODULES_SILENT_SHELL_DEBU
 1440563255 /afs/ece.cmu.edu/support/synopsys/synopsys.release/vcs-mx_vK-2015.09/linux64/lib/libvirsim.so
 1440562843 /afs/ece.cmu.edu/support/synopsys/synopsys.release/vcs-mx_vK-2015.09/linux64/lib/liberrorinf.so
 1440562824 /afs/ece.cmu.edu/support/synopsys/synopsys.release/vcs-mx_vK-2015.09/linux64/lib/libsnpsmalloc.so
-1744329031 simv.daidir
+1744335469 simv.daidir

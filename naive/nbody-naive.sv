@@ -9,10 +9,7 @@ typedef struct packed {
 } body_t;
 
 module NBodySim #(parameter N = 16,                    // Number of bodies 
-                  parameter ADDR_WIDTH = $clog2(N),
-                  parameter DT = 32'h3C23D70A,         // 0.01 in IEEE 754 - timestep
-                  parameter G = 32'h3A83126F,          // 0.001 in IEEE 754 - gravitatonal constant
-                  parameter SOFTENING = 32'h3A83126F)  // 0.001 in IEEE 754 - prevents infinite force
+                  parameter ADDR_WIDTH = $clog2(N))
 
 (
     input  logic clk,
@@ -46,6 +43,17 @@ ram_2_port BRAM(.clock(clk),
                 .wren(wr_en),
                 .q(read_body)
                );
+
+FP FLOATING_POINT(.clk,
+                  .clk_en(1),
+                  .dataa(),
+                  .datab(),
+                  .n(),
+                  .reset,
+                  .reset_req(0),
+                  .start(),
+                  .done(),
+                  .result());
 
 enum logic [3:0] {
     IDLE,   
@@ -241,7 +249,7 @@ typedef struct packed {
 } stage4_t;
 
 typedef struct packed {
-    logic [31:0] inv_dist_sq;  // 1/dist_sq (scaled integer)
+    logic [31:0] dist_3;  // 1/dist_3 (scaled integer)
     logic [31:0] mass_j_scaled;
     logic valid;
 } stage5_t;
@@ -254,6 +262,7 @@ stage4_t s4;
 stage5_t s5;
 
 logic [31:0] safe_dist_sq;
+logic [31:0] safe_dist_sq_sqrt;
 logic [63:0] magnitude;
 
 logic delayed_valid_out;
@@ -293,8 +302,8 @@ end
 always_ff @(posedge clk) begin
     if (reset) s3 <= '0;
     else if (enable) begin
-        s3.dx_sq       <= (s2.dx * s2.dx) >> 8;       // dx^2 (32-bit result)
-        s3.dy_sq       <= (s2.dy * s2.dy) >> 8;
+        s3.dx_sq       <= (s2.dx * s2.dx);       // dx^2 (32-bit result)
+        s3.dy_sq       <= (s2.dy * s2.dy);
         s3.softening_sq <= SOFTENING * SOFTENING;
         s3.mass_j      <= s2.mass_j;
         s3.valid      <= s2.valid;
@@ -307,7 +316,7 @@ end
 always_ff @(posedge clk) begin
     if (reset) s4 <= '0;
     else if (enable) begin
-        s4.dist_sq <= s3.dx_sq + s3.dy_sq + s3.softening_sq;
+        s4.dist_sq <= s3.dx_sq + s3.dy_sq; // todo: removed + s3.softening_sq
         s4.mass_j  <= s3.mass_j;
         s4.valid   <= s3.valid;
     end
@@ -324,9 +333,10 @@ always_ff @(posedge clk) begin
     else if (enable) begin
         // Avoid division by zero (clamp dist_sq to 1 if too small)
         safe_dist_sq = (s4.dist_sq < 1) ? 1 : s4.dist_sq;
-        
+        safe_dist_sq_sqrt = $sqrt(int'(safe_dist_sq));
         // Approximate 1/dist_sq using scaling (fixed-point)
-        s5.inv_dist_sq <= (SCALE * SCALE) / safe_dist_sq;  // Scaled 1/r^2
+        // s5.inv_dist_sq <= (SCALE * SCALE) / safe_dist_sq;  // Scaled 1/r^2
+        s5.dist_3 <= safe_dist_sq_sqrt * safe_dist_sq_sqrt * safe_dist_sq_sqrt;
         
         // Scale G*m_j for later multiplication
         s5.mass_j_scaled <= G * s4.mass_j;
@@ -344,11 +354,11 @@ always_ff @(posedge clk) begin
         valid_out <= 0;
     end else if (enable) begin
         // magnitude = (G * m_j * inv_dist_sq) / SCALE^2
-        magnitude = (s5.mass_j_scaled * s5.inv_dist_sq) / SCALE;
+        magnitude = (s5.mass_j_scaled / s5.dist_3); // todo: remove / SCALE
         
         // Force components (rescale to original units)
-        force_x <= magnitude * s2.dx / SCALE;  // Preserve sign
-        force_y <= magnitude * s2.dy / SCALE;
+        force_x <= magnitude * s2.dx; // todo: remove / SCALE
+        force_y <= magnitude * s2.dy; // todo: remove / SCALE
         valid_out <= s5.valid;
     end
 end

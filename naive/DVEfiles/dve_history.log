@@ -52,11 +52,18 @@ gui_state_default_create -off
 gui_sim_run Ucli -exe ./simv -args {-ucligui  } -dir .
 gui_list_expand -id  Hier.1   NBodySim_tb
 gui_list_select -id Hier.1 -current_item_name NBodySim_tb.sim -current_item_type Scope  -selected  { NBodySim_tb.sim   }
-gui_list_select -id Data.1 { NBodySim_tb.sim.clk  NBodySim_tb.sim.reset  NBodySim_tb.sim.start  NBodySim_tb.sim.done  NBodySim_tb.sim.read_body  NBodySim_tb.sim.body_i  NBodySim_tb.sim.body_j  NBodySim_tb.sim.register_i  NBodySim_tb.sim.register_j  NBodySim_tb.sim.fc_en  NBodySim_tb.sim.fc_done  NBodySim_tb.sim.fc_valid  {NBodySim_tb.sim.force_x[31:0]}  {NBodySim_tb.sim.force_y[31:0]}  {NBodySim_tb.sim.total_force_x[31:0]}  {NBodySim_tb.sim.total_force_y[31:0]}  {NBodySim_tb.sim.i[7:0]}  {NBodySim_tb.sim.j[7:0]}  NBodySim_tb.sim.incr_i  NBodySim_tb.sim.incr_j  {NBodySim_tb.sim.addr[14:0]}  {NBodySim_tb.sim.write_data[79:0]}  NBodySim_tb.sim.wr_en  NBodySim_tb.sim.currState  NBodySim_tb.sim.nextState  {NBodySim_tb.sim.N[31:0]}  {NBodySim_tb.sim.ADDR_WIDTH[31:0]}  {NBodySim_tb.sim.DT[31:0]}  {NBodySim_tb.sim.G[31:0]}  {NBodySim_tb.sim.SOFTENING[31:0]}  {NBodySim_tb.sim.G[31:0]}  {NBodySim_tb.sim.SOFTENING[31:0]}  {NBodySim_tb.sim.G[31:0]}  {NBodySim_tb.sim.DT[31:0]}  {NBodySim_tb.sim.G[31:0]}  {NBodySim_tb.sim.DT[31:0]}  {NBodySim_tb.sim.N[31:0]}  {NBodySim_tb.sim.ADDR_WIDTH[31:0]}  {NBodySim_tb.sim.DT[31:0]}  {NBodySim_tb.sim.N[31:0]}  NBodySim_tb.sim.currState  NBodySim_tb.sim.nextState  {NBodySim_tb.sim.N[31:0]}  NBodySim_tb.sim.currState  NBodySim_tb.sim.wr_en  NBodySim_tb.sim.currState  NBodySim_tb.sim.wr_en  {NBodySim_tb.sim.write_data[79:0]}  NBodySim_tb.sim.wr_en  {NBodySim_tb.sim.write_data[79:0]}  {NBodySim_tb.sim.addr[14:0]}  {NBodySim_tb.sim.write_data[79:0]}  {NBodySim_tb.sim.addr[14:0]}  NBodySim_tb.sim.incr_i  NBodySim_tb.sim.incr_j  {NBodySim_tb.sim.addr[14:0]}  NBodySim_tb.sim.incr_i  {NBodySim_tb.sim.j[7:0]}  NBodySim_tb.sim.incr_i  {NBodySim_tb.sim.j[7:0]}  {NBodySim_tb.sim.i[7:0]}  {NBodySim_tb.sim.j[7:0]}  {NBodySim_tb.sim.i[7:0]}  {NBodySim_tb.sim.total_force_y[31:0]}  {NBodySim_tb.sim.i[7:0]}  {NBodySim_tb.sim.total_force_y[31:0]}  {NBodySim_tb.sim.total_force_x[31:0]}  {NBodySim_tb.sim.total_force_y[31:0]}  {NBodySim_tb.sim.total_force_x[31:0]}  {NBodySim_tb.sim.force_y[31:0]}  {NBodySim_tb.sim.total_force_x[31:0]}  {NBodySim_tb.sim.force_y[31:0]}  {NBodySim_tb.sim.force_x[31:0]}  {NBodySim_tb.sim.force_y[31:0]}  {NBodySim_tb.sim.force_x[31:0]}  NBodySim_tb.sim.fc_valid  {NBodySim_tb.sim.force_x[31:0]}  NBodySim_tb.sim.fc_valid  NBodySim_tb.sim.fc_done  NBodySim_tb.sim.fc_valid  NBodySim_tb.sim.fc_done  NBodySim_tb.sim.fc_en  NBodySim_tb.sim.fc_done  NBodySim_tb.sim.fc_en  NBodySim_tb.sim.register_j  NBodySim_tb.sim.fc_en  NBodySim_tb.sim.register_j  NBodySim_tb.sim.register_i  NBodySim_tb.sim.register_j  NBodySim_tb.sim.register_i  NBodySim_tb.sim.body_j  NBodySim_tb.sim.register_i  NBodySim_tb.sim.body_j  NBodySim_tb.sim.body_i  NBodySim_tb.sim.body_j  NBodySim_tb.sim.body_i  NBodySim_tb.sim.read_body  NBodySim_tb.sim.body_i  NBodySim_tb.sim.read_body  NBodySim_tb.sim.body_i  NBodySim_tb.sim.body_j  NBodySim_tb.sim.register_i  NBodySim_tb.sim.register_j  NBodySim_tb.sim.fc_en  NBodySim_tb.sim.fc_done  NBodySim_tb.sim.fc_valid  {NBodySim_tb.sim.force_x[31:0]}  {NBodySim_tb.sim.force_y[31:0]}  {NBodySim_tb.sim.total_force_x[31:0]}  {NBodySim_tb.sim.total_force_y[31:0]}  {NBodySim_tb.sim.i[7:0]}  {NBodySim_tb.sim.j[7:0]}  NBodySim_tb.sim.incr_i  NBodySim_tb.sim.incr_j  {NBodySim_tb.sim.addr[14:0]}  {NBodySim_tb.sim.write_data[79:0]}  NBodySim_tb.sim.wr_en  NBodySim_tb.sim.currState  NBodySim_tb.sim.nextState   }
-gui_list_create_group_when_add -wave -enable
+gui_list_select_all -id Hier.1
+gui_list_select -id Hier.1 -current_item_name NBodySim_tb -current_item_type Scope  -selected  { NBodySim_tb.sim  NBodySim_tb  NBodySim_tb.print_forces  NBodySim_tb.ram_read  _vcs_unit__100957332   }
+gui_list_select -id Hier.1 -current_item_name NBodySim_tb.sim -current_item_type Scope  -selected  { NBodySim_tb.sim   }
+gui_list_select_all -id Data.1
 gui_open_window Wave
-gui_list_add -id Wave.1 -from Data.1 { NBodySim_tb.sim.clk NBodySim_tb.sim.reset NBodySim_tb.sim.start NBodySim_tb.sim.done NBodySim_tb.sim.read_body NBodySim_tb.sim.body_i NBodySim_tb.sim.body_j NBodySim_tb.sim.register_i NBodySim_tb.sim.register_j NBodySim_tb.sim.fc_en NBodySim_tb.sim.fc_done NBodySim_tb.sim.fc_valid {NBodySim_tb.sim.force_x[31:0]} {NBodySim_tb.sim.force_y[31:0]} {NBodySim_tb.sim.total_force_x[31:0]} {NBodySim_tb.sim.total_force_y[31:0]} {NBodySim_tb.sim.i[7:0]} {NBodySim_tb.sim.j[7:0]} NBodySim_tb.sim.incr_i NBodySim_tb.sim.incr_j {NBodySim_tb.sim.addr[14:0]} {NBodySim_tb.sim.write_data[79:0]} NBodySim_tb.sim.wr_en NBodySim_tb.sim.currState NBodySim_tb.sim.nextState } -insertionbar
+gui_list_add -id Wave.1 -from Data.1 { NBodySim_tb.sim.clk NBodySim_tb.sim.reset {NBodySim_tb.sim.test_addr[14:0]} NBodySim_tb.sim.start NBodySim_tb.sim.done {NBodySim_tb.sim.read_body[79:0]} NBodySim_tb.sim.body_i NBodySim_tb.sim.body_j NBodySim_tb.sim.register_i NBodySim_tb.sim.register_j NBodySim_tb.sim.fc_en NBodySim_tb.sim.fc_done NBodySim_tb.sim.fc_valid {NBodySim_tb.sim.force_x[31:0]} {NBodySim_tb.sim.force_y[31:0]} {NBodySim_tb.sim.total_force_x[31:0]} {NBodySim_tb.sim.total_force_y[31:0]} {NBodySim_tb.sim.i[7:0]} {NBodySim_tb.sim.j[7:0]} NBodySim_tb.sim.incr_i NBodySim_tb.sim.incr_j {NBodySim_tb.sim.addr[14:0]} {NBodySim_tb.sim.write_data[79:0]} NBodySim_tb.sim.wr_en NBodySim_tb.sim.currState NBodySim_tb.sim.nextState {NBodySim_tb.sim.N[31:0]} {NBodySim_tb.sim.ADDR_WIDTH[31:0]} {NBodySim_tb.sim.DT[31:0]} {NBodySim_tb.sim.G[31:0]} {NBodySim_tb.sim.SOFTENING[31:0]} } -insertionbar
 gui_sim_continue  
+gui_wv_scroll_hslidermove -id  Wave.1 2134187
+gui_zoom -window Wave.1 -factor 0.5
+gui_zoom -window Wave.1 -factor 0.5
+gui_zoom -window Wave.1 -factor 0.5
+gui_wv_scroll_hslidermove -id  Wave.1 60402
 gui_zoom -window Wave.1 -factor 0.5
 gui_zoom -window Wave.1 -factor 0.5
 gui_zoom -window Wave.1 -factor 0.5
@@ -64,16 +71,46 @@ gui_zoom -window Wave.1 -factor 0.5
 gui_zoom -window Wave.1 -factor 0.5
 gui_zoom -window Wave.1 -factor 0.5
 gui_zoom -window Wave.1 -factor 0.5
-gui_zoom -window Wave.1 -factor 0.5
-gui_wv_scroll_hslidermove -id  Wave.1 2378
-gui_wv_scroll_hslidermove -id  Wave.1 1184
-gui_marker_move -id  Wave.1 C1 125000
-gui_wv_scroll_hslidermove -id  Wave.1 1532
-gui_marker_move -id  Wave.1 C1 185000
-gui_marker_move -id  Wave.1 C1 175000
-gui_marker_move -id  Wave.1 C1 185000
-gui_wv_scroll_hslidermove -id  Wave.1 1804
-gui_marker_move -id  Wave.1 C1 215000
-gui_wv_scroll_hslidermove -id  Wave.1 3994
-gui_marker_move -id  Wave.1 C1 415000
-gui_wv_scroll_hslidermove -id  Wave.1 2415
+gui_wv_scroll_hslidermove -id  Wave.1 95
+gui_list_expand -id  Hier.1   NBodySim_tb.sim
+gui_list_select -id Hier.1 -current_item_name NBodySim_tb.sim.FORCE -current_item_type Scope  -selected  { NBodySim_tb.sim.FORCE   }
+gui_list_select -id Data.1 { NBodySim_tb.sim.FORCE.clk  NBodySim_tb.sim.FORCE.reset  NBodySim_tb.sim.FORCE.enable  NBodySim_tb.sim.FORCE.body_i  NBodySim_tb.sim.FORCE.body_j  NBodySim_tb.sim.FORCE.valid_in  {NBodySim_tb.sim.FORCE.force_x[31:0]}  {NBodySim_tb.sim.FORCE.force_y[31:0]}  NBodySim_tb.sim.FORCE.valid_out  NBodySim_tb.sim.FORCE.s1  NBodySim_tb.sim.FORCE.s2  NBodySim_tb.sim.FORCE.s3  NBodySim_tb.sim.FORCE.s4  NBodySim_tb.sim.FORCE.s5  {NBodySim_tb.sim.FORCE.safe_dist_sq[31:0]}  {NBodySim_tb.sim.FORCE.magnitude[63:0]}  NBodySim_tb.sim.FORCE.delayed_valid_out  {NBodySim_tb.sim.FORCE.G[31:0]}  {NBodySim_tb.sim.FORCE.SOFTENING[31:0]}  NBodySim_tb.sim.FORCE.delayed_valid_out  {NBodySim_tb.sim.FORCE.G[31:0]}  {NBodySim_tb.sim.FORCE.SOFTENING[31:0]}  NBodySim_tb.sim.FORCE.delayed_valid_out  {NBodySim_tb.sim.FORCE.magnitude[63:0]}  NBodySim_tb.sim.FORCE.delayed_valid_out  {NBodySim_tb.sim.FORCE.magnitude[63:0]}  NBodySim_tb.sim.FORCE.s5  {NBodySim_tb.sim.FORCE.safe_dist_sq[31:0]}  {NBodySim_tb.sim.FORCE.magnitude[63:0]}  NBodySim_tb.sim.FORCE.s5  NBodySim_tb.sim.FORCE.s4  NBodySim_tb.sim.FORCE.s5  NBodySim_tb.sim.FORCE.s4  NBodySim_tb.sim.FORCE.s3  NBodySim_tb.sim.FORCE.s4  NBodySim_tb.sim.FORCE.s3  NBodySim_tb.sim.FORCE.s2  NBodySim_tb.sim.FORCE.s3  NBodySim_tb.sim.FORCE.s2  NBodySim_tb.sim.FORCE.s1  NBodySim_tb.sim.FORCE.s2  NBodySim_tb.sim.FORCE.s1  NBodySim_tb.sim.FORCE.valid_out  NBodySim_tb.sim.FORCE.s1  NBodySim_tb.sim.FORCE.valid_out  {NBodySim_tb.sim.FORCE.force_y[31:0]}  NBodySim_tb.sim.FORCE.valid_out  {NBodySim_tb.sim.FORCE.force_y[31:0]}  NBodySim_tb.sim.FORCE.valid_out  NBodySim_tb.sim.FORCE.s1  NBodySim_tb.sim.FORCE.s2  NBodySim_tb.sim.FORCE.s3  NBodySim_tb.sim.FORCE.s4  NBodySim_tb.sim.FORCE.s5  {NBodySim_tb.sim.FORCE.safe_dist_sq[31:0]}  NBodySim_tb.sim.FORCE.s5  {NBodySim_tb.sim.FORCE.safe_dist_sq[31:0]}  NBodySim_tb.sim.FORCE.s5  {NBodySim_tb.sim.FORCE.safe_dist_sq[31:0]}  {NBodySim_tb.sim.FORCE.magnitude[63:0]}  NBodySim_tb.sim.FORCE.delayed_valid_out   }
+gui_list_create_group_when_add -wave -enable
+gui_list_add -id Wave.1 -from Data.1 { NBodySim_tb.sim.FORCE.clk NBodySim_tb.sim.FORCE.reset NBodySim_tb.sim.FORCE.enable NBodySim_tb.sim.FORCE.body_i NBodySim_tb.sim.FORCE.body_j NBodySim_tb.sim.FORCE.valid_in {NBodySim_tb.sim.FORCE.force_x[31:0]} {NBodySim_tb.sim.FORCE.force_y[31:0]} NBodySim_tb.sim.FORCE.valid_out NBodySim_tb.sim.FORCE.s1 NBodySim_tb.sim.FORCE.s2 NBodySim_tb.sim.FORCE.s3 NBodySim_tb.sim.FORCE.s4 NBodySim_tb.sim.FORCE.s5 {NBodySim_tb.sim.FORCE.safe_dist_sq[31:0]} {NBodySim_tb.sim.FORCE.magnitude[63:0]} NBodySim_tb.sim.FORCE.delayed_valid_out } -insertionbar
+gui_sim_restart
+gui_sim_continue  
+gui_wv_scroll_hslidermove -id  Wave.1 0
+gui_list_expand -id  Wave.1   NBodySim_tb.sim.FORCE.s1
+gui_list_select -id Wave.1 -selected  { {NBodySim_tb.sim.FORCE.s1.pos_y_i[15:0]}   }
+gui_list_select -id Wave.1 -selected  { {NBodySim_tb.sim.FORCE.s1.pos_y_j[15:0]}   }
+gui_list_expand -id  Wave.1   NBodySim_tb.sim.FORCE.s2
+gui_marker_move -id  Wave.1 C1 186694
+gui_list_expand -id  Wave.1   NBodySim_tb.sim.FORCE.s3
+gui_set_env SIMSETUP::SIMCURRENTDIR /afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive
+gui_sim_restart -build make
+gui_sim_continue  
+gui_wv_scroll_hslidermove -id  Wave.1 0
+gui_marker_move -id  Wave.1 C1 226358
+gui_list_expand -id  Wave.1   NBodySim_tb.sim.FORCE.s4
+gui_list_expand -id  Wave.1   NBodySim_tb.sim.FORCE.s5
+gui_marker_move -id  Wave.1 C1 270125
+gui_sim_restart
+gui_sim_continue  
+gui_wv_scroll_hslidermove -id  Wave.1 1899
+gui_wv_scroll_hslidermove -id  Wave.1 178
+gui_marker_move -id  Wave.1 C1 229435
+gui_marker_move -id  Wave.1 C1 260551
+gui_marker_move -id  Wave.1 C1 263286
+gui_marker_move -id  Wave.1 C1 247215
+gui_list_select -id Wave.1 -selected  { {NBodySim_tb.sim.FORCE.s5.dist_3[31:0]}   }
+gui_marker_move -id  Wave.1 C1 267389
+gui_marker_move -id  Wave.1 C1 283118
+gui_marker_move -id  Wave.1 C1 274228
+gui_sim_restart
+gui_sim_continue  
+gui_wv_scroll_hslidermove -id  Wave.1 8
+gui_marker_move -id  Wave.1 C1 215758
+gui_marker_move -id  Wave.1 C1 264654
+gui_marker_move -id  Wave.1 C1 284144
+gui_marker_move -id  Wave.1 C1 302266
+gui_marker_move -id  Wave.1 C1 293376

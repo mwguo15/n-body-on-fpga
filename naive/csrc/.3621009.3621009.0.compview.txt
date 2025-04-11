@@ -1,0 +1,9 @@
+{"vcs1":{"timestamp_begin":1744152343.579057601, "rt":0.56, "ut":0.13, "st":0.19}}
+{"vcselab":{"timestamp_begin":1744152344.246921114, "rt":0.41, "ut":0.24, "st":0.08}}
+{"link":{"timestamp_begin":1744152344.741667182, "rt":3.69, "ut":0.17, "st":3.18}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1744152342.823241508}
+{"VCS_COMP_START_TIME": 1744152342.823241508}
+{"VCS_COMP_END_TIME": 1744152348.547176863}
+{"VCS_USER_OPTIONS": "-full64 -sverilog -debug=none +lint=all,noVCDE +warn=all -j64 -timescale=1ns/1ps +v2k -v /afs/ece/support/altera/release/16.1.2/quartus/eda/sim_lib/220model.v -v /afs/ece/support/altera/release/16.1.2/quartus/eda/sim_lib/altera_mf.v -v /afs/ece/support/altera/release/16.1.2/quartus/eda/sim_lib/cycloneiv_atoms.v -v /afs/ece/support/altera/release/16.1.2/quartus/eda/sim_lib/lpm.v -o simv divide_example.sv division.v"}
+{"vcs1": {"peak_mem": 3621567}}
+{"stitch_vcselab": {"peak_mem": 3621628}}

@@ -1,4 +1,24 @@
 {
+    "_vcs_unit__100957332": [
+        "_vcs_unit__100957332",
+        "WGNUL",
+        "module"
+    ],
+    "std": [
+        "std",
+        "reYIK",
+        "module"
+    ],
+    "...MASTER...": [
+        "SIM",
+        "amcQw",
+        "module"
+    ],
+    "ram_2_port": [
+        "ram_2_port",
+        "gvUe1",
+        "module"
+    ],
     "NBodySim_tb": [
         "NBodySim_tb",
         "rm0m1",
@@ -9,29 +29,9 @@
         "MaNWi",
         "module"
     ],
-    "std": [
-        "std",
-        "reYIK",
-        "module"
-    ],
-    "_vcs_unit__100957332": [
-        "_vcs_unit__100957332",
-        "WGNUL",
-        "module"
-    ],
-    "ram_2_port": [
-        "ram_2_port",
-        "gvUe1",
-        "module"
-    ],
     "ALTERA_MF_MEMORY_INITIALIZATION": [
         "ALTERA_MF_MEMORY_INITIALIZATION",
         "er73t",
-        "module"
-    ],
-    "...MASTER...": [
-        "SIM",
-        "amcQw",
         "module"
     ]
 }

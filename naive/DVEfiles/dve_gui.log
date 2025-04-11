@@ -1,6 +1,122 @@
 Chronologic VCS simulator copyright 1991-2015
 Contains Synopsys proprietary information.
-Compiler version K-2015.09_Full64; Runtime version K-2015.09_Full64;  Apr 10 18:30 2025
+Compiler version K-2015.09_Full64; Runtime version K-2015.09_Full64;  Apr 10 21:00 2025
+VCD+ Writer K-2015.09_Full64 Copyright (c) 1991-2015 by Synopsys Inc.
+The file '/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/inter.vpd' was opened successfully.
+Simulation completed at time 445000
+Reading forces from memory...
+Force 0: 0000002d00000000002d
+Force 1: 612fffda0000612fffda
+Force 2: 00000000000000000000
+Force 3: 00000000000000000000
+Force 4: 00000000000000000000
+Body 0: 0064006400050005000a
+Body 1: 00c800c800060006000c
+Body 2: 00000000000000000000
+Body 3: 00000000000000000000
+Body 4: 00000000000000000000
+$finish called from file "nbody-naive_tb.sv", line 49.
+$finish at simulation time               845000
+Simulation complete, time is 845000 ps.
+Chronologic VCS simulator copyright 1991-2015
+Contains Synopsys proprietary information.
+Compiler version K-2015.09_Full64; Runtime version K-2015.09_Full64;  Apr 10 21:03 2025
+VCD+ Writer K-2015.09_Full64 Copyright (c) 1991-2015 by Synopsys Inc.
+The file '/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/inter.vpd' was opened successfully.
+Simulation completed at time 445000
+Reading forces from memory...
+Force 0: 0000002d00000000002d
+Force 1: 612fffda0000612fffda
+Force 2: 00000000000000000000
+Force 3: 00000000000000000000
+Force 4: 00000000000000000000
+Body 0: 0064006400050005000a
+Body 1: 00c800c800060006000c
+Body 2: 00000000000000000000
+Body 3: 00000000000000000000
+Body 4: 00000000000000000000
+$finish called from file "nbody-naive_tb.sv", line 49.
+$finish at simulation time               845000
+Simulation complete, time is 845000 ps.
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 845000 ps
+CPU Time:      1.130 seconds;       Data structure size:   1.3Mb
+Thu Apr 10 21:08:56 2025
+vcs -debug_access+r -full64 -sverilog -debug=none +warn=all -j80 -timescale=1ns/1ps +v2k  -v /afs/ece/support/altera/release/16.1.2/quartus/eda/sim_lib/220model.v -v /afs/ece/support/altera/release/16.1.2/quartus/eda/sim_lib/altera_mf.v -v /afs/ece/support/altera/release/16.1.2/quartus/eda/sim_lib/cycloneiv_atoms.v -v /afs/ece/support/altera/release/16.1.2/quartus/eda/sim_lib/lpm.v  -o simv nbody-naive.sv nbody-naive_tb.sv ram_2_port.v
+
+Warning-[UNKWN_OPTVSIM] Unknown option passed
+  Ignoring unknown option '-debug=none' passed to 'vcs' and continuing 
+  compilation.
+
+                         Chronologic VCS (TM)
+         Version K-2015.09_Full64 -- Thu Apr 10 21:08:58 2025
+               Copyright (c) 1991-2015 by Synopsys Inc.
+                         ALL RIGHTS RESERVED
+
+This program is proprietary and confidential information of Synopsys Inc.
+and may be used and disclosed only as authorized in a license agreement
+controlling such use and disclosure.
+
+Parsing design file 'nbody-naive.sv'
+
+Warning-[IPDW] Identifier previously declared
+nbody-naive.sv, 26
+  Second declaration for identifier 'read_body' ignored
+
+Parsing design file 'nbody-naive_tb.sv'
+Parsing design file 'ram_2_port.v'
+Parsing library file '/afs/ece/support/altera/release/16.1.2/quartus/eda/sim_lib/220model.v'
+Parsing library file '/afs/ece/support/altera/release/16.1.2/quartus/eda/sim_lib/altera_mf.v'
+Top Level Modules:
+       NBodySim_tb
+TimeScale is 1 ps / 1 ps
+Starting vcs inline pass...
+
+Note-[VCS_PARAL] Parallel code-gen enabled
+  VCS is running with parallel code generation(-j)...
+
+5 modules and 0 UDP read.
+	However, due to incremental compilation, only 2 modules need to be compiled.
+recompiling module NBodySim_tb because:
+	Signal dependencies have changed
+	Module parameters have been changed via defparam.
+recompiling module force_calculator because:
+	Signal dependencies have changed
+	Module parameters have been changed via defparam.
+Both modules done.
+make[1]: Entering directory '/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/csrc'
+make[1]: Leaving directory '/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/csrc'
+make[1]: Entering directory '/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/csrc'
+rm -f _csrc*.so linux64_scvhdl_*.so pre_vcsobj_*.so share_vcsobj_*.so
+if [ -x ../simv ]; then chmod -x ../simv; fi
+g++  -o ../simv   -Wl,-rpath-link=./ -Wl,-rpath='$ORIGIN'/simv.daidir/ -Wl,-rpath=./simv.daidir/ -Wl,-rpath='$ORIGIN'/simv.daidir//scsim.db.dir  -rdynamic   amcQwB.o objs/amcQw_d.o   _414094_archive_1.so _414095_archive_1.so _prev_archive_1.so  SIM_l.o       rmapats_mop.o rmapats.o rmar.o  rmar_llvm_0_1.o rmar_llvm_0_0.o          /afs/ece.cmu.edu/support/synopsys/synopsys.release/vcs-mx_vK-2015.09/linux64/lib/libzerosoft_rt_stubs.so /afs/ece.cmu.edu/support/synopsys/synopsys.release/vcs-mx_vK-2015.09/linux64/lib/libvirsim.so /afs/ece.cmu.edu/support/synopsys/synopsys.release/vcs-mx_vK-2015.09/linux64/lib/liberrorinf.so /afs/ece.cmu.edu/support/synopsys/synopsys.release/vcs-mx_vK-2015.09/linux64/lib/libsnpsmalloc.so    /afs/ece.cmu.edu/support/synopsys/synopsys.release/vcs-mx_vK-2015.09/linux64/lib/libvcsnew.so /afs/ece.cmu.edu/support/synopsys/synopsys.release/vcs-mx_vK-2015.09/linux64/lib/libsimprofile.so /afs/ece.cmu.edu/support/synopsys/synopsys.release/vcs-mx_vK-2015.09/linux64/lib/libuclinative.so   -Wl,-whole-archive /afs/ece.cmu.edu/support/synopsys/synopsys.release/vcs-mx_vK-2015.09/linux64/lib/libvcsucli.so -Wl,-no-whole-archive          /afs/ece.cmu.edu/support/synopsys/synopsys.release/vcs-mx_vK-2015.09/linux64/lib/vcs_save_restore_new.o -ldl  -lc -lm -lpthread -ldl 
+../simv up to date
+make[1]: Leaving directory '/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/csrc'
+CPU time: 1.179 seconds to compile + .704 seconds to elab + .784 seconds to link
+Finished rebuilding the design.
+Chronologic VCS simulator copyright 1991-2015
+Contains Synopsys proprietary information.
+Compiler version K-2015.09_Full64; Runtime version K-2015.09_Full64;  Apr 10 21:09 2025
+VCD+ Writer K-2015.09_Full64 Copyright (c) 1991-2015 by Synopsys Inc.
+The file '/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/inter.vpd' was opened successfully.
+Simulation completed at time 445000
+Reading forces from memory...
+Force 0: 00000000000000000000
+Force 1: 005fffff0000005fffff
+Force 2: 00000000000000000000
+Force 3: 00000000000000000000
+Force 4: 00000000000000000000
+Body 0: 0064006400050005000a
+Body 1: 00c800c800060006000c
+Body 2: 00000000000000000000
+Body 3: 00000000000000000000
+Body 4: 00000000000000000000
+$finish called from file "nbody-naive_tb.sv", line 49.
+$finish at simulation time               845000
+Simulation complete, time is 845000 ps.
+Chronologic VCS simulator copyright 1991-2015
+Contains Synopsys proprietary information.
+Compiler version K-2015.09_Full64; Runtime version K-2015.09_Full64;  Apr 10 21:30 2025
 VCD+ Writer K-2015.09_Full64 Copyright (c) 1991-2015 by Synopsys Inc.
 The file '/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/inter.vpd' was opened successfully.
 Simulation completed at time 445000
@@ -11,10 +127,41 @@ Force 2: 00000000000000000000
 Force 3: 00000000000000000000
 Force 4: 00000000000000000000
 Body 0: 0064006400050005000a
-Body 1: 0069006900060006000c
+Body 1: 00c800c800060006000c
 Body 2: 00000000000000000000
 Body 3: 00000000000000000000
 Body 4: 00000000000000000000
-$finish called from file "nbody-naive_tb.sv", line 55.
+$finish called from file "nbody-naive_tb.sv", line 49.
+$finish at simulation time               845000
+Simulation complete, time is 845000 ps.
+Chronologic VCS simulator copyright 1991-2015
+Contains Synopsys proprietary information.
+Compiler version K-2015.09_Full64; Runtime version K-2015.09_Full64;  Apr 10 21:35 2025
+VCD+ Writer K-2015.09_Full64 Copyright (c) 1991-2015 by Synopsys Inc.
+The file '/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/inter.vpd' was opened successfully.
+Error: [DVAP037] 
+Errors while sourcing the file '/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/.restartSimSession.tcl':
+
+ Line 97: [DVSG007] 
+Signal ' "NBodySim_tb.sim.DT" "NBodySim_tb.sim.G" "NBodySim_tb.sim.SOFTENING"' cannot be found.
+ Line 102: Specified signals (Sim:NBodySim_tb.sim.DT) not found.
+ Line 103: Specified signals (Sim:NBodySim_tb.sim.DT) not found.
+ Line 104: Specified signals (Sim:NBodySim_tb.sim.G) not found.
+ Line 105: Specified signals (Sim:NBodySim_tb.sim.G) not found.
+ Line 106: Specified signals (Sim:NBodySim_tb.sim.SOFTENING) not found.
+ Line 107: Specified signals (Sim:NBodySim_tb.sim.SOFTENING) not found..
+Simulation completed at time 445000
+Reading forces from memory...
+Force 0: 00000000000000000000
+Force 1: 00000000000000000000
+Force 2: 00000000000000000000
+Force 3: 00000000000000000000
+Force 4: 00000000000000000000
+Body 0: 00640064000500050064
+Body 1: 00c800c8000600060064
+Body 2: 00000000000000000000
+Body 3: 00000000000000000000
+Body 4: 00000000000000000000
+$finish called from file "nbody-naive_tb.sv", line 49.
 $finish at simulation time               845000
 Simulation complete, time is 845000 ps.

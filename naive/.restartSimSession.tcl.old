@@ -1,16 +1,16 @@
 # Begin_DVE_Session_Save_Info
 # DVE restart session
-# Saved on Wed Apr 9 23:58:43 2025
+# Saved on Thu Apr 10 21:35:42 2025
 # Designs open: 1
 #   Sim: /afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/naive/simv
 # Toplevel windows open: 2
 # 	TopLevel.1
 # 	TopLevel.2
 #   Source.1: NBodySim_tb
-#   Wave.1: 41 signals
+#   Wave.1: 48 signals
 #   Group count = 2
-#   Group Group1 signal count = 16
-#   Group Group2 signal count = 25
+#   Group Group1 signal count = 31
+#   Group Group2 signal count = 17
 # End_DVE_Session_Save_Info
 
 # DVE version: K-2015.09_Full64
@@ -60,7 +60,7 @@ gui_sync_global -id ${TopLevel.2} -option true
 
 # MDI window settings
 set Wave.1 Wave.1
-gui_update_layout -id ${Wave.1} {{show_state maximized} {dock_state undocked} {dock_on_new_line false} {child_wave_left 594} {child_wave_right 1448} {child_wave_colname 236} {child_wave_colvalue 354} {child_wave_col1 0} {child_wave_col2 1}}
+gui_update_layout -id ${Wave.1} {{show_state maximized} {dock_state undocked} {dock_on_new_line false} {child_wave_left 477} {child_wave_right 1164} {child_wave_colname 236} {child_wave_colvalue 237} {child_wave_col1 0} {child_wave_col2 1}}
 
 # End MDI window settings
 
@@ -87,20 +87,30 @@ gui_set_time_units 1ps
 # Global: Signal Compare
 
 # Global: Signal Groups
-gui_load_child_values {NBodySim_tb.sim.FORCE}
+gui_load_child_values {NBodySim_tb.sim}
 
 
 set _session_group_7 Group1
 gui_sg_create "$_session_group_7"
 set Group1 "$_session_group_7"
 
-gui_sg_addsignal -group "$_session_group_7" { NBodySim_tb.sim.FORCE.clk NBodySim_tb.sim.FORCE.reset NBodySim_tb.sim.FORCE.enable NBodySim_tb.sim.FORCE.body_i NBodySim_tb.sim.FORCE.body_j NBodySim_tb.sim.FORCE.valid_in NBodySim_tb.sim.FORCE.force_x NBodySim_tb.sim.FORCE.force_y NBodySim_tb.sim.FORCE.valid_out NBodySim_tb.sim.FORCE.s1 NBodySim_tb.sim.FORCE.s2 NBodySim_tb.sim.FORCE.s3 NBodySim_tb.sim.FORCE.s4 NBodySim_tb.sim.FORCE.s5 NBodySim_tb.sim.FORCE.safe_dist_sq NBodySim_tb.sim.FORCE.magnitude }
+gui_sg_addsignal -group "$_session_group_7" { NBodySim_tb.sim.clk NBodySim_tb.sim.reset NBodySim_tb.sim.test_addr NBodySim_tb.sim.start NBodySim_tb.sim.done NBodySim_tb.sim.read_body NBodySim_tb.sim.body_i NBodySim_tb.sim.body_j NBodySim_tb.sim.register_i NBodySim_tb.sim.register_j NBodySim_tb.sim.fc_en NBodySim_tb.sim.fc_done NBodySim_tb.sim.fc_valid NBodySim_tb.sim.force_x NBodySim_tb.sim.force_y NBodySim_tb.sim.total_force_x NBodySim_tb.sim.total_force_y NBodySim_tb.sim.i NBodySim_tb.sim.j NBodySim_tb.sim.incr_i NBodySim_tb.sim.incr_j NBodySim_tb.sim.addr NBodySim_tb.sim.write_data NBodySim_tb.sim.wr_en NBodySim_tb.sim.currState NBodySim_tb.sim.nextState NBodySim_tb.sim.N NBodySim_tb.sim.ADDR_WIDTH NBodySim_tb.sim.DT NBodySim_tb.sim.G NBodySim_tb.sim.SOFTENING }
+gui_set_radix -radix {decimal} -signals {Sim:NBodySim_tb.sim.N}
+gui_set_radix -radix {twosComplement} -signals {Sim:NBodySim_tb.sim.N}
+gui_set_radix -radix {decimal} -signals {Sim:NBodySim_tb.sim.ADDR_WIDTH}
+gui_set_radix -radix {twosComplement} -signals {Sim:NBodySim_tb.sim.ADDR_WIDTH}
+gui_set_radix -radix {decimal} -signals {Sim:NBodySim_tb.sim.DT}
+gui_set_radix -radix {unsigned} -signals {Sim:NBodySim_tb.sim.DT}
+gui_set_radix -radix {decimal} -signals {Sim:NBodySim_tb.sim.G}
+gui_set_radix -radix {unsigned} -signals {Sim:NBodySim_tb.sim.G}
+gui_set_radix -radix {decimal} -signals {Sim:NBodySim_tb.sim.SOFTENING}
+gui_set_radix -radix {unsigned} -signals {Sim:NBodySim_tb.sim.SOFTENING}
 
 set _session_group_8 Group2
 gui_sg_create "$_session_group_8"
 set Group2 "$_session_group_8"
 
-gui_sg_addsignal -group "$_session_group_8" { NBodySim_tb.sim.clk NBodySim_tb.sim.reset NBodySim_tb.sim.start NBodySim_tb.sim.done NBodySim_tb.sim.read_body NBodySim_tb.sim.body_i NBodySim_tb.sim.body_j NBodySim_tb.sim.register_i NBodySim_tb.sim.register_j NBodySim_tb.sim.fc_en NBodySim_tb.sim.fc_done NBodySim_tb.sim.fc_valid NBodySim_tb.sim.force_x NBodySim_tb.sim.force_y NBodySim_tb.sim.total_force_x NBodySim_tb.sim.total_force_y NBodySim_tb.sim.i NBodySim_tb.sim.j NBodySim_tb.sim.incr_i NBodySim_tb.sim.incr_j NBodySim_tb.sim.addr NBodySim_tb.sim.write_data NBodySim_tb.sim.wr_en NBodySim_tb.sim.currState NBodySim_tb.sim.nextState }
+gui_sg_addsignal -group "$_session_group_8" { NBodySim_tb.sim.FORCE.clk NBodySim_tb.sim.FORCE.reset NBodySim_tb.sim.FORCE.enable NBodySim_tb.sim.FORCE.body_i NBodySim_tb.sim.FORCE.body_j NBodySim_tb.sim.FORCE.valid_in NBodySim_tb.sim.FORCE.force_x NBodySim_tb.sim.FORCE.force_y NBodySim_tb.sim.FORCE.valid_out NBodySim_tb.sim.FORCE.s1 NBodySim_tb.sim.FORCE.s2 NBodySim_tb.sim.FORCE.s3 NBodySim_tb.sim.FORCE.s4 NBodySim_tb.sim.FORCE.s5 NBodySim_tb.sim.FORCE.safe_dist_sq NBodySim_tb.sim.FORCE.magnitude NBodySim_tb.sim.FORCE.delayed_valid_out }
 
 # Global: Highlighting
 
@@ -131,16 +141,17 @@ gui_list_set_filter -id ${Hier.1} -list { {Package 1} {All 0} {Process 1} {VirtP
 gui_list_set_filter -id ${Hier.1} -text {*}
 gui_change_design -id ${Hier.1} -design Sim
 catch {gui_list_expand -id ${Hier.1} NBodySim_tb}
-catch {gui_list_select -id ${Hier.1} {NBodySim_tb.sim}}
+catch {gui_list_expand -id ${Hier.1} NBodySim_tb.sim}
+catch {gui_list_select -id ${Hier.1} {NBodySim_tb.sim.FORCE}}
 gui_view_scroll -id ${Hier.1} -vertical -set 0
 gui_view_scroll -id ${Hier.1} -horizontal -set 0
 
 # Data 'Data.1'
 gui_list_set_filter -id ${Data.1} -list { {Buffer 1} {Input 1} {Others 1} {Linkage 1} {Output 1} {LowPower 1} {Parameter 1} {All 1} {Aggregate 1} {LibBaseMember 1} {Event 1} {Assertion 1} {Constant 1} {Interface 1} {BaseMembers 1} {Signal 1} {$unit 1} {Inout 1} {Variable 1} }
 gui_list_set_filter -id ${Data.1} -text {*}
-gui_list_show_data -id ${Data.1} {NBodySim_tb.sim}
+gui_list_show_data -id ${Data.1} {NBodySim_tb.sim.FORCE}
 gui_show_window -window ${Data.1}
-catch { gui_list_select -id ${Data.1} {NBodySim_tb.sim.nextState NBodySim_tb.sim.read_body NBodySim_tb.sim.reset NBodySim_tb.sim.i NBodySim_tb.sim.j NBodySim_tb.sim.incr_i NBodySim_tb.sim.fc_en NBodySim_tb.sim.addr NBodySim_tb.sim.incr_j NBodySim_tb.sim.total_force_x NBodySim_tb.sim.wr_en NBodySim_tb.sim.total_force_y NBodySim_tb.sim.fc_valid NBodySim_tb.sim.register_i NBodySim_tb.sim.register_j NBodySim_tb.sim.currState NBodySim_tb.sim.force_x NBodySim_tb.sim.force_y NBodySim_tb.sim.clk NBodySim_tb.sim.body_i NBodySim_tb.sim.body_j NBodySim_tb.sim.write_data NBodySim_tb.sim.done NBodySim_tb.sim.start NBodySim_tb.sim.fc_done }}
+catch { gui_list_select -id ${Data.1} {NBodySim_tb.sim.FORCE.valid_in NBodySim_tb.sim.FORCE.valid_out NBodySim_tb.sim.FORCE.reset NBodySim_tb.sim.FORCE.safe_dist_sq NBodySim_tb.sim.FORCE.enable NBodySim_tb.sim.FORCE.delayed_valid_out NBodySim_tb.sim.FORCE.magnitude NBodySim_tb.sim.FORCE.s1 NBodySim_tb.sim.FORCE.s2 NBodySim_tb.sim.FORCE.s3 NBodySim_tb.sim.FORCE.s4 NBodySim_tb.sim.FORCE.s5 NBodySim_tb.sim.FORCE.force_x NBodySim_tb.sim.FORCE.force_y NBodySim_tb.sim.FORCE.clk NBodySim_tb.sim.FORCE.body_i NBodySim_tb.sim.FORCE.body_j }}
 gui_view_scroll -id ${Data.1} -vertical -set 0
 gui_view_scroll -id ${Data.1} -horizontal -set 0
 gui_view_scroll -id ${Hier.1} -vertical -set 0
@@ -161,11 +172,15 @@ set origWaveHeight [gui_get_pref_value -category Wave -key waveRowHeight]
 gui_list_set_height -id Wave -height 25
 set origGroupCreationState [gui_list_create_group_when_add -wave]
 gui_list_create_group_when_add -wave -disable
-gui_wv_zoom_timerange -id ${Wave.1} 293803 415659
+gui_wv_zoom_timerange -id ${Wave.1} 59838 451006
 gui_list_add_group -id ${Wave.1} -after {New Group} {Group1}
 gui_list_add_group -id ${Wave.1} -after {New Group} {Group2}
+gui_list_expand -id ${Wave.1} NBodySim_tb.sim.FORCE.s1
+gui_list_expand -id ${Wave.1} NBodySim_tb.sim.FORCE.s2
+gui_list_expand -id ${Wave.1} NBodySim_tb.sim.FORCE.s3
+gui_list_expand -id ${Wave.1} NBodySim_tb.sim.FORCE.s4
 gui_list_expand -id ${Wave.1} NBodySim_tb.sim.FORCE.s5
-gui_list_select -id ${Wave.1} {NBodySim_tb.sim.FORCE.s5.mass_j_scaled NBodySim_tb.sim.fc_en NBodySim_tb.sim.fc_done NBodySim_tb.sim.fc_valid }
+gui_list_select -id ${Wave.1} {NBodySim_tb.sim.FORCE.s5.dist_3 }
 gui_seek_criteria -id ${Wave.1} {Any Edge}
 
 
@@ -183,7 +198,7 @@ gui_list_set_filter -id ${Wave.1} -list { {Buffer 1} {Input 1} {Others 1} {Linka
 gui_list_set_filter -id ${Wave.1} -text {*}
 gui_list_set_insertion_bar  -id ${Wave.1} -group Group2  -position in
 
-gui_view_scroll -id ${Wave.1} -vertical -set 303
+gui_view_scroll -id ${Wave.1} -vertical -set 1154
 gui_show_grid -id ${Wave.1} -enable false
 # Restore toplevel window zorder
 # The toplevel window could be closed if it has no view/pane
