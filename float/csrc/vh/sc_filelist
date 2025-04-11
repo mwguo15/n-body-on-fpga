@@ -1,0 +1,45 @@
+# This file contains the list of objects to create scsim.
+
+# --- $(VHDL_OBJS) dependency 
+VHDL_OBJS= $(EVENT_OBJS) $(CY_OBJS)
+
+LN      =ln -sf
+
+
+linux64_scvhdl_1.so: vh/_vhdl_ar_1.a
+	@ld -shared -o $(VSRC)/simv.daidir/linux64_scvhdl_1.so -whole-archive vh/_vhdl_ar_1.a -no-whole-archive
+	@$(LN) $(VSRC)/simv.daidir/linux64_scvhdl_1.so linux64_scvhdl_1.so
+
+
+
+linux64_scvhdl_2.so: vh/_vhdl_ar_2.a
+	@ld -shared -o $(VSRC)/simv.daidir/linux64_scvhdl_2.so -whole-archive vh/_vhdl_ar_2.a -no-whole-archive
+	@$(LN) $(VSRC)/simv.daidir/linux64_scvhdl_2.so linux64_scvhdl_2.so
+
+
+
+linux64_scvhdl_3.so: vh/_vhdl_ar_3.a
+	@ld -shared -o $(VSRC)/simv.daidir/linux64_scvhdl_3.so -whole-archive vh/_vhdl_ar_3.a -no-whole-archive
+	@$(LN) $(VSRC)/simv.daidir/linux64_scvhdl_3.so linux64_scvhdl_3.so
+
+
+
+linux64_scvhdl_4.so: vh/_vhdl_ar_4.a
+	@ld -shared -o $(VSRC)/simv.daidir/linux64_scvhdl_4.so -whole-archive vh/_vhdl_ar_4.a -no-whole-archive
+	@$(LN) $(VSRC)/simv.daidir/linux64_scvhdl_4.so linux64_scvhdl_4.so
+
+
+EVENT_OBJS=\
+	linux64_scvhdl_1.so\
+	linux64_scvhdl_2.so\
+	linux64_scvhdl_3.so\
+	linux64_scvhdl_4.so\
+	vh/scscomm.o\
+	vh/scsFilelist.o
+
+vh/scscomm.o: vh/scscomm.c
+	@$(CC) $(CFLAGS) -o $@ -I$(SYNOPSYS_SIM)/include -I$(SYNOPSYS_SIM)/linux64/lib -c vh/scscomm.c
+
+vh/scsFilelist.o: vh/scsFilelist.c
+	@$(CC) $(CFLAGS) -o $@ -I$(SYNOPSYS_SIM)/include -c vh/scsFilelist.c
+

@@ -1,0 +1,17 @@
+{
+    "Modules": {
+        "...MASTER...": {},
+        "fpoint2_multi": {}
+    },
+    "CompUnits": {
+        "amcQw_d": {
+            "mod": "...MASTER...",
+            "mode": 4,
+            "out": "objs/amcQw_d.o",
+            "checksum": 4294967295,
+            "bytes": 7653
+        }
+    },
+    "reusePaths": {},
+    "ObjArchives": []
+}

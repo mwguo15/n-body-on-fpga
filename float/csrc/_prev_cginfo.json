@@ -1,0 +1,102 @@
+{
+    "stat": {
+        "ru_childs_cgstart": {
+            "ru_nvcsw": 998,
+            "ru_utime_sec": 0.103689,
+            "ru_majflt": 343,
+            "ru_maxrss_kb": 87496,
+            "ru_stime_sec": 0.33507500000000001,
+            "ru_minflt": 5073,
+            "ru_nivcsw": 5
+        },
+        "ru_self_cgstart": {
+            "ru_nvcsw": 1515,
+            "ru_utime_sec": 0.130965,
+            "ru_majflt": 219,
+            "ru_maxrss_kb": 106180,
+            "ru_stime_sec": 0.61446000000000001,
+            "ru_minflt": 10349,
+            "ru_nivcsw": 1
+        },
+        "nMops": 12,
+        "mopSpeed": 1150.1964919007,
+        "ru_childs_end": {
+            "ru_nvcsw": 6189,
+            "ru_utime_sec": 0.48333199999999998,
+            "ru_majflt": 419,
+            "ru_maxrss_kb": 110660,
+            "ru_stime_sec": 2.0476700000000001,
+            "ru_minflt": 36439,
+            "ru_nivcsw": 20
+        },
+        "CodeGen(%)": 7.3784636274911941,
+        "nQuads": 15,
+        "totalObjSize": 104482,
+        "ru_self_end": {
+            "ru_nvcsw": 1940,
+            "ru_utime_sec": 0.141398,
+            "ru_majflt": 266,
+            "ru_maxrss_kb": 110660,
+            "ru_stime_sec": 0.75129900000000005,
+            "ru_minflt": 12006,
+            "ru_nivcsw": 1
+        },
+        "quadSpeed": 1437.7456148758749,
+        "mop/quad": 0.80000000000000004,
+        "Frontend(%)": 92.6215363725088,
+        "outputSizePerQuad": 6965.0
+    },
+    "MlibObjs": {},
+    "PrevCompiledModules": {},
+    "NameTable": {
+        "std": [
+            "std",
+            "reYIK",
+            "module"
+        ],
+        "fp_testbench": [
+            "fp_testbench",
+            "nM3Cm",
+            "module"
+        ],
+        "fpoint2_multi": [
+            "fpoint2_multi",
+            "QVqiY",
+            "module"
+        ],
+        "...MASTER...": [
+            "SIM",
+            "amcQw",
+            "module"
+        ]
+    },
+    "CurCompileUdps": {},
+    "CompileStrategy": "fullobj",
+    "SIMBData": {
+        "out": "amcQwB.o",
+        "bytes": 88863
+    },
+    "CurCompileModules": [
+        "...MASTER...",
+        "fpoint2_multi"
+    ],
+    "CompileStatus": "Successful",
+    "PEModules": [],
+    "LVLData": [
+        "SIM"
+    ],
+    "CompileProcesses": [
+        "cgproc.711916.json",
+        "cgproc.712143.json",
+        "cgproc.712145.json"
+    ],
+    "Misc": {
+        "daidir_abs": "/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/float/simv.daidir",
+        "csrc_abs": "/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/float/csrc",
+        "cwd": "/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/float",
+        "csrc": "csrc",
+        "daidir": "/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/float/simv.daidir",
+        "default_output_dir": "csrc",
+        "archive_dir": "archive.0"
+    }
+}

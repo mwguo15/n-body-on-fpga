@@ -1,0 +1,62 @@
+Info: Starting: Create simulation model
+Info: qsys-generate /afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/float/FP.qsys --simulation=VERILOG --allow-mixed-language-simulation --output-directory=/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/float/FP/simulation --family="Cyclone IV E" --part=EP4CE115F29C7
+Progress: Loading float/FP.qsys
+Progress: Reading input file
+Progress: Adding nios_custom_instr_floating_point_2_multi_0 [altera_nios_custom_instr_floating_point_2_multi 23.1]
+Progress: Parameterizing module nios_custom_instr_floating_point_2_multi_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: FP: Generating FP "FP" for SIM_VERILOG
+Info: nios_custom_instr_floating_point_2_multi_0: "FP" instantiated altera_nios_custom_instr_floating_point_2_multi "nios_custom_instr_floating_point_2_multi_0"
+Info: FP: Done "FP" with 2 modules, 15 files
+Info: qsys-generate succeeded.
+Info: Finished: Create simulation model
+Info: Starting: Create Modelsim Project.
+Info: sim-script-gen --spd=/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/float/FP/FP.spd --output-directory=/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/float/FP/simulation/ --use-relative-paths=true
+Info: Doing: ip-make-simscript --spd=/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/float/FP/FP.spd --output-directory=/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/float/FP/simulation/ --use-relative-paths=true
+Info: Generating the following file(s) for XCELIUM simulator in /afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/float/FP/simulation/ directory:
+Info: 	xcelium/cds.lib
+Info: 	xcelium/hdl.var
+Info: 	xcelium/xcelium_setup.sh
+Info: 	1 .cds.lib files in xcelium/cds_libs/ directory
+Info: Generating the following file(s) for VCSMX simulator in /afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/float/FP/simulation/ directory:
+Info: 	synopsys/vcsmx/synopsys_sim.setup
+Info: 	synopsys/vcsmx/vcsmx_setup.sh
+Info: Skipping VCS script generation since VHDL file $QUARTUS_INSTALL_DIR/eda/sim_lib/altera_syn_attributes.vhd is required for simulation
+Info: Generating the following file(s) for RIVIERA simulator in /afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/float/FP/simulation/ directory:
+Info: 	aldec/rivierapro_setup.tcl
+Info: Generating the following file(s) for MODELSIM simulator in /afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/float/FP/simulation/ directory:
+Info: 	mentor/msim_setup.tcl
+Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under /afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/float/FP/simulation/.
+Info: Regenerate these scripts whenever you make any change to any Quartus-generated IP in your project.
+Info: Finished: Create Modelsim Project.
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate /afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/float/FP.qsys --block-symbol-file --output-directory=/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/float/FP --family="Cyclone IV E" --part=EP4CE115F29C7
+Progress: Loading float/FP.qsys
+Progress: Reading input file
+Progress: Adding nios_custom_instr_floating_point_2_multi_0 [altera_nios_custom_instr_floating_point_2_multi 23.1]
+Progress: Parameterizing module nios_custom_instr_floating_point_2_multi_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate /afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/float/FP.qsys --synthesis=VERILOG --output-directory=/afs/ece.cmu.edu/usr/mwguo/private/15418/n-body-on-fpga/float/FP/synthesis --family="Cyclone IV E" --part=EP4CE115F29C7
+Progress: Loading float/FP.qsys
+Progress: Reading input file
+Progress: Adding nios_custom_instr_floating_point_2_multi_0 [altera_nios_custom_instr_floating_point_2_multi 23.1]
+Progress: Parameterizing module nios_custom_instr_floating_point_2_multi_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: FP: Generating FP "FP" for QUARTUS_SYNTH
+Info: nios_custom_instr_floating_point_2_multi_0: "FP" instantiated altera_nios_custom_instr_floating_point_2_multi "nios_custom_instr_floating_point_2_multi_0"
+Info: FP: Done "FP" with 2 modules, 15 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

@@ -1,0 +1,17 @@
+
+VLOGAN	= vlogan
+VLOGAN_OPT	= -full64 -sverilog +v2k -v /afs/ece/support/altera/release/16.1.2/quartus/eda/sim_lib/altera_primitives.v -v /afs/ece/support/altera/release/16.1.2/quartus/eda/sim_lib/220model.v -v /afs/ece/support/altera/release/16.1.2/quartus/eda/sim_lib/altera_mf.v -v /afs/ece/support/altera/release/16.1.2/quartus/eda/sim_lib/cycloneiv_atoms.v -work WORK -full64
+
+all :		_VCSgd_t1dZbe_1.db \
+	_VCSgd_tF7VKe_1.db \
+
+
+
+_VCSgd_t1dZbe_1.db :	FP/simulation/FP.v 
+		${VLOGAN}  ${VLOGAN_OPT} FP/simulation/FP.v
+
+
+_VCSgd_tF7VKe_1.db :	fp_tb.sv 
+		${VLOGAN}  ${VLOGAN_OPT} fp_tb.sv
+
+

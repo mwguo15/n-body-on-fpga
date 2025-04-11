@@ -1,0 +1,22 @@
+{
+    "std": [
+        "std",
+        "reYIK",
+        "module"
+    ],
+    "fp_testbench": [
+        "fp_testbench",
+        "nM3Cm",
+        "module"
+    ],
+    "fpoint2_multi": [
+        "fpoint2_multi",
+        "QVqiY",
+        "module"
+    ],
+    "...MASTER...": [
+        "SIM",
+        "amcQw",
+        "module"
+    ]
+}

@@ -1,0 +1,6 @@
+14
+140080649
+FP/simulation/FP.v 
+-full64 -sverilog +v2k -work WORK -v /afs/ece/support/altera/release/16.1.2/quartus/eda/sim_lib/altera_primitives.v -v /afs/ece/support/altera/release/16.1.2/quartus/eda/sim_lib/220model.v -v /afs/ece/support/altera/release/16.1.2/quartus/eda/sim_lib/altera_mf.v -v /afs/ece/support/altera/release/16.1.2/quartus/eda/sim_lib/cycloneiv_atoms.v FP/simulation/FP.v
+   /afs/ece.cmu.edu/support/synopsys/synopsys.release/vcs-mx_vK-2015.09/linux64/bin/vcs1 -Mcc=gcc -Mcplusplus=g++ -Masflags= -Mcfl=' -pipe -O -I/afs/ece.cmu.edu/support/synopsys/synopsys.release/vcs-mx_vK-2015.09/include ' -Mldflags=" -Wl,-E,-rpath /afs/ece.cmu.edu/support/synopsys/synopsys.release/vcs-mx_vK-2015.09/linux64/lib " -Mout=simv -Mamsrun="" -Mvcsaceobjs="" -Mobjects=" " -Msaverestoreobj= -Mcrt0="" -Mcrtn="" -Mcsrc="" -Msyslibs="-lncurses -L/usr/X11R6/lib64 -lX11 -ldl -ldl "
+-Xvlogan=0x1 -full64 -sverilog +v2k  -work=WORK  -v /afs/ece/support/altera/release/16.1.2/quartus/eda/sim_lib/altera_primitives.v  -v /afs/ece/support/altera/release/16.1.2/quartus/eda/sim_lib/220model.v  -v /afs/ece/support/altera/release/16.1.2/quartus/eda/sim_lib/altera_mf.v  -v /afs/ece/support/altera/release/16.1.2/quartus/eda/sim_lib/cycloneiv_atoms.v  "FP/simulation/FP.v"  +mixedhdl2    

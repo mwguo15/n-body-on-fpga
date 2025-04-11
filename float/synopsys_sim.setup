@@ -1,0 +1,9 @@
+WORK > DEFAULT
+DEFAULT : ./work
+altera : ./altera_lib
+altera_mf : ./altera_mf_lib
+lpm : ./lpm_lib
+altera_lnsim : ./altera_lnsim_lib
+cycloneiv : ./cycloneiv_lib
+cycloneiv_hssi : ./cycloneiv_hssi_lib
+cycloneiv_pcie_hip : ./cycloneiv_pcie_hip_lib

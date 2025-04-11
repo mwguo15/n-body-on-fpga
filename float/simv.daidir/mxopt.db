@@ -1,0 +1,11 @@
++vhdllib+WORK 
++vhdllib+DEFAULT 
++vhdllib+ALTERA 
++vhdllib+ALTERA_MF 
++vhdllib+LPM 
++vhdllib+ALTERA_LNSIM 
++vhdllib+CYCLONEIV 
++vhdllib+CYCLONEIV_HSSI 
++vhdllib+CYCLONEIV_PCIE_HIP 
++reflib+WORK 
++reflib+DEFAULT 
